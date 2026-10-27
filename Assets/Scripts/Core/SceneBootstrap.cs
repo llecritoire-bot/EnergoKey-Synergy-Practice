@@ -319,10 +319,10 @@ public sealed class SceneBootstrap : MonoBehaviour
     private void CreatePauseUi(Transform parent, GameController controller)
     {
         Button pauseButton = CreateFittedButton(parent, "PauseButton", "II", null, new Vector2(-48f, -43f), new Vector2(66f, 58f), new Vector2(1f, 1f));
-        GameObject pausePanel = UIFactory.CreateOverlayPanel(parent, "PausePanel", "ПАУЗА", "Игра остановлена");
+        GameObject pausePanel = UIFactory.CreateOverlayPanel(parent, "PausePanel", "ПАУЗА", string.Empty);
         CanvasGroup pauseGroup = pausePanel.AddComponent<CanvasGroup>();
         SetCanvasGroupVisible(pauseGroup, false);
-        Text timer = UIFactory.CreateText(pausePanel.transform, "PausedTimer", "ТАЙМЕР ОСТАНОВЛЕН  00:00", 24, TextAnchor.MiddleCenter, new Vector2(0.28f, 0.44f), new Vector2(0.72f, 0.53f), Vector2.zero, Vector2.zero);
+        Text timer = UIFactory.CreateText(pausePanel.transform, "PausedTimer", "ТАЙМЕР ОСТАНОВЛЕН  00:00", 24, TextAnchor.MiddleCenter, new Vector2(0.28f, 0.50f), new Vector2(0.72f, 0.58f), Vector2.zero, Vector2.zero);
         timer.color = ThemeAssets.Yellow;
         Button resume = CreateFittedButton(pausePanel.transform, "ResumeButton", "ПРОДОЛЖИТЬ", null, new Vector2(0f, -65f), new Vector2(270f, 56f));
         CreateFittedButton(pausePanel.transform, "LevelSelectButton", "ВЫБОР УРОВНЯ", NavigateToLevelSelect, new Vector2(0f, -130f), new Vector2(270f, 54f));

@@ -137,6 +137,14 @@ public sealed class PauseController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+    }
+
     private void LateUpdate()
     {
         if (IsPaused)
