@@ -18,6 +18,7 @@
 - Структурная проверка: PASS, 165/165, включая `ENV-2D-SPRITE-PACKAGE` и `ENV-2D-DEFAULT-MODE`, `EVIDENCE/PROJECT_VALIDATION.md`.
 - macOS Standalone Development Build: PASS, 0 ошибок, 0 предупреждений; фактический запуск MainMenu подтверждён runtime-маркером, `EVIDENCE/MAC_STANDALONE_TEST.md`.
 - PlayerPrefs между независимыми Unity-процессами: PASS, `EVIDENCE/PERSISTENCE_RESTART_PROBE.md`.
+- Свежий публичный clone: PASS; compile, EditMode 24/24, PlayMode 17/17 и structural validation 165/165, `EVIDENCE/FRESH_CLONE_TEST.md`.
 
 ## Визуальная палитра
 
@@ -108,7 +109,7 @@
 - Тег оформленного этапа: `up-pm13-styled` → `d0b7433011ef097a5b92ea4799ac92d2887fa5c4`.
 - Тег `profiler-before` → `d0b7433011ef097a5b92ea4799ac92d2887fa5c4`.
 - Commit событийного HUD: `11771ef31459a3aad844614287306db68119c8d2`.
-- Сведения о проверенной опубликованной ревизии, `git ls-remote` и тегах: `EVIDENCE/REPOSITORY_URL.md`.
+- Проверенная опубликованная ревизия: `87a0b2642b7f7d02bcdb8165dccedccf2dc2164f`; сведения `git ls-remote` и тегах: `EVIDENCE/REPOSITORY_URL.md`.
 - Результаты новой чистой копии после публикации: `EVIDENCE/FRESH_CLONE_TEST.md`.
 - Старые авторы, даты и этапные теги сохранены без переписывания.
 
@@ -155,9 +156,9 @@
 | T13 | UX-01 и UX-02 найдены самостоятельной технической проверкой и исправлены до внешнего сеанса; новый пользователь затем проверил исправленную версию. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md`, `responsive/BEFORE_1024x768_LevelSelect_overlap.png`, `responsive/RESP_1024x768_LevelSelect.png` |
 | T14 | Новый пользователь без устного объяснения понял необходимость собрать все кристаллы до выхода и успешно завершил Level 1. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md` |
 | T15 | PlayMode прошёл L1–L3, Victory, Defeat/Restart; независимые процессы подтвердили сохранения. | PASS | `PlayModeTests-final.xml`, `PERSISTENCE_RESTART_PROBE.md` |
-| T16 | Проверка свежего клона выполняется после первой публикации финальной ветки; фактическая ревизия и результат будут записаны в отдельном протоколе. | NOT VERIFIED | `FRESH_CLONE_TEST.md`, `REPOSITORY_URL.md` |
+| T16 | Публичная ревизия `87a0b2642b7f7d02bcdb8165dccedccf2dc2164f` клонирована без credential helper; compile, 24 EditMode, 17 PlayMode и 165 structural checks прошли. | PASS | `FRESH_CLONE_TEST.md`, `REPOSITORY_URL.md` |
 
-Промежуточный итог до проверки свежего клона: 15 PASS, 0 FAIL, 1 NOT VERIFIED.
+Итог ПП.ПМ.13: 16 PASS, 0 FAIL, 0 NOT VERIFIED.
 
 Полные ожидаемые и фактические результаты приведены в `EVIDENCE/TEST_RESULTS.md`.
 
@@ -175,5 +176,5 @@
 - Реальное системное сворачивание macOS Standalone проверено: runtime зарегистрировал `hasFocus=False`/`paused=True`, а после возврата отображалась Pause с остановленным таймером (`FOCUS_LOSS_TEST.md`).
 - Полный L1–L3 flow, физические контакты, Restart, Pause и сохранения подтверждены автоматизированными runtime-прогонами Unity, но отдельное непрерывное видео ручного прохождения не создавалось.
 - Внешний новый пользователь проверил уже исправленную версию; устройство сеанса отдельно не фиксировалось.
-- Публичный URL создан; проверка ветки, тегов и свежего клона фиксируется после первой отправки ревизии.
+- Публичный URL, ветка, этапные теги и свежий клон проверены; точный финальный HEAD разрешается тегом `submission-final` после метадата-коммита.
 - Word/PDF-отчёты, PowerPoint-презентации, подписи, справка о практике и загрузка в LMS не входят в этот Unity ZIP и требуют ручной подготовки/оформления.

@@ -13,7 +13,7 @@
 
 - Внешняя пользовательская проверка проведена: новый пользователь без устных подсказок освоил управление, понял особое правило, завершил Level 1 и проверил Pause/Resume. Протокол: `USER_TEST.md`.
 - Публичный репозиторий создан: `https://github.com/llecritoire-bot/EnergoKey-Synergy-Practice`.
-- Проверка свежего клона оформляется в `FRESH_CLONE_TEST.md` после публикации итоговой ревизии.
+- Свежий публичный clone проверен: compile, EditMode, PlayMode и structural validation прошли; протокол — `FRESH_CLONE_TEST.md`.
 
 ## Не входило в этот этап
 

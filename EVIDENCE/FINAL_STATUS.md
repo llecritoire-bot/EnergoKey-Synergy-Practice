@@ -37,16 +37,16 @@
 | EditMode tests | PASS | `EditModeTests-final.xml` | 24/24, 0 Failed. |
 | PlayMode tests | PASS | `PlayModeTests-final.xml` | Итоговый прогон 17/17, 0 Failed. |
 | Структурная проверка | PASS | `PROJECT_VALIDATION.md`, `PROJECT_VALIDATION.json` | 165/165. |
-| ПП.ПМ.12 Т01–Т16 | NOT VERIFIED | `TEST_RESULTS.md` | 15 PASS; T15 ожидает свежий клон после первой публикации. |
-| ПП.ПМ.13 Т01–Т16 | NOT VERIFIED | `TEST_RESULTS.md` | 15 PASS; T16 ожидает свежий клон после первой публикации. |
+| ПП.ПМ.12 Т01–Т16 | PASS | `TEST_RESULTS.md` | 16 PASS, 0 FAIL, 0 NOT VERIFIED. |
+| ПП.ПМ.13 Т01–Т16 | PASS | `TEST_RESULTS.md` | 16 PASS, 0 FAIL, 0 NOT VERIFIED. |
 | Пользовательская проверка | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md` | Новый пользователь понял управление и правило, завершил L1, проверил Pause/Resume. |
 | Ранее найденные UX-проблемы исправлены | PASS | `PP13_10_BeforeUserFix.png`, `PP13_11_AfterUserFix.png`, `responsive/BEFORE_...`, `responsive/RESP_1024x768_LevelSelect.png` | Проблемы выявлены технической проверкой до внешнего сеанса. |
 | Release-комплект | PASS | `Release/README.md`, `FILE_MANIFEST.md` | Иконка, promo, шесть кадров, mockup, описания, guides, credits, changelog и storyboard присутствуют. |
 | `.gitignore` и отсутствие generated-папок в Git | PASS | `.gitignore`, `git ls-files` | Library/Temp/Logs/obj/UserSettings/Build/Builds не отслеживаются; `EVIDENCE/logs` является доказательной папкой. |
 | История и этапные теги | PASS | `git log`, `git tag` | Старые авторы и даты не переписывались. |
-| Публичный репозиторий создан | PASS | `REPOSITORY_URL.md` | Репозиторий создан публичным; отправка итоговой ветки выполняется после фиксации файлов. |
-| Публичная ветка main и теги | NOT VERIFIED | `REPOSITORY_URL.md` | Будет проверено через `git ls-remote` после push. |
-| Свежий клон публичного репозитория | NOT VERIFIED | `FRESH_CLONE_TEST.md` | Выполняется после push. |
+| Публичный репозиторий создан | PASS | `REPOSITORY_URL.md` | GitHub visibility `PUBLIC`, HTML-доступ без авторизации подтверждён. |
+| Публичная ветка main и теги | PASS | `REPOSITORY_URL.md` | Неавторизованный `git ls-remote` вернул main и шесть этапных тегов. |
+| Свежий клон публичного репозитория | PASS | `FRESH_CLONE_TEST.md`, FreshClone XML и логи | Compile, 24/24 EditMode, 17/17 PlayMode, 165/165 validation. |
 | Очистка служебных материалов текущей версии | PASS | `POST_FIX_AUDIT.md` | Служебные инструкции, исходные пакеты, временные логи и локальные пути удалены или обезличены. |
 | Поиск секретов текущей версии | PASS | `POST_FIX_AUDIT.md` | Токены, пароли, private keys и credentials не обнаружены. |
 | macOS Standalone | PASS | `MAC_STANDALONE_TEST.md`, `logs/mac-standalone-smoke.log` | Build 0/0, MainMenu runtime-marker получен. |
@@ -54,6 +54,6 @@
 | Видео 60–90 секунд | NOT APPLICABLE | `Release/storyboard.md` | По ТЗ допустим storyboard; подготовлено 7 кадров на 80 секунд. |
 | Word/PDF/PPT отчёты | NOT APPLICABLE | — | Намеренно не создавались на этом этапе. |
 
-## Промежуточный итог до публикации
+## Итог
 
-Функциональная, визуальная, тестовая и пользовательская части подтверждены. Для закрытия двух Git-пунктов требуется отправить текущую ветку и теги, затем выполнить Unity-проверку свежего публичного клона. После этого таблица обновляется фактическими результатами.
+Функциональная, визуальная, тестовая, пользовательская и Git-проверки завершены. Единственные `NOT VERIFIED` относятся к физическому Android/iOS-устройству и системной Safe Area мобильного устройства. Они не подменяются проверкой MacBook или Editor-имитацией.

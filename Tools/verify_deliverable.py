@@ -78,6 +78,8 @@ EXPECTED_STAGE_TAGS = (
     "pp-pm13-release",
 )
 
+FINAL_DELIVERY_TAG = "submission-final"
+
 # Used only if no matrix file can be found.  The missing matrix is still
 # reported as NOT VERIFIED, so this fallback cannot masquerade as a source
 # check.  It keeps the delivery name checks useful in a detached project copy.
@@ -1528,18 +1530,25 @@ def check_git(root: Path, reporter: Reporter) -> None:
         reporter.add(PASS, "git.clean_worktree", "The delivery worktree is clean")
 
     final_tag_points_to_head = False
-    if head and "pp-pm13-release" in tags:
-        tag_rc, tag_commit, tag_error = run_git(root, ("rev-list", "-n", "1", "pp-pm13-release"))
+    if head and FINAL_DELIVERY_TAG in tags:
+        tag_rc, tag_commit, tag_error = run_git(
+            root,
+            ("rev-list", "-n", "1", FINAL_DELIVERY_TAG),
+        )
         if tag_rc != 0:
             reporter.add(
                 NOT_VERIFIED,
                 "git.final_tag_target",
-                "Could not resolve pp-pm13-release",
+                f"Could not resolve {FINAL_DELIVERY_TAG}",
                 tag_error,
             )
         elif tag_commit == head:
             final_tag_points_to_head = True
-            reporter.add(PASS, "git.final_tag_target", "pp-pm13-release points to HEAD")
+            reporter.add(
+                PASS,
+                "git.final_tag_target",
+                f"{FINAL_DELIVERY_TAG} points to HEAD",
+            )
         else:
             ancestor_rc, _ancestor_output, _ancestor_error = run_git(
                 root, ("merge-base", "--is-ancestor", tag_commit, head)
@@ -1548,16 +1557,22 @@ def check_git(root: Path, reporter: Reporter) -> None:
                 reporter.add(
                     NOT_VERIFIED,
                     "git.final_tag_target",
-                    "pp-pm13-release is an ancestor of HEAD, not HEAD itself",
+                    f"{FINAL_DELIVERY_TAG} is an ancestor of HEAD, not HEAD itself",
                     f"Tag: {tag_commit}; HEAD: {head}",
                 )
             else:
                 reporter.add(
                     FAIL,
                     "git.final_tag_target",
-                    "pp-pm13-release does not identify the current delivery history",
+                    f"{FINAL_DELIVERY_TAG} does not identify the current delivery history",
                     f"Tag: {tag_commit}; HEAD: {head}",
                 )
+    elif head:
+        reporter.add(
+            NOT_VERIFIED,
+            "git.final_tag_target",
+            f"Final delivery tag {FINAL_DELIVERY_TAG} is not present",
+        )
 
     readme_text = read_text(root / "README.md") or ""
     documented_hashes = unique_in_order(match.lower() for match in FULL_GIT_HASH_RE.findall(readme_text))
@@ -1590,7 +1605,7 @@ def check_git(root: Path, reporter: Reporter) -> None:
 
         final_tag_documented = bool(
             re.search(
-                r"git\s+rev-parse\s+pp-pm13-release(?:\^\{commit\})?",
+                rf"git\s+rev-parse\s+{re.escape(FINAL_DELIVERY_TAG)}(?:\^\{{commit\}})?",
                 readme_text,
                 re.IGNORECASE,
             )
@@ -1602,7 +1617,7 @@ def check_git(root: Path, reporter: Reporter) -> None:
                 "README.md records a full delivery ancestor and documents the final immutable tag",
                 "Recorded ancestor(s): "
                 + ", ".join(valid_ancestors)
-                + f"; pp-pm13-release/HEAD: {head}",
+                + f"; {FINAL_DELIVERY_TAG}/HEAD: {head}",
             )
         elif valid_ancestors:
             reporter.add(

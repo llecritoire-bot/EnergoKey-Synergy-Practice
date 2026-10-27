@@ -1,3 +1,6 @@
+README.md export-subst
+EVIDENCE/REPOSITORY_URL.md export-subst
+EVIDENCE/ARCHIVE_CONTENTS.md export-subst
 # Preserve raw Unity evidence logs without text-diff whitespace normalization.
 EVIDENCE/*.log -diff
 EVIDENCE/logs/*.log -diff

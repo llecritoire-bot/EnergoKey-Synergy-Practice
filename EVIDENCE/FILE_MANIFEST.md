@@ -31,6 +31,8 @@ Prefab: `Player`, `Collectible`, `Hazard`, `UIButton`.
 | `ProfilerBenchmarkBeforeTests.xml`, `ProfilerBenchmarkAfterTests.xml` | Машинные результаты повторного benchmark-прогона |
 | `MAC_STANDALONE_TEST.md` | macOS Standalone Development Build собран и запущен |
 | `FOCUS_LOSS_TEST.md` | Реальное системное сворачивание macOS Standalone вызвало автоматическую Pause |
+| `FRESH_CLONE_TEST.md` | Публичный clone: compile PASS, EditMode 24/24, PlayMode 17/17, validation 165/165 |
+| `FreshCloneEditModeTests.xml`, `FreshClonePlayModeTests.xml` | Машинные результаты свежего публичного клона |
 
 Связанные журналы находятся в `EVIDENCE/logs`, включая итоговую компиляцию, EditMode, PlayMode, structural validation, macOS build/runtime и focus-loss. Для Profiler сохранены JSON, NUnit XML, воспроизводимый harness и снимки до/после; временные полные логи удалены из сдаваемой версии.
 
@@ -76,6 +78,9 @@ Prefab: `Player`, `Collectible`, `Hazard`, `UIButton`.
 - `USER_TEST.md` и `USER_ACCEPTANCE.md` — протокол реальной проверки новым пользователем;
 - `FINAL_STATUS.md` — сверка с чек-листом;
 - `MISSING_EVIDENCE.md` — честно обозначенные внешние ограничения.
+- `REPOSITORY_URL.md` — публичный URL, ветка, проверенная ревизия и теги;
+- `POST_FIX_AUDIT.md` — итог очистки, тестов, secret scan и публикации;
+- `FRESH_CLONE_TEST.md` — проверка новой копии публичного репозитория.
 
 MacBook с Apple M3 зафиксирован как физический компьютер macOS, а не как мобильное Android/iOS-устройство. Устройство внешнего пользовательского сеанса отдельно не фиксировалось.
 
