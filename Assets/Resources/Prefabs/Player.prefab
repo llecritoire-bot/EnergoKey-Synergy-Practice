@@ -157,7 +157,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.42
 --- !u!114 &5910580771338024972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,5 +169,5 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f964f84a34f489295828bf55d64908, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  m_EditorClassIdentifier: EnergoKey.Runtime::PlayerController
   moveSpeed: 4.8

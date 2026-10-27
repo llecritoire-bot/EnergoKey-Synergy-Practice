@@ -1,0 +1,21 @@
+{
+  "name": "EnergoKey.EditModeTests",
+  "rootNamespace": "EnergoKey.Tests.EditMode",
+  "references": [
+    "EnergoKey.Runtime"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

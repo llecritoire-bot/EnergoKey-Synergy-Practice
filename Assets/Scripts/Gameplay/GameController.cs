@@ -62,10 +62,13 @@ public sealed class GameController : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.F3)) CollectAllForEvidence();
-        if (Input.GetKeyDown(KeyCode.F4)) WinForEvidence();
-        if (Input.GetKeyDown(KeyCode.F5)) DefeatForEvidence();
-        if (Input.GetKeyDown(KeyCode.F6)) TryUseExit();
+        if (Time.timeScale > 0f)
+        {
+            if (Input.GetKeyDown(KeyCode.F3)) CollectAllForEvidence();
+            if (Input.GetKeyDown(KeyCode.F4)) WinForEvidence();
+            if (Input.GetKeyDown(KeyCode.F5)) DefeatForEvidence();
+            if (Input.GetKeyDown(KeyCode.F6)) TryUseExit();
+        }
 #endif
     }
 
@@ -246,6 +249,10 @@ public sealed class GameController : MonoBehaviour
         group.alpha = value ? 1f : 0f;
         group.interactable = value;
         group.blocksRaycasts = value;
+        if (value)
+        {
+            panel.transform.SetAsLastSibling();
+        }
     }
 
     private void NotifyChanged()
