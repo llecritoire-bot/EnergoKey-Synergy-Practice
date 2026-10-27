@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class ThemeAssets
 {
-    public const bool Styled = false;
+    public const bool Styled = true;
     private static readonly Dictionary<string, Sprite> RuntimeSprites = new Dictionary<string, Sprite>();
 
     public static Sprite Sprite(string name)
