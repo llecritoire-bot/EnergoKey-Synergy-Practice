@@ -1,0 +1,393 @@
+Unity Editor version:    6000.6.2f1 (770e33f6875c)
+Branch:                  6000.6/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 27.0 (Build 26A428)
+Darwin version:          27.0.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        16384 MB
+Date:                    2026-10-27T13:59:04Z
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/NetCoreRuntime/dotnet
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 78502)
+VBCSCompiler prewarm took 7.08 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-[LOCAL_USER]" at "2026-10-27T13:59:04.582658Z"
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/MacOS/Unity
+-batchmode
+-nographics
+-projectPath
+[USER_HOME]/Desktop/untitled folder 2/EnergoKey
+-runTests
+-testPlatform
+EditMode
+-testResults
+[USER_HOME]/Desktop/untitled folder 2/EnergoKey/EVIDENCE/EditModeTests-final.xml
+-logFile
+[USER_HOME]/Desktop/untitled folder 2/EnergoKey/EVIDENCE/logs/editmode-tests-final.log
+Successfully changed project path to: [USER_HOME]/Desktop/untitled folder 2/EnergoKey
+[USER_HOME]/Desktop/untitled folder 2/EnergoKey
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.
+Player connection [8357805952]  Target information:
+
+Player connection [8357805952]  * "[IP] [LOCAL_IPV4] [Port] 55504 [Flags] 2 [Guid] 559238050 [EditorId] 559238050 [Version] 1048832 [Id] OSXEditor(0,[LOCAL_HOST]) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8357805952]  * "[IP] [LOCAL_IPV4] [Port] 55504 [Flags] 2 [Guid] 559238050 [EditorId] 559238050 [Version] 1048832 [Id] OSXEditor(0,[LOCAL_HOST]) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8357805952] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8357805952] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              [UNITY_SESSION_ID]
+  Correlation Id:          [UNITY_CORRELATION_ID]
+  External correlation Id: [UNITY_EXTERNAL_CORRELATION_ID]
+  Machine Id:              [UNITY_MACHINE_ID]
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-[LOCAL_USER]" (connect: 0.00s, validation: 0.00s, handshake: 0.27s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-[LOCAL_USER]-notifications" at "2026-10-27T13:59:04.854913Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 5774144511925-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Module] Licensing Background thread has ended after 0.28s
+[Package Manager] Connected to IPC stream "Upm-78493" after 0.3 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+Initialising UDS system complete:
+  - System type: Client
+  - Resource namespace: 56df3026d3a14d69986dc5cfe36b4d9e
+  - Shared memory size: 1073741824
+  - Command buffer id: 1052672
+  - Command buffer size: 8192
+  - Hashmap size: 4194304
+  - Service connected: false
+Launching Unity Data Store - /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/Unity.DataStore 
+Unity Data Store artifact dir = Library/DataStore, working dir = [USER_HOME]/Desktop/untitled folder 2/EnergoKey[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Unity Data Store running and initialised
+Initialize engine version: 6000.6.2f1 (770e33f6875c)
+[EntityIdStore] init: VM path (explicit commit), pageSize=16384, blockCount=262144, entitiesPerBlock=1024, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=[LOCAL_IPV4]:56493
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.000985 seconds.
+Native extension for OSXStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.791 seconds
+Domain Reload Profiling: 1265ms
+	BeginReloadAssembly (108ms)
+		CreateAndSetChildDomain (14ms)
+	RebuildCommonClasses (4ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (306ms)
+		LoadAssemblies (94ms)
+		TypeCache.Refresh (189ms)
+			TypeCache.ScanAssembly (175ms)
+		AnalyzeDomain (2ms)
+	FinalizeReload (791ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (48ms)
+			ProcessInitializeOnLoadMethodAttributes (532ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 44 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ide.rider@3.0.38 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.ide.rider@1f60b3138684)
+    com.unity.ide.visualstudio@2.0.26 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.ide.visualstudio@a99d56dec63f)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.2d.sprite@947350d67f82)
+    com.unity.test-framework@1.8.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.test-framework@7a3849e09bd0)
+    com.unity.ugui@2.6.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.ugui@0f30cee369f3)
+    com.unity.modules.accessibility@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.tetgen)
+    com.unity.modules.tilemap@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.tilemap)
+    com.unity.modules.timelinefoundation@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.timelinefoundation)
+    com.unity.modules.ui@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.video)
+    com.unity.modules.wind@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.1.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.ext.nunit@0198eae3b53e)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.01 seconds
+Starting: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/200b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: [USER_HOME]/Desktop/untitled folder 2/EnergoKey
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s118ms
+[260/297    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.10 seconds), 1 items updated, 297 evaluated
+AssetDatabase: script compilation time: 0.648664s
+Begin MonoManager ReloadAssembly
+Total cache size 70462780
+Total cache size after purge 70462780, took 00:00:00.0538217
+Native extension for OSXStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.246 seconds
+Domain Reload Profiling: 524ms
+	BeginReloadAssembly (116ms)
+		DisableScriptedObjects (9ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (5ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (21ms)
+	LoadAllAssembliesAndSetupDomain (124ms)
+		LoadAssemblies (102ms)
+		TypeCache.Refresh (14ms)
+			TypeCache.ScanAssembly (9ms)
+		AnalyzeDomain (6ms)
+			BuildScriptInfoCaches (5ms)
+	FinalizeReload (247ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (49ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Starting new worker id: 0 with log in [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Logs/AssetImportWorkerHW0.log
+
+Asset Pipeline Refresh (id=02bdea7ffbbd7476a91760442ca2186c): Total: 1.337 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=371 ms
+		Asset DB Callback time: managed=14 ms, native=7 ms
+		Scripting: domain reloads=1, domain reload time=288 ms, compile time=650 ms, other=5 ms
+		Project Asset Count: scripts=299, non-scripts=198
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokePackagesCallback: 8.253ms
+	ApplyChangesToAssetFolders: 0.180ms
+	Scan: 73.324ms
+	Collect global state as custom dependencies: 7.206ms
+	CategorizeScriptCompilationAssets: 4.532ms
+	ProcessAssetsWithTransientArtifactChanges: 6.060ms
+	CategorizeAssets: 3.454ms
+	CompileScripts: 649.651ms
+	ImportOutOfDateAssets: 248.410ms (246.959ms without children)
+		UnloadImportedAssets: 0.123ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.059ms
+		ImportSchedulerStart: 1.268ms
+	PostProcessAllAssets: 14.386ms
+		MonoPostProcessAllAssets: 14.357ms
+			SyncVS.PostprocessSyncProject 5.444ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 3.665ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.409ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 0.351ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.125ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.088ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.063ms
+	UnloadStreamsBegin: 0.910ms
+	GenerateScriptTypeHashes: 0.677ms
+	GenerateScriptTypeSerializationHashes: 1.680ms
+	Untracked: 319.136ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 0.036ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Энергоключ
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 949 unused Assets / (0.6 MB). Loaded Objects now: 1693.
+Memory consumption went from 140.1 MB to 139.5 MB.
+Total: 4.540500 ms (FindLiveObjects: 0.127375 ms CreateObjectMapping: 0.014625 ms MarkObjects: 4.095666 ms  DeleteObjects: 0.249208 ms)
+
+[Project] Loading completed in 3.656 seconds
+	Project init time: 				3.505 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.342 seconds
+		Asset Database init time: 		0.185 seconds
+		Global illumination init time: 	0.001 seconds
+		Assemblies load time: 			1.295 seconds
+		Unity extensions init time: 	0.003 seconds
+		Asset Database refresh time: 	1.337 seconds
+	Scene opening time: 			0.080 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1793109548225,"processId":78493,"projectLoad":3.6563390420000004,"projectInit":3.504656041,"templateInit":0.0,"packageManagerInit":0.3417265,"assetDatabaseInit":0.185146708,"globalIlluminationInit":0.000710958,"assembliesLoad":1.294971667,"unityExtensionsInit":0.002733541,"assetDatabaseRefresh":1.337408,"sceneOpening":0.0804135}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1793109548225,"processId":78493,"editorVersion":"6000.6.2f1 (770e33f6875c)","branch":"6000.6/staging","buildType":"Release","platform":"OSX"}
+[Licensing::Client] Successfully resolved entitlement details
+Running tests for ExecutionSettings with details:
+targetPlatform = 
+playerHeartbeatTimeout = 600
+filters[0] = 
+   Filter with settings:
+   testMode = EditMode
+   targetPlatform = 
+   testNames = null
+   groupNames = null
+   categoryNames = null
+   assemblyNames = null
+ignoreTests = {}
+featureFlags = null
+
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:InitializeAndExecuteRun (string[]) (at ./Library/PackageCache/com.unity.test-framework@7a3849e09bd0/UnityEditor.TestRunner/CommandLineTest/Executer.cs:53)
+UnityEditor.TestTools.TestRunner.CommandLineTest.TestStarter:InitializeAndExecuteRun () (at ./Library/PackageCache/com.unity.test-framework@7a3849e09bd0/UnityEditor.TestRunner/CommandLineTest/TestStarter.cs:64)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions () (at [USER_HOME]/build/output/unity/unity/Editor/Mono/EditorApplication.cs:413)
+
+(Filename: ./Library/PackageCache/com.unity.test-framework@7a3849e09bd0/UnityEditor.TestRunner/CommandLineTest/Executer.cs Line: 53)
+
+Start Indexing on Editor startup
+[Indexing] Starting Initial Indexing for Assets
+[UnityConnectServicesConfig] config is NOT valid, switching to default
+Created GICache directory at [USER_HOME]/Library/Caches/com.unity3d.UnityEditor/GiCache. Took: 0.005s, timestamps: [3.658 - 3.663]
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1846.
+Memory consumption went from 143.2 MB to 143.2 MB.
+Total: 5.433375 ms (FindLiveObjects: 0.095375 ms CreateObjectMapping: 0.010375 ms MarkObjects: 5.271209 ms  DeleteObjects: 0.003708 ms)
+
+Saving results to: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/EVIDENCE/EditModeTests-final.xml
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (Unknown). Loaded Objects now: 1847.
+Memory consumption went from 135.8 MB to 135.8 MB.
+Total: 5.492916 ms (FindLiveObjects: 0.081541 ms CreateObjectMapping: 0.009209 ms MarkObjects: 5.348250 ms  DeleteObjects: 0.002958 ms)
+
+DisplayProgressbar: Undo
+Test run completed. Exiting with code 0 (Ok). Run completed.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:ExitApplication (UnityEditor.TestTools.TestRunner.CommandLineTest.Executer/ReturnCodes,string) (at ./Library/PackageCache/com.unity.test-framework@7a3849e09bd0/UnityEditor.TestRunner/CommandLineTest/Executer.cs:81)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:ExitIfRunIsCompleted () (at ./Library/PackageCache/com.unity.test-framework@7a3849e09bd0/UnityEditor.TestRunner/CommandLineTest/Executer.cs:74)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions () (at [USER_HOME]/build/output/unity/unity/Editor/Mono/EditorApplication.cs:413)
+
+(Filename: ./Library/PackageCache/com.unity.test-framework@7a3849e09bd0/UnityEditor.TestRunner/CommandLineTest/Executer.cs Line: 81)
+
+MonoPathRemapper: Attempts to remap: 11765; Successful remaps: 2400
+Serialized file version minimum: 23, current 23
+Thread 0x16ecc7000 may have been prematurely finalized
+Request timed out while processing request "https://public-cdn.cloud.unity3d.com/config/production", HTTP error code 0
+.[UnityConnect] Request timed out.
+Request timed out while processing request "https://public-cdn.cloud.unity3d.com/config/production", HTTP error code 0
+.[UnityConnect] Request timed out.
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+Worker ready: AssetImportWorkerHW0 0
+Shutting down MSBuild server...
+Shutting down VB/C# compiler server...
+VB/C# compiler server shut down successfully.
+Thread 0x16c6d7000 may have been prematurely finalized
+Thread 0x16c64b000 may have been prematurely finalized
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+[Licensing::IpcConnector] LicenseClient-[LOCAL_USER]-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-[LOCAL_USER] channel disconnected successfully.
+MSBuild server shut down successfully.
+Shut down UDS service system complete
+Lingering sessions upon destruction of worker manager
+Unity Data Store service was successfully shut down
+UDS shutting down local client system
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+CodeReloadManager destroyed
+debugger-agent: Unable to listen on 52

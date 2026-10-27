@@ -4,6 +4,8 @@
 [Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
+!EVIDENCE/logs/
+!EVIDENCE/logs/**
 [Uu]ser[Ss]ettings/
 .gradle/
 .vs/

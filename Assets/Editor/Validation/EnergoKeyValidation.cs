@@ -193,6 +193,23 @@ namespace EnergoKey.Editor
                 packages.Contains("com.unity.test-framework"),
                 "Packages/manifest.json contains com.unity.test-framework",
                 packages.Contains("com.unity.test-framework") ? "dependency present" : "dependency missing");
+
+            AddCheck(
+                report,
+                "ENV-2D-SPRITE-PACKAGE",
+                packages.Contains("com.unity.2d.sprite"),
+                "Packages/manifest.json contains com.unity.2d.sprite",
+                packages.Contains("com.unity.2d.sprite") ? "dependency present" : "dependency missing");
+
+            string editorSettings = ReadTextOrEmpty("ProjectSettings/EditorSettings.asset");
+            AddCheck(
+                report,
+                "ENV-2D-DEFAULT-MODE",
+                Regex.IsMatch(editorSettings, @"(?m)^\s*m_DefaultBehaviorMode:\s*1\s*$"),
+                "ProjectSettings/EditorSettings.asset uses 2D default behavior mode (1)",
+                Regex.IsMatch(editorSettings, @"(?m)^\s*m_DefaultBehaviorMode:\s*1\s*$")
+                    ? "m_DefaultBehaviorMode: 1"
+                    : "2D default behavior mode not found");
         }
 
         private static void ValidateRules(ValidationReport report)

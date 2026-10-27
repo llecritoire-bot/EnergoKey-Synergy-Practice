@@ -485,10 +485,11 @@ public sealed class SceneBootstrap : MonoBehaviour
 
     private static void CreateControls(Transform parent, PlayerController player)
     {
-        CreateDirectionButton(parent, player, "LeftButton", "←", new Vector2(-240f, 95f), Vector2.left);
-        CreateDirectionButton(parent, player, "RightButton", "→", new Vector2(-80f, 95f), Vector2.right);
-        CreateDirectionButton(parent, player, "UpButton", "↑", new Vector2(-160f, 175f), Vector2.up);
-        CreateDirectionButton(parent, player, "DownButton", "↓", new Vector2(-160f, 15f), Vector2.down);
+        // Keep the 72 px controls fully inside the bottom safe edge even on 4:3.
+        CreateDirectionButton(parent, player, "LeftButton", "←", new Vector2(-240f, 130f), Vector2.left);
+        CreateDirectionButton(parent, player, "RightButton", "→", new Vector2(-80f, 130f), Vector2.right);
+        CreateDirectionButton(parent, player, "UpButton", "↑", new Vector2(-160f, 210f), Vector2.up);
+        CreateDirectionButton(parent, player, "DownButton", "↓", new Vector2(-160f, 50f), Vector2.down);
     }
 
     private static void CreateDirectionButton(Transform parent, PlayerController player, string name, string label, Vector2 position, Vector2 direction)

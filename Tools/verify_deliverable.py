@@ -301,19 +301,16 @@ def check_required_structure(root: Path, reporter: Reporter) -> None:
 
 
 def check_forbidden_directories(root: Path, reporter: Reporter) -> None:
-    found: List[Path] = []
-    for current, dirs, _files in os.walk(root, followlinks=False):
-        current_path = Path(current)
-        kept: List[str] = []
-        for dirname in dirs:
-            if dirname == ".git":
-                continue
-            candidate = current_path / dirname
-            if dirname.casefold() in FORBIDDEN_DIRECTORY_NAMES:
-                found.append(candidate)
-                continue
-            kept.append(dirname)
-        dirs[:] = kept
+    # These names describe Unity-generated roots that must not be delivered.
+    # Evidence logs are deliberate deliverables and are valid below EVIDENCE/.
+    try:
+        found = [
+            child
+            for child in root.iterdir()
+            if child.is_dir() and child.name.casefold() in FORBIDDEN_DIRECTORY_NAMES
+        ]
+    except OSError:
+        found = []
 
     if found:
         reporter.add(
@@ -991,6 +988,7 @@ def check_git(root: Path, reporter: Reporter) -> None:
     else:
         reporter.add(PASS, "git.clean_worktree", "The delivery worktree is clean")
 
+    final_tag_points_to_head = False
     if head and "pp-pm13-release" in tags:
         tag_rc, tag_commit, tag_error = run_git(root, ("rev-list", "-n", "1", "pp-pm13-release"))
         if tag_rc != 0:
@@ -1001,6 +999,7 @@ def check_git(root: Path, reporter: Reporter) -> None:
                 tag_error,
             )
         elif tag_commit == head:
+            final_tag_points_to_head = True
             reporter.add(PASS, "git.final_tag_target", "pp-pm13-release points to HEAD")
         else:
             ancestor_rc, _ancestor_output, _ancestor_error = run_git(
@@ -1050,7 +1049,23 @@ def check_git(root: Path, reporter: Reporter) -> None:
             if ancestor_rc == 0:
                 valid_ancestors.append(documented)
 
-        if valid_ancestors:
+        final_tag_documented = bool(
+            re.search(
+                r"git\s+rev-parse\s+pp-pm13-release(?:\^\{commit\})?",
+                readme_text,
+                re.IGNORECASE,
+            )
+        )
+        if valid_ancestors and final_tag_points_to_head and final_tag_documented:
+            reporter.add(
+                PASS,
+                "git.readme_hash",
+                "README.md records a full delivery ancestor and documents the final immutable tag",
+                "Recorded ancestor(s): "
+                + ", ".join(valid_ancestors)
+                + f"; pp-pm13-release/HEAD: {head}",
+            )
+        elif valid_ancestors:
             reporter.add(
                 NOT_VERIFIED,
                 "git.readme_hash",

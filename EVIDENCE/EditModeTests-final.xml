@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="24" result="Passed" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.0348825">
+  <test-suite type="TestSuite" id="1000" name="Энергоключ" fullname="Энергоключ" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.034883" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1031" name="EnergoKey.EditModeTests.dll" fullname="[USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/ScriptAssemblies/EnergoKey.EditModeTests.dll" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.030700" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="78493" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1032" name="EnergoKey" fullname="EnergoKey" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.030446" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1033" name="Tests" fullname="EnergoKey.Tests" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.030270" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1034" name="EditMode" fullname="EnergoKey.Tests.EditMode" runstate="Runnable" testcasecount="24" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.030064" total="24" passed="24" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="GameRulesTests" fullname="EnergoKey.Tests.EditMode.GameRulesTests" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.013472" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="ParameterizedMethod" id="1007" name="CalculateScore_UsesCrystalsAndLivesAndClampsNegatives" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CalculateScore_UsesCrystalsAndLivesAndClampsNegatives" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.008776" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1003" name="CalculateScore_UsesCrystalsAndLivesAndClampsNegatives(0,3,150)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CalculateScore_UsesCrystalsAndLivesAndClampsNegatives(0,3,150)" methodname="CalculateScore_UsesCrystalsAndLivesAndClampsNegatives" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="1053754281" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.005765" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1004" name="CalculateScore_UsesCrystalsAndLivesAndClampsNegatives(3,3,450)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CalculateScore_UsesCrystalsAndLivesAndClampsNegatives(3,3,450)" methodname="CalculateScore_UsesCrystalsAndLivesAndClampsNegatives" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="2115228482" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000063" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1005" name="CalculateScore_UsesCrystalsAndLivesAndClampsNegatives(5,1,550)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CalculateScore_UsesCrystalsAndLivesAndClampsNegatives(5,1,550)" methodname="CalculateScore_UsesCrystalsAndLivesAndClampsNegatives" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="1890501882" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000023" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1006" name="CalculateScore_UsesCrystalsAndLivesAndClampsNegatives(-2,-1,0)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CalculateScore_UsesCrystalsAndLivesAndClampsNegatives(-2,-1,0)" methodname="CalculateScore_UsesCrystalsAndLivesAndClampsNegatives" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="1282165897" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000017" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-case id="1002" name="Constants_MatchDesignSpecification" fullname="EnergoKey.Tests.EditMode.GameRulesTests.Constants_MatchDesignSpecification" methodname="Constants_MatchDesignSpecification" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="1285406873" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000060" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1013" name="CrystalCountForLevel_ClampsToSupportedRange" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CrystalCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000673" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1008" name="CrystalCountForLevel_ClampsToSupportedRange(0,3)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CrystalCountForLevel_ClampsToSupportedRange(0,3)" methodname="CrystalCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="545614140" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000096" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1009" name="CrystalCountForLevel_ClampsToSupportedRange(1,3)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CrystalCountForLevel_ClampsToSupportedRange(1,3)" methodname="CrystalCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="1952492289" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000018" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1010" name="CrystalCountForLevel_ClampsToSupportedRange(2,4)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CrystalCountForLevel_ClampsToSupportedRange(2,4)" methodname="CrystalCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="1662112233" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000019" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1011" name="CrystalCountForLevel_ClampsToSupportedRange(3,5)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CrystalCountForLevel_ClampsToSupportedRange(3,5)" methodname="CrystalCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="872137875" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000018" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1012" name="CrystalCountForLevel_ClampsToSupportedRange(4,5)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.CrystalCountForLevel_ClampsToSupportedRange(4,5)" methodname="CrystalCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="1120837980" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000018" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-suite type="ParameterizedMethod" id="1019" name="HazardCountForLevel_ClampsToSupportedRange" fullname="EnergoKey.Tests.EditMode.GameRulesTests.HazardCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000410" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1014" name="HazardCountForLevel_ClampsToSupportedRange(0,2)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.HazardCountForLevel_ClampsToSupportedRange(0,2)" methodname="HazardCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="695919577" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000044" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1015" name="HazardCountForLevel_ClampsToSupportedRange(1,2)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.HazardCountForLevel_ClampsToSupportedRange(1,2)" methodname="HazardCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="2056340771" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000019" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1016" name="HazardCountForLevel_ClampsToSupportedRange(2,4)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.HazardCountForLevel_ClampsToSupportedRange(2,4)" methodname="HazardCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="1146616946" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000016" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1017" name="HazardCountForLevel_ClampsToSupportedRange(3,6)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.HazardCountForLevel_ClampsToSupportedRange(3,6)" methodname="HazardCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="2056729133" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000017" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1018" name="HazardCountForLevel_ClampsToSupportedRange(4,6)" fullname="EnergoKey.Tests.EditMode.GameRulesTests.HazardCountForLevel_ClampsToSupportedRange(4,6)" methodname="HazardCountForLevel_ClampsToSupportedRange" classname="EnergoKey.Tests.EditMode.GameRulesTests" runstate="Runnable" seed="1364632476" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000018" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+            </test-suite>
+            <test-suite type="TestFixture" id="1020" name="SaveServiceTests" fullname="EnergoKey.Tests.EditMode.SaveServiceTests" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.016134" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1029" name="MarkTutorialSeen_PersistsFlag" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.MarkTutorialSeen_PersistsFlag" methodname="MarkTutorialSeen_PersistsFlag" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" seed="1986407128" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.003877" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="NewSave_UsesDocumentedDefaults" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.NewSave_UsesDocumentedDefaults" methodname="NewSave_UsesDocumentedDefaults" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" seed="1743990241" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.001473" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1023" name="RegisterVictory_DoesNotLowerProgressOrBestScore" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.RegisterVictory_DoesNotLowerProgressOrBestScore" methodname="RegisterVictory_DoesNotLowerProgressOrBestScore" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" seed="64697319" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.001952" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1024" name="RegisterVictory_OnFinalLevelNeverCreatesLevelFour" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.RegisterVictory_OnFinalLevelNeverCreatesLevelFour" methodname="RegisterVictory_OnFinalLevelNeverCreatesLevelFour" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" seed="1175215792" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.001339" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1022" name="RegisterVictory_UnlocksNextLevelAndStoresBestScore" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.RegisterVictory_UnlocksNextLevelAndStoresBestScore" methodname="RegisterVictory_UnlocksNextLevelAndStoresBestScore" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" seed="719191456" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000969" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1030" name="ResetProgressForDevelopment_ClearsProgressButPreservesVolume" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.ResetProgressForDevelopment_ClearsProgressButPreservesVolume" methodname="ResetProgressForDevelopment_ClearsProgressButPreservesVolume" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" seed="296580356" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.002178" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-suite type="ParameterizedMethod" id="1028" name="SetMasterVolume_ClampsAndPersists" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.SetMasterVolume_ClampsAndPersists" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.003379" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1025" name="SetMasterVolume_ClampsAndPersists(-0.4f,0.0f)" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.SetMasterVolume_ClampsAndPersists(-0.4f,0.0f)" methodname="SetMasterVolume_ClampsAndPersists" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" seed="1775299738" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.001033" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1026" name="SetMasterVolume_ClampsAndPersists(0.35f,0.35f)" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.SetMasterVolume_ClampsAndPersists(0.35f,0.35f)" methodname="SetMasterVolume_ClampsAndPersists" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" seed="1180908939" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.001012" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1027" name="SetMasterVolume_ClampsAndPersists(1.8f,1.0f)" fullname="EnergoKey.Tests.EditMode.SaveServiceTests.SetMasterVolume_ClampsAndPersists(1.8f,1.0f)" methodname="SetMasterVolume_ClampsAndPersists" classname="EnergoKey.Tests.EditMode.SaveServiceTests" runstate="Runnable" seed="860366904" result="Passed" start-time="2026-10-27 13:59:08Z" end-time="2026-10-27 13:59:08Z" duration="0.000986" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Saving results to: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/EVIDENCE/EditModeTests-final.xml
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

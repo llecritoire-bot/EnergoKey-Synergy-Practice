@@ -1,0 +1,1443 @@
+﻿{
+    "schemaVersion": "1.0",
+    "generatedAtUtc": "2026-10-27T13:56:58.6747710Z",
+    "unityVersion": "6000.6.2f1",
+    "projectRoot": "[USER_HOME]/Desktop/untitled folder 2/EnergoKey",
+    "overallStatus": "PASS",
+    "totalChecks": 165,
+    "passedChecks": 165,
+    "failedChecks": 0,
+    "counts": {
+        "sceneFiles": 6,
+        "prefabFiles": 4,
+        "finalArtPngFiles": 16,
+        "audioWavFiles": 6,
+        "releasePngFiles": 3,
+        "editModeTestSourceFiles": 2
+    },
+    "checks": [
+        {
+            "id": "ENV-UNITY-VERSION",
+            "status": "PASS",
+            "expected": "6000.6.2f1",
+            "actual": "6000.6.2f1"
+        },
+        {
+            "id": "ENV-PACKAGES",
+            "status": "PASS",
+            "expected": "file exists: Packages/manifest.json",
+            "actual": "found"
+        },
+        {
+            "id": "ENV-PROJECT-VERSION",
+            "status": "PASS",
+            "expected": "file exists: ProjectSettings/ProjectVersion.txt",
+            "actual": "found"
+        },
+        {
+            "id": "ENV-TEST-FRAMEWORK",
+            "status": "PASS",
+            "expected": "Packages/manifest.json contains com.unity.test-framework",
+            "actual": "dependency present"
+        },
+        {
+            "id": "ENV-2D-SPRITE-PACKAGE",
+            "status": "PASS",
+            "expected": "Packages/manifest.json contains com.unity.2d.sprite",
+            "actual": "dependency present"
+        },
+        {
+            "id": "ENV-2D-DEFAULT-MODE",
+            "status": "PASS",
+            "expected": "ProjectSettings/EditorSettings.asset uses 2D default behavior mode (1)",
+            "actual": "m_DefaultBehaviorMode: 1"
+        },
+        {
+            "id": "RULE-MAX-LEVEL",
+            "status": "PASS",
+            "expected": "3",
+            "actual": "3"
+        },
+        {
+            "id": "RULE-START-LIVES",
+            "status": "PASS",
+            "expected": "3",
+            "actual": "3"
+        },
+        {
+            "id": "RULE-CRYSTAL-COUNTS",
+            "status": "PASS",
+            "expected": "3,4,5",
+            "actual": "3,4,5"
+        },
+        {
+            "id": "RULE-HAZARD-COUNTS",
+            "status": "PASS",
+            "expected": "2,4,6",
+            "actual": "2,4,6"
+        },
+        {
+            "id": "RULE-SCORE",
+            "status": "PASS",
+            "expected": "3 crystals + 2 lives = 400; negative inputs clamp to 0",
+            "actual": "score(3,2)=400; score(-1,-1)=0"
+        },
+        {
+            "id": "SAVE-KEYS-UNIQUE",
+            "status": "PASS",
+            "expected": "4 distinct PlayerPrefs keys",
+            "actual": "distinct=4, total=4"
+        },
+        {
+            "id": "PLAYER-PRODUCT-NAME",
+            "status": "PASS",
+            "expected": "Энергоключ",
+            "actual": "Энергоключ"
+        },
+        {
+            "id": "PLAYER-VERSION",
+            "status": "PASS",
+            "expected": "1.0.0",
+            "actual": "1.0.0"
+        },
+        {
+            "id": "PLAYER-ORIENTATION",
+            "status": "PASS",
+            "expected": "landscape default; both landscape rotations allowed; portrait rotations disabled",
+            "actual": "default=LandscapeLeft; left=True; right=True; portrait=False; portraitUpsideDown=False"
+        },
+        {
+            "id": "PLAYER-README-VERSION",
+            "status": "PASS",
+            "expected": "README.md contains 1.0.0",
+            "actual": "version found"
+        },
+        {
+            "id": "SCENE-FILE-Prototype",
+            "status": "PASS",
+            "expected": "file exists: Assets/Scenes/Prototype.unity",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-FILE-Prototype-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Scenes/Prototype.unity.meta",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-BOOTSTRAP-Prototype",
+            "status": "PASS",
+            "expected": "scene references SceneBootstrap",
+            "actual": "reference found"
+        },
+        {
+            "id": "SCENE-FILE-MainMenu",
+            "status": "PASS",
+            "expected": "file exists: Assets/Scenes/MainMenu.unity",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-FILE-MainMenu-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Scenes/MainMenu.unity.meta",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-BOOTSTRAP-MainMenu",
+            "status": "PASS",
+            "expected": "scene references SceneBootstrap",
+            "actual": "reference found"
+        },
+        {
+            "id": "SCENE-FILE-LevelSelect",
+            "status": "PASS",
+            "expected": "file exists: Assets/Scenes/LevelSelect.unity",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-FILE-LevelSelect-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Scenes/LevelSelect.unity.meta",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-BOOTSTRAP-LevelSelect",
+            "status": "PASS",
+            "expected": "scene references SceneBootstrap",
+            "actual": "reference found"
+        },
+        {
+            "id": "SCENE-FILE-Level1",
+            "status": "PASS",
+            "expected": "file exists: Assets/Scenes/Level1.unity",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-FILE-Level1-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Scenes/Level1.unity.meta",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-BOOTSTRAP-Level1",
+            "status": "PASS",
+            "expected": "scene references SceneBootstrap",
+            "actual": "reference found"
+        },
+        {
+            "id": "SCENE-FILE-Level2",
+            "status": "PASS",
+            "expected": "file exists: Assets/Scenes/Level2.unity",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-FILE-Level2-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Scenes/Level2.unity.meta",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-BOOTSTRAP-Level2",
+            "status": "PASS",
+            "expected": "scene references SceneBootstrap",
+            "actual": "reference found"
+        },
+        {
+            "id": "SCENE-FILE-Level3",
+            "status": "PASS",
+            "expected": "file exists: Assets/Scenes/Level3.unity",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-FILE-Level3-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Scenes/Level3.unity.meta",
+            "actual": "found"
+        },
+        {
+            "id": "SCENE-BOOTSTRAP-Level3",
+            "status": "PASS",
+            "expected": "scene references SceneBootstrap",
+            "actual": "reference found"
+        },
+        {
+            "id": "BUILD-SCENE-MainMenu",
+            "status": "PASS",
+            "expected": "enabled in Build Settings: Assets/Scenes/MainMenu.unity",
+            "actual": "enabled"
+        },
+        {
+            "id": "BUILD-SCENE-LevelSelect",
+            "status": "PASS",
+            "expected": "enabled in Build Settings: Assets/Scenes/LevelSelect.unity",
+            "actual": "enabled"
+        },
+        {
+            "id": "BUILD-SCENE-Level1",
+            "status": "PASS",
+            "expected": "enabled in Build Settings: Assets/Scenes/Level1.unity",
+            "actual": "enabled"
+        },
+        {
+            "id": "BUILD-SCENE-Level2",
+            "status": "PASS",
+            "expected": "enabled in Build Settings: Assets/Scenes/Level2.unity",
+            "actual": "enabled"
+        },
+        {
+            "id": "BUILD-SCENE-Level3",
+            "status": "PASS",
+            "expected": "enabled in Build Settings: Assets/Scenes/Level3.unity",
+            "actual": "enabled"
+        },
+        {
+            "id": "BUILD-FIRST-SCENE",
+            "status": "PASS",
+            "expected": "Assets/Scenes/MainMenu.unity",
+            "actual": "Assets/Scenes/MainMenu.unity"
+        },
+        {
+            "id": "PREFAB-PLAYER-FILE",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Prefabs/Player.prefab",
+            "actual": "found"
+        },
+        {
+            "id": "PREFAB-PLAYER-FILE-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Prefabs/Player.prefab.meta",
+            "actual": "found"
+        },
+        {
+            "id": "PREFAB-PLAYER",
+            "status": "PASS",
+            "expected": "PlayerController + Rigidbody2D + Collider2D + SpriteRenderer + Player tag",
+            "actual": "required components found"
+        },
+        {
+            "id": "PREFAB-COLLECTIBLE-FILE",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Prefabs/Collectible.prefab",
+            "actual": "found"
+        },
+        {
+            "id": "PREFAB-COLLECTIBLE-FILE-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Prefabs/Collectible.prefab.meta",
+            "actual": "found"
+        },
+        {
+            "id": "PREFAB-COLLECTIBLE",
+            "status": "PASS",
+            "expected": "Collectible + SpriteRenderer + trigger Collider2D",
+            "actual": "required components found"
+        },
+        {
+            "id": "PREFAB-HAZARD-FILE",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Prefabs/Hazard.prefab",
+            "actual": "found"
+        },
+        {
+            "id": "PREFAB-HAZARD-FILE-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Prefabs/Hazard.prefab.meta",
+            "actual": "found"
+        },
+        {
+            "id": "PREFAB-HAZARD",
+            "status": "PASS",
+            "expected": "Hazard + SpriteRenderer + trigger Collider2D",
+            "actual": "required components found"
+        },
+        {
+            "id": "PREFAB-UI-BUTTON-FILE",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Prefabs/UIButton.prefab",
+            "actual": "found"
+        },
+        {
+            "id": "PREFAB-UI-BUTTON-FILE-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Prefabs/UIButton.prefab.meta",
+            "actual": "found"
+        },
+        {
+            "id": "PREFAB-UI-BUTTON",
+            "status": "PASS",
+            "expected": "Button + Image",
+            "actual": "required components found"
+        },
+        {
+            "id": "ART-FILE-background",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/background.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-background-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/background.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-background",
+            "status": "PASS",
+            "expected": "1280x720",
+            "actual": "1280x720"
+        },
+        {
+            "id": "ART-IMPORT-background",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-player",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/player.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-player-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/player.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-player",
+            "status": "PASS",
+            "expected": "256x256",
+            "actual": "256x256"
+        },
+        {
+            "id": "ART-IMPORT-player",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-crystal",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/crystal.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-crystal-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/crystal.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-crystal",
+            "status": "PASS",
+            "expected": "256x256",
+            "actual": "256x256"
+        },
+        {
+            "id": "ART-IMPORT-crystal",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-hazard",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/hazard.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-hazard-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/hazard.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-hazard",
+            "status": "PASS",
+            "expected": "256x256",
+            "actual": "256x256"
+        },
+        {
+            "id": "ART-IMPORT-hazard",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-exit_closed",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/exit_closed.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-exit_closed-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/exit_closed.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-exit_closed",
+            "status": "PASS",
+            "expected": "320x320",
+            "actual": "320x320"
+        },
+        {
+            "id": "ART-IMPORT-exit_closed",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-exit_open",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/exit_open.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-exit_open-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/exit_open.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-exit_open",
+            "status": "PASS",
+            "expected": "320x320",
+            "actual": "320x320"
+        },
+        {
+            "id": "ART-IMPORT-exit_open",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-ui_button",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/ui_button.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-ui_button-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/ui_button.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-ui_button",
+            "status": "PASS",
+            "expected": "640x192",
+            "actual": "640x192"
+        },
+        {
+            "id": "ART-IMPORT-ui_button",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-ui_panel",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/ui_panel.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-ui_panel-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/ui_panel.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-ui_panel",
+            "status": "PASS",
+            "expected": "720x440",
+            "actual": "720x440"
+        },
+        {
+            "id": "ART-IMPORT-ui_panel",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-life",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/life.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-life-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/life.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-life",
+            "status": "PASS",
+            "expected": "128x128",
+            "actual": "128x128"
+        },
+        {
+            "id": "ART-IMPORT-life",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-lock",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/lock.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-lock-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/lock.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-lock",
+            "status": "PASS",
+            "expected": "128x128",
+            "actual": "128x128"
+        },
+        {
+            "id": "ART-IMPORT-lock",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-pause",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/pause.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-pause-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/pause.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-pause",
+            "status": "PASS",
+            "expected": "128x128",
+            "actual": "128x128"
+        },
+        {
+            "id": "ART-IMPORT-pause",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-arrow_up",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/arrow_up.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-arrow_up-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/arrow_up.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-arrow_up",
+            "status": "PASS",
+            "expected": "128x128",
+            "actual": "128x128"
+        },
+        {
+            "id": "ART-IMPORT-arrow_up",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-arrow_down",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/arrow_down.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-arrow_down-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/arrow_down.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-arrow_down",
+            "status": "PASS",
+            "expected": "128x128",
+            "actual": "128x128"
+        },
+        {
+            "id": "ART-IMPORT-arrow_down",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-arrow_left",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/arrow_left.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-arrow_left-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/arrow_left.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-arrow_left",
+            "status": "PASS",
+            "expected": "128x128",
+            "actual": "128x128"
+        },
+        {
+            "id": "ART-IMPORT-arrow_left",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-arrow_right",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/arrow_right.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-arrow_right-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/arrow_right.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-arrow_right",
+            "status": "PASS",
+            "expected": "128x128",
+            "actual": "128x128"
+        },
+        {
+            "id": "ART-IMPORT-arrow_right",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "ART-FILE-arrows",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Art/Final/arrows.png",
+            "actual": "found"
+        },
+        {
+            "id": "ART-FILE-arrows-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Art/Final/arrows.png.meta",
+            "actual": "found"
+        },
+        {
+            "id": "ART-SIZE-arrows",
+            "status": "PASS",
+            "expected": "384x384",
+            "actual": "384x384"
+        },
+        {
+            "id": "ART-IMPORT-arrows",
+            "status": "PASS",
+            "expected": "TextureImporterType.Sprite and Sprite asset load succeeds",
+            "actual": "type=Sprite; spriteLoaded=True"
+        },
+        {
+            "id": "AUDIO-FILE-collect",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Audio/collect.wav",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-FILE-collect-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Audio/collect.wav.meta",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-IMPORT-collect",
+            "status": "PASS",
+            "expected": "mono, 44100 Hz, non-empty AudioClip",
+            "actual": "channels=1; frequency=44100; length=0.340s"
+        },
+        {
+            "id": "AUDIO-FILE-error",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Audio/error.wav",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-FILE-error-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Audio/error.wav.meta",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-IMPORT-error",
+            "status": "PASS",
+            "expected": "mono, 44100 Hz, non-empty AudioClip",
+            "actual": "channels=1; frequency=44100; length=0.460s"
+        },
+        {
+            "id": "AUDIO-FILE-damage",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Audio/damage.wav",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-FILE-damage-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Audio/damage.wav.meta",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-IMPORT-damage",
+            "status": "PASS",
+            "expected": "mono, 44100 Hz, non-empty AudioClip",
+            "actual": "channels=1; frequency=44100; length=0.520s"
+        },
+        {
+            "id": "AUDIO-FILE-victory",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Audio/victory.wav",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-FILE-victory-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Audio/victory.wav.meta",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-IMPORT-victory",
+            "status": "PASS",
+            "expected": "mono, 44100 Hz, non-empty AudioClip",
+            "actual": "channels=1; frequency=44100; length=1.480s"
+        },
+        {
+            "id": "AUDIO-FILE-defeat",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Audio/defeat.wav",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-FILE-defeat-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Audio/defeat.wav.meta",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-IMPORT-defeat",
+            "status": "PASS",
+            "expected": "mono, 44100 Hz, non-empty AudioClip",
+            "actual": "channels=1; frequency=44100; length=1.320s"
+        },
+        {
+            "id": "AUDIO-FILE-button",
+            "status": "PASS",
+            "expected": "file exists: Assets/Resources/Audio/button.wav",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-FILE-button-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Resources/Audio/button.wav.meta",
+            "actual": "found"
+        },
+        {
+            "id": "AUDIO-IMPORT-button",
+            "status": "PASS",
+            "expected": "mono, 44100 Hz, non-empty AudioClip",
+            "actual": "channels=1; frequency=44100; length=0.140s"
+        },
+        {
+            "id": "RELEASE-ICON-FILE",
+            "status": "PASS",
+            "expected": "file exists: Release/icon_512.png",
+            "actual": "found"
+        },
+        {
+            "id": "RELEASE-ICON",
+            "status": "PASS",
+            "expected": "512x512",
+            "actual": "512x512"
+        },
+        {
+            "id": "RELEASE-PROMO-FILE",
+            "status": "PASS",
+            "expected": "file exists: Release/promo_1280x720.png",
+            "actual": "found"
+        },
+        {
+            "id": "RELEASE-PROMO",
+            "status": "PASS",
+            "expected": "1280x720",
+            "actual": "1280x720"
+        },
+        {
+            "id": "RELEASE-PRODUCT-MOCKUP-FILE",
+            "status": "PASS",
+            "expected": "file exists: Release/product_page_mockup.png",
+            "actual": "found"
+        },
+        {
+            "id": "RELEASE-PRODUCT-MOCKUP",
+            "status": "PASS",
+            "expected": "1440x1800",
+            "actual": "1440x1800"
+        },
+        {
+            "id": "DOC-DESCRIPTION",
+            "status": "PASS",
+            "expected": "file exists: Release/Docs/DESCRIPTION.md",
+            "actual": "found"
+        },
+        {
+            "id": "DOC-PLAYER_GUIDE",
+            "status": "PASS",
+            "expected": "file exists: Release/Docs/PLAYER_GUIDE.md",
+            "actual": "found"
+        },
+        {
+            "id": "DOC-CREDITS",
+            "status": "PASS",
+            "expected": "file exists: Release/Docs/CREDITS.md",
+            "actual": "found"
+        },
+        {
+            "id": "DOC-CHANGELOG",
+            "status": "PASS",
+            "expected": "file exists: Release/Docs/CHANGELOG.md",
+            "actual": "found"
+        },
+        {
+            "id": "DOC-storyboard",
+            "status": "PASS",
+            "expected": "file exists: Release/storyboard.md",
+            "actual": "found"
+        },
+        {
+            "id": "DOC-SHORT-DESCRIPTION-LENGTH",
+            "status": "PASS",
+            "expected": "1..80 characters",
+            "actual": "73 characters"
+        },
+        {
+            "id": "DOC-FULL-DESCRIPTION-LENGTH",
+            "status": "PASS",
+            "expected": "600..1200 characters",
+            "actual": "988 characters"
+        },
+        {
+            "id": "DOC-STORYBOARD-ROWS",
+            "status": "PASS",
+            "expected": "7 rows and documented 80-second duration",
+            "actual": "rows=7; duration80=True"
+        },
+        {
+            "id": "TEST-FILE-EnergoKey.Runtime",
+            "status": "PASS",
+            "expected": "file exists: Assets/Scripts/EnergoKey.Runtime.asmdef",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-FILE-EnergoKey.Runtime-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Scripts/EnergoKey.Runtime.asmdef.meta",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-FILE-EnergoKey.EditModeTests",
+            "status": "PASS",
+            "expected": "file exists: Assets/Tests/EditMode/EnergoKey.EditModeTests.asmdef",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-FILE-EnergoKey.EditModeTests-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Tests/EditMode/EnergoKey.EditModeTests.asmdef.meta",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-FILE-GameRulesTests",
+            "status": "PASS",
+            "expected": "file exists: Assets/Tests/EditMode/GameRulesTests.cs",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-FILE-GameRulesTests-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Tests/EditMode/GameRulesTests.cs.meta",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-FILE-SaveServiceTests",
+            "status": "PASS",
+            "expected": "file exists: Assets/Tests/EditMode/SaveServiceTests.cs",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-FILE-SaveServiceTests-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Tests/EditMode/SaveServiceTests.cs.meta",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-FILE-EnergoKeyValidation",
+            "status": "PASS",
+            "expected": "file exists: Assets/Editor/Validation/EnergoKeyValidation.cs",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-FILE-EnergoKeyValidation-META",
+            "status": "PASS",
+            "expected": "meta exists: Assets/Editor/Validation/EnergoKeyValidation.cs.meta",
+            "actual": "found"
+        },
+        {
+            "id": "TEST-PLAYERPREFS-ISOLATION",
+            "status": "PASS",
+            "expected": "SaveService exposes Editor-only isolated test keys with cleanup",
+            "actual": "test scope found"
+        },
+        {
+            "id": "COUNT-SCENES",
+            "status": "PASS",
+            "expected": ">= 6",
+            "actual": "6"
+        },
+        {
+            "id": "COUNT-PREFABS",
+            "status": "PASS",
+            "expected": ">= 4",
+            "actual": "4"
+        },
+        {
+            "id": "COUNT-FINAL-ART",
+            "status": "PASS",
+            "expected": ">= 16",
+            "actual": "16"
+        },
+        {
+            "id": "COUNT-AUDIO",
+            "status": "PASS",
+            "expected": ">= 6",
+            "actual": "6"
+        },
+        {
+            "id": "COUNT-RELEASE-PNG",
+            "status": "PASS",
+            "expected": ">= 3",
+            "actual": "3"
+        },
+        {
+            "id": "COUNT-EDITMODE-TESTS",
+            "status": "PASS",
+            "expected": ">= 2",
+            "actual": "2"
+        }
+    ],
+    "manifest": [
+        {
+            "path": "Assets/Editor/Validation/EnergoKeyValidation.cs",
+            "bytes": 35287,
+            "sha256": "dc1ff35567a6564239f9bda940d3eeafbcdf1621a582f2f1391f1cf687328ee9"
+        },
+        {
+            "path": "Assets/Editor/Validation/EnergoKeyValidation.cs.meta",
+            "bytes": 59,
+            "sha256": "d4d856f2f5cd5b27e9bf5678c63ce918119e92232769138ae36ec6c4b7434b47"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrow_down.png",
+            "bytes": 9894,
+            "sha256": "27d59d451a365de6200ddd25fe6f8e639b3cd141619c219de4f702ddf414e974"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrow_down.png.meta",
+            "bytes": 3315,
+            "sha256": "b2d20dc6ad663f5020cb0cc51e915c7cbfed76490f4281ace6e938516431b76d"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrow_left.png",
+            "bytes": 10013,
+            "sha256": "fde9cf47a44a1bf0165422cd3c8867ba0bf6ac1f8156c512849e5a86691213db"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrow_left.png.meta",
+            "bytes": 3315,
+            "sha256": "41e15e53cdbae70d37a103a4300f8059186fd851764082a2e1c55972b23ac476"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrow_right.png",
+            "bytes": 9977,
+            "sha256": "44aa2542f87273d60153e81a9213c2cdeb8ed27740b273ac130442508c341576"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrow_right.png.meta",
+            "bytes": 3318,
+            "sha256": "0be11330ac5dcc25a0d2fcc85d76982eb75e06f11bc9aa8fd51ab0db1df350a0"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrow_up.png",
+            "bytes": 9827,
+            "sha256": "c968951ce1c4822dc13db70021d20fd25d3df9d07c9fb1914ba883517d1e2516"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrow_up.png.meta",
+            "bytes": 3312,
+            "sha256": "05fea92765b0c2f478401311a766b534b5a2c5672f7acd528bb1dd71efd1d42e"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrows.png",
+            "bytes": 40609,
+            "sha256": "aca94b1737304516cfa7dc0749ae5d9b156a2c05432e0ce82c5bbd6db34804f5"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/arrows.png.meta",
+            "bytes": 3306,
+            "sha256": "11e8346f78f560142e05a04f62974de0d224aca2865d27556b97562871f86da8"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/background.png",
+            "bytes": 124934,
+            "sha256": "7b5e29f58c2eafc9a9e6a4b17636d4f1b322a89d1bf13a7ce6906f976770a1b9"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/background.png.meta",
+            "bytes": 3318,
+            "sha256": "013de2f826633db13025044705a419e6e74227a7f03700ee4733c30e03c0fbe4"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/crystal.png",
+            "bytes": 37413,
+            "sha256": "15c4b8c795c2e36b9a815d192206cfbe8d1c7db74ffcf687b3d6a8f305ff5a9a"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/crystal.png.meta",
+            "bytes": 3306,
+            "sha256": "3fcd4ed9c09953b188439b28de63260bb196fa685392eaa0fe1c8dbff5736495"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/exit_closed.png",
+            "bytes": 25123,
+            "sha256": "0769d2057a55b84c641c43b554e8b5532d8f6835caaa2f207f59c597388a0816"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/exit_closed.png.meta",
+            "bytes": 3321,
+            "sha256": "c00a47fa64252adcd1fc74ba31d6a13e0ef81a2f854e28c7b940da50d4f91583"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/exit_open.png",
+            "bytes": 32942,
+            "sha256": "1d8a133a4c5de88cce77dcb0c0b6f507ad3309a8438d874a00e81f6442dbfb3c"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/exit_open.png.meta",
+            "bytes": 3312,
+            "sha256": "53acc2690d79372c253d341479a8c6e8a1cc84812cd2da3e3e00f3d199ac1306"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/hazard.png",
+            "bytes": 59781,
+            "sha256": "36b05e80cf6859c1727e2d6ff1633894151f5a0229ad8248405f705eefddec27"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/hazard.png.meta",
+            "bytes": 3303,
+            "sha256": "8c7d2290b167035487e9d7021002b40685de9e7cfeef428e30297a5c4fdcb0ac"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/life.png",
+            "bytes": 15833,
+            "sha256": "2d9859fbc40f6c220878e66e77ca6ad64627c69671b473b0b69487c2ca9d78ee"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/life.png.meta",
+            "bytes": 3300,
+            "sha256": "86f27553da6499376cf73406374262541ee664511b144d016f6b35d6381e8c18"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/lock.png",
+            "bytes": 10074,
+            "sha256": "f70c7de21a68da0edeebd70bea43505ba1589574d6d3bc3f43c2e7d871082151"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/lock.png.meta",
+            "bytes": 3300,
+            "sha256": "4e9228abc458495b7711864959623a7896568be714bbe58f55a8e5d526aead15"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/pause.png",
+            "bytes": 8543,
+            "sha256": "703d583cfbb79dc9ef2662101b663e357827f175a4bc9a761fa47f7af21c2b9b"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/pause.png.meta",
+            "bytes": 3303,
+            "sha256": "c4ced90e4a507b85e1018af4b5ec3958373d0c9e6a78a238828ee8974b5ed223"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/player.png",
+            "bytes": 51385,
+            "sha256": "3b49512ef45357f098c034453cb77f1f8eaa59e8b2c1cc787785167aea5081b1"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/player.png.meta",
+            "bytes": 3303,
+            "sha256": "bb93f341b807aa857b0c597678627363232da22eed899f4664e6ef4fc91ca80b"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/ui_button.png",
+            "bytes": 15861,
+            "sha256": "a089f45bd96715549237a1248e8c457303f12ac8f16c3b7078bc63d0cf6091b8"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/ui_button.png.meta",
+            "bytes": 3315,
+            "sha256": "20c0cdfe968dd198865b64fd2820671b52bc55f1363a20e991b6168143ae3171"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/ui_panel.png",
+            "bytes": 20942,
+            "sha256": "6b0e09e299de2f0339bc82806d581a47d2d7e923d614365524953801f42d247a"
+        },
+        {
+            "path": "Assets/Resources/Art/Final/ui_panel.png.meta",
+            "bytes": 3309,
+            "sha256": "4b77c51a9a8cce0e12b294be66cb1a77ef040789204c738200cf7d20289102f2"
+        },
+        {
+            "path": "Assets/Resources/Audio/button.wav",
+            "bytes": 12392,
+            "sha256": "bdd29978f5a5a6db62e72e8e3cb0fc5c1bc570c39a5508c7d7200dcc94be9f9c"
+        },
+        {
+            "path": "Assets/Resources/Audio/button.wav.meta",
+            "bytes": 485,
+            "sha256": "37e4a548696007f0582d6325a98a7e79702a79be16421cccd4cde380346a6e70"
+        },
+        {
+            "path": "Assets/Resources/Audio/collect.wav",
+            "bytes": 30032,
+            "sha256": "c2a16c1740083f552cff23234b2df5a92620f73bdc5d1026654bf73943aabe02"
+        },
+        {
+            "path": "Assets/Resources/Audio/collect.wav.meta",
+            "bytes": 485,
+            "sha256": "64e6e25d88e8ec9f8c3feb33f6650e9b8d5a5363da2069b429d65a09d0ab98a2"
+        },
+        {
+            "path": "Assets/Resources/Audio/damage.wav",
+            "bytes": 45908,
+            "sha256": "f6e4600bbe7da25121fa2a26b879b4a3b21df5ab6a03770467b2817a7ca8ae07"
+        },
+        {
+            "path": "Assets/Resources/Audio/damage.wav.meta",
+            "bytes": 485,
+            "sha256": "8f4f0102beb35b9c754ce8926d0ac18cd2a1f4673676c00927a7b6b2dc12b863"
+        },
+        {
+            "path": "Assets/Resources/Audio/defeat.wav",
+            "bytes": 116468,
+            "sha256": "8f9969c4f48e13e70089f066d4ce0e99fc30e4742031663a5b66be9cda19dc79"
+        },
+        {
+            "path": "Assets/Resources/Audio/defeat.wav.meta",
+            "bytes": 485,
+            "sha256": "d4597a2156ccf5ed59b2dda35d70624039e0af278629b3e83121b67524fa0dd1"
+        },
+        {
+            "path": "Assets/Resources/Audio/error.wav",
+            "bytes": 40616,
+            "sha256": "0e3f331c51241542b1ca8143f1711c476aa33bb081ecc72abe5a2dfc369c5397"
+        },
+        {
+            "path": "Assets/Resources/Audio/error.wav.meta",
+            "bytes": 485,
+            "sha256": "eba2d6b0093769158476dafc98030b48652b23f93673e44febd34b46c6eed1ee"
+        },
+        {
+            "path": "Assets/Resources/Audio/victory.wav",
+            "bytes": 130580,
+            "sha256": "5431e899d9cc0983485cfbcb95be4fc90fc8623bb467141d532585d9feabc9ea"
+        },
+        {
+            "path": "Assets/Resources/Audio/victory.wav.meta",
+            "bytes": 485,
+            "sha256": "e1a841ba0856bd4d51712efde0e10d51d0136998e8f3275bedcc9ba86a220269"
+        },
+        {
+            "path": "Assets/Resources/Prefabs/Collectible.prefab",
+            "bytes": 3957,
+            "sha256": "1315010b3ec4157500b66c51f43c5c0109c6658e2137b36221aa44f2d8f8e087"
+        },
+        {
+            "path": "Assets/Resources/Prefabs/Collectible.prefab.meta",
+            "bytes": 154,
+            "sha256": "b9c8db339331b872a1498895e235c507fe8a4749b8c3fcbac4fdc291b75ea191"
+        },
+        {
+            "path": "Assets/Resources/Prefabs/Hazard.prefab",
+            "bytes": 4205,
+            "sha256": "17aa4cab36da0f2e2efcdc854888737f3be78e3f86d4a0edecb6115ba430d965"
+        },
+        {
+            "path": "Assets/Resources/Prefabs/Hazard.prefab.meta",
+            "bytes": 154,
+            "sha256": "ee8838e836c1e9f4f2a05868a239134508cdebf79583c68eaa54421a17172186"
+        },
+        {
+            "path": "Assets/Resources/Prefabs/Player.prefab",
+            "bytes": 4644,
+            "sha256": "03f05198a2d8132312a244d518c55924f0cde755a7198dc0c9de21f42c66fe09"
+        },
+        {
+            "path": "Assets/Resources/Prefabs/Player.prefab.meta",
+            "bytes": 154,
+            "sha256": "692fe8f568f32cfae9f49fd480fdc9b4f6046109afddb040c2945a7ff3ac9773"
+        },
+        {
+            "path": "Assets/Resources/Prefabs/UIButton.prefab",
+            "bytes": 6160,
+            "sha256": "54a78450401701f9af741cb1445e4603f0d89f756701416748c02c3dbf652c1a"
+        },
+        {
+            "path": "Assets/Resources/Prefabs/UIButton.prefab.meta",
+            "bytes": 154,
+            "sha256": "b2375b622eb79aad7fd450bb0b0bf13f48cb7da19e9aeb28a0d460f76d55bcd8"
+        },
+        {
+            "path": "Assets/Scenes/Level1.unity",
+            "bytes": 4815,
+            "sha256": "286c2dfcba75ec18898cfd1d8bf306a22bc09866a131548d070892f9b8309dbd"
+        },
+        {
+            "path": "Assets/Scenes/Level1.unity.meta",
+            "bytes": 155,
+            "sha256": "4ef8faddc8a9b62cb74ad9ec519b05bb21bcefec300188a9cc58fd296af61642"
+        },
+        {
+            "path": "Assets/Scenes/Level2.unity",
+            "bytes": 4815,
+            "sha256": "286c2dfcba75ec18898cfd1d8bf306a22bc09866a131548d070892f9b8309dbd"
+        },
+        {
+            "path": "Assets/Scenes/Level2.unity.meta",
+            "bytes": 155,
+            "sha256": "337b7dac2861c5b25b7cc90839e9dc769441783933547391885d5ead4757198e"
+        },
+        {
+            "path": "Assets/Scenes/Level3.unity",
+            "bytes": 4815,
+            "sha256": "286c2dfcba75ec18898cfd1d8bf306a22bc09866a131548d070892f9b8309dbd"
+        },
+        {
+            "path": "Assets/Scenes/Level3.unity.meta",
+            "bytes": 155,
+            "sha256": "14e1d2da83b75102a540274216825633a938e831ba2cd3ced5c2d41071e4ebb6"
+        },
+        {
+            "path": "Assets/Scenes/LevelSelect.unity",
+            "bytes": 4815,
+            "sha256": "286c2dfcba75ec18898cfd1d8bf306a22bc09866a131548d070892f9b8309dbd"
+        },
+        {
+            "path": "Assets/Scenes/LevelSelect.unity.meta",
+            "bytes": 155,
+            "sha256": "d6ded55966d37dd60f73de272f73f91fd31e8355f75a0cf4fbf4947c9d501eca"
+        },
+        {
+            "path": "Assets/Scenes/MainMenu.unity",
+            "bytes": 4815,
+            "sha256": "286c2dfcba75ec18898cfd1d8bf306a22bc09866a131548d070892f9b8309dbd"
+        },
+        {
+            "path": "Assets/Scenes/MainMenu.unity.meta",
+            "bytes": 155,
+            "sha256": "b07ab655db06ff0b7411ca5c4a3e83fd6742b01522a8b0c3b54413928631f097"
+        },
+        {
+            "path": "Assets/Scenes/Prototype.unity",
+            "bytes": 4815,
+            "sha256": "286c2dfcba75ec18898cfd1d8bf306a22bc09866a131548d070892f9b8309dbd"
+        },
+        {
+            "path": "Assets/Scenes/Prototype.unity.meta",
+            "bytes": 155,
+            "sha256": "e2b2a38d5c5f7f93262c4458f7db0e2c7486f7fe9cfba16bb48ab7edc7660b3c"
+        },
+        {
+            "path": "Assets/Scripts/EnergoKey.Runtime.asmdef",
+            "bytes": 347,
+            "sha256": "057ab3d5dbf46488570b2ccf67138a5df324f8a35a24c310068c2c7a11890b63"
+        },
+        {
+            "path": "Assets/Scripts/EnergoKey.Runtime.asmdef.meta",
+            "bytes": 166,
+            "sha256": "6172a2d36341701b4d2753d326f2dbc43070b536c3c88f9f27e13425eeab17c2"
+        },
+        {
+            "path": "Assets/Tests/EditMode/EnergoKey.EditModeTests.asmdef",
+            "bytes": 458,
+            "sha256": "6ada84602528eeb380893049733b2acc8335af143a12805ba8ecdf7466e089a1"
+        },
+        {
+            "path": "Assets/Tests/EditMode/EnergoKey.EditModeTests.asmdef.meta",
+            "bytes": 166,
+            "sha256": "2b8914e7ada0f9f0c7548fd7cbbed82bbc2090c3816212dfef956bb848d1a773"
+        },
+        {
+            "path": "Assets/Tests/EditMode/GameRulesTests.cs",
+            "bytes": 1388,
+            "sha256": "75d39cca23e6ad5b372840111c20bf35ef44e03a7eb6d56b27dbdd19b128d74d"
+        },
+        {
+            "path": "Assets/Tests/EditMode/GameRulesTests.cs.meta",
+            "bytes": 59,
+            "sha256": "3fd375b6db81b9ccbdb79373ce0503750a3a956fbdc7da748193fd3a18e4b325"
+        },
+        {
+            "path": "Assets/Tests/EditMode/SaveServiceTests.cs",
+            "bytes": 3223,
+            "sha256": "a720f6532b66ea631efe06d8373003e0c453d827ee446682d8ef179c9658fc8f"
+        },
+        {
+            "path": "Assets/Tests/EditMode/SaveServiceTests.cs.meta",
+            "bytes": 59,
+            "sha256": "d8a381156b8f24b53f0bdb8604c7b0c9b5b7420183878f0c687eeb4421c48dfc"
+        },
+        {
+            "path": "Packages/manifest.json",
+            "bytes": 1864,
+            "sha256": "58c1b02759d05387a13553658a58586352180fd9b1ccfdd437a71e6f1d74cb39"
+        },
+        {
+            "path": "ProjectSettings/ProjectVersion.txt",
+            "bytes": 83,
+            "sha256": "783f2de974f75156071dec6bb0c52e1004fd919a5078f7f84c75a936d3d787c0"
+        },
+        {
+            "path": "README.md",
+            "bytes": 13717,
+            "sha256": "7665f016d5ac9771f9f0c9d3333af37b10f967dfd849c944e16d81c1159c89c8"
+        },
+        {
+            "path": "Release/Docs/CHANGELOG.md",
+            "bytes": 1740,
+            "sha256": "0bcdb9bb768f47171649df16ea3738f6b28ae34c04863bbb77c1d1d4d75bfce6"
+        },
+        {
+            "path": "Release/Docs/CREDITS.md",
+            "bytes": 1339,
+            "sha256": "1f7c5806ca8b95141897a87806ef69425af3955b790c380e699d4c499857d6ea"
+        },
+        {
+            "path": "Release/Docs/DESCRIPTION.md",
+            "bytes": 2031,
+            "sha256": "54703d54a1707f8d245073f26dfbce37889925e9a184a293e96f91a41e822a80"
+        },
+        {
+            "path": "Release/Docs/PLAYER_GUIDE.md",
+            "bytes": 3502,
+            "sha256": "b8b8235f3e5ec51f1d3f719ccdbcf27e2225581d518b64de080c34c6bdc06099"
+        },
+        {
+            "path": "Release/icon_512.png",
+            "bytes": 145742,
+            "sha256": "9f1680da77d711aa3254514009a74a8ab579ab7b1cb4a55a20ea0a6cc1d4e7d0"
+        },
+        {
+            "path": "Release/product_page_mockup.png",
+            "bytes": 573145,
+            "sha256": "440fda568be2aa49c34185fcadf32d7ed68c00f9cc8f2e3a247c0bdb2bff95d6"
+        },
+        {
+            "path": "Release/promo_1280x720.png",
+            "bytes": 338413,
+            "sha256": "04c79f520ce9e1c8be4216c706b6e49e13262ec5d74c00f59f99e7b90c1f3dd2"
+        },
+        {
+            "path": "Release/storyboard.md",
+            "bytes": 3148,
+            "sha256": "2ed596a052802f973c36de3cdcb21fccbea7f2268ab6368cbb1fa237b733319f"
+        }
+    ],
+    "limitations": [
+        "Structural validation does not prove that all three levels are playable from start to finish.",
+        "It does not replace T01–T16 observations, a new-user test, physical-device testing or screenshots.",
+        "It does not create or validate Profiler before/after measurements.",
+        "Safe Area and 16:9, 18:9 and 4:3 layouts still require visual checks in Game View."
+    ]
+}
