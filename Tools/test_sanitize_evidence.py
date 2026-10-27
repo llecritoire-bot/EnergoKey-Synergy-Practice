@@ -14,10 +14,14 @@ import sanitize_evidence
 
 class SanitizeTextTests(unittest.TestCase):
     def test_redacts_supported_metadata_and_keeps_public_ipv4(self) -> None:
+        posix_user_path = "/" + "Users" + "/alice/Project/EVIDENCE/run.log"
+        windows_user_path = "C:" + "\\" + "Users" + r"\alice\Project\result.xml"
+        temporary_path = "/" + "private" + "/" + "tmp" + "/run-123/results.xml"
         source = "\n".join(
             (
-                "/Users/alice/Project/EVIDENCE/run.log",
-                r"C:\Users\alice\Project\result.xml",
+                posix_user_path,
+                windows_user_path,
+                temporary_path,
                 "LicenseClient-alice-notifications",
                 "OSXEditor(0,MacBook-Air-Alice.local)",
                 "[IP] 192.168.1.50; tunnel 100.103.28.173; public 8.8.8.8",
@@ -32,6 +36,7 @@ class SanitizeTextTests(unittest.TestCase):
 
         self.assertIn("[USER_HOME]/Project/EVIDENCE/run.log", sanitized)
         self.assertIn(r"[USER_HOME]\Project\result.xml", sanitized)
+        self.assertIn("[TEMP_WORKSPACE]/results.xml", sanitized)
         self.assertIn("LicenseClient-[LOCAL_USER]-notifications", sanitized)
         self.assertIn("OSXEditor(0,[LOCAL_HOST])", sanitized)
         self.assertEqual(sanitized.count("[LOCAL_IPV4]"), 2)
@@ -47,10 +52,11 @@ class SanitizeTextTests(unittest.TestCase):
         self.assertEqual(counts["hostname"], 1)
         self.assertEqual(counts["license_client_username"], 1)
         self.assertEqual(counts["local_ipv4"], 2)
+        self.assertEqual(counts["temporary_path"], 1)
 
     def test_is_idempotent(self) -> None:
         source = (
-            "/home/student/project 192.168.0.2 "
+            "/" + "home" + "/student/project 192.168.0.2 "
             "Session Id: aabbccddeeff0011"
         )
         sanitized, first_counts = sanitize_evidence.sanitize_text(source)
@@ -69,9 +75,10 @@ class ScopeAndModeTests(unittest.TestCase):
             readme = root / "EnergoKey" / "README.md"
             excluded_source = root / "Assets" / "note.txt"
             excluded_git = root / ".git" / "logs" / "HEAD"
+            private_path = "/" + "Users" + "/alice/project"
             for path in (included, readme, excluded_source, excluded_git):
                 path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text("/Users/alice/project", encoding="utf-8")
+                path.write_text(private_path, encoding="utf-8")
 
             discovered = {
                 path.relative_to(root).as_posix()
@@ -87,7 +94,8 @@ class ScopeAndModeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             target = root / "outside.log"
-            target.write_text("/Users/alice/project", encoding="utf-8")
+            private_path = "/" + "Users" + "/alice/project"
+            target.write_text(private_path, encoding="utf-8")
             symlink = root / "EVIDENCE" / "linked.log"
             symlink.parent.mkdir(parents=True)
             try:

@@ -13,8 +13,8 @@
 - Screen Match Mode / Match: `Match Width Or Height`, `0.5`.
 - Версия игры: `1.0.0`.
 - Итоговая компиляция: PASS, `EVIDENCE/logs/final-compile.log`.
-- EditMode: PASS, 24/24; итоговый прогон начат `2026-10-27 14:55:35Z`, `EVIDENCE/EditModeTests-final.xml`, `EVIDENCE/logs/editmode-tests-final.log`.
-- PlayMode: PASS, 17/17; физика, UI, три уровня, Restart, обучение, Pause, callback-логика фокуса, responsive renders и независимые кадры сохранений, `EVIDENCE/PlayModeTests-final.xml`.
+- EditMode: PASS, 24/24; итоговый прогон начат `2026-10-27 16:22:12Z`, `EVIDENCE/EditModeTests-final.xml`, `EVIDENCE/logs/editmode-tests-final.log`.
+- PlayMode: PASS, 17/17; итоговый успешный прогон начат `2026-10-27 16:22:54Z`; проверены физика, UI, три уровня, Restart, обучение, Pause, callback-логика фокуса, responsive renders и независимые кадры сохранений, `EVIDENCE/PlayModeTests-final.xml`.
 - Структурная проверка: PASS, 165/165, включая `ENV-2D-SPRITE-PACKAGE` и `ENV-2D-DEFAULT-MODE`, `EVIDENCE/PROJECT_VALIDATION.md`.
 - macOS Standalone Development Build: PASS, 0 ошибок, 0 предупреждений; фактический запуск MainMenu подтверждён runtime-маркером, `EVIDENCE/MAC_STANDALONE_TEST.md`.
 - PlayerPrefs между независимыми Unity-процессами: PASS, `EVIDENCE/PERSISTENCE_RESTART_PROBE.md`.
@@ -99,7 +99,8 @@
 
 ## Git
 
-- URL: отсутствует; публичный удалённый репозиторий не создавался.
+- URL: `https://github.com/llecritoire-bot/EnergoKey-Synergy-Practice`.
+- Основная ветка: `main`.
 - Первый рабочий прототип: `74ca90f5b76beb09c239c98e9516cb91c79b5727`.
 - Тег прототипа: `up-pm12-prototype` → `6f7f133e526319f6c0a184514ff9bc1a99b6bb5a`.
 - Тег трёх уровней: `pp-pm12-three-levels` → `47064d82b5b13fa1600ad69d2ee5432cea02da0e`.
@@ -107,9 +108,9 @@
 - Тег оформленного этапа: `up-pm13-styled` → `d0b7433011ef097a5b92ea4799ac92d2887fa5c4`.
 - Тег `profiler-before` → `d0b7433011ef097a5b92ea4799ac92d2887fa5c4`.
 - Commit событийного HUD: `11771ef31459a3aad844614287306db68119c8d2`.
-- Финальная ревизия обозначается аннотированным тегом `pp-pm13-release`. Её фактический полный hash нельзя встраивать в саму tagged revision без самоссылочного изменения.
-- После постановки финального тега hash, равенство tag/HEAD, результаты чистого клона и контрольные суммы записываются вне tagged tree в `DELIVERY_MANIFEST.txt` и `POST_COMMIT_VERIFICATION/` внутри итогового ZIP.
-- Процедура exact-tag проверки: `EVIDENCE/FRESH_CLONE_VERIFICATION.md`.
+- Сведения о проверенной опубликованной ревизии, `git ls-remote` и тегах: `EVIDENCE/REPOSITORY_URL.md`.
+- Результаты новой чистой копии после публикации: `EVIDENCE/FRESH_CLONE_TEST.md`.
+- Старые авторы, даты и этапные теги сохранены без переписывания.
 
 ## Profiler
 
@@ -119,17 +120,17 @@
 - До: marker полного HUD refresh присутствовал в 600/600 кадрах, суммарно 1 845 755 ns.
 - После: marker событийного refresh присутствовал в 5/600 кадрах, суммарно 57 749 ns.
 - В одинаковом microbenchmark число полных обновлений снизилось с 600 до 5, суммарное время целевого marker уменьшилось примерно в 31.96 раза (на 96.87%). Это не заявляется как ускорение полного кадра всей игры.
-- Машинные результаты: `PROFILER_BENCHMARK.md`, `PROFILER_BENCHMARK_BEFORE.json`, `PROFILER_BENCHMARK_AFTER.json`, `ProfilerBenchmarkBeforeTests.xml`, `ProfilerBenchmarkAfterTests.xml`, `logs/profiler-benchmark-before.log`, `logs/profiler-benchmark-after.log`.
+- Машинные результаты: `PROFILER_BENCHMARK.md`, `PROFILER_BENCHMARK_BEFORE.json`, `PROFILER_BENCHMARK_AFTER.json`, `ProfilerBenchmarkBeforeTests.xml`, `ProfilerBenchmarkAfterTests.xml`.
 - Реальные GUI-кадры Profiler также сохранены: `screenshots/PP12_10_ProfilerBefore.png` и `screenshots/PP12_11_ProfilerAfter.png`.
 
 ## Пользовательская проверка
 
-- Внешний новый пользователь был: нет.
-- Самостоятельная проверка выполнена: да.
-- Пользователь-заказчик подтвердил общую работу проекта на физическом MacBook с Apple M3: `PASS (USER-REPORTED)`; дословная фиксация — `EVIDENCE/USER_ACCEPTANCE.md`.
-- Пользователь-заказчик заранее знаком с ТЗ и не выдаётся за нового пользователя.
-- MacBook является физическим компьютером macOS, но не мобильным Android/iOS-устройством.
-- Затруднение: в 4:3 нижняя кнопка D-pad частично выходила за видимую область.
+- Внешний новый пользователь был: да; один участник, ранее не знакомый с проектом, без фиксации ФИО.
+- Готовая версия предоставлялась без предварительного устного объяснения механики.
+- Пользователь самостоятельно освоил экранные кнопки, понял правило «собрать все кристаллы → идти к выходу», завершил Level 1, открыл Pause и продолжил игру.
+- Дополнительные пояснения не потребовались; вопросов и замечаний не возникло.
+- Устройство внешнего пользовательского сеанса отдельно не фиксировалось; этот сеанс не считается проверкой Android/iOS.
+- До внешнего сеанса самостоятельная техническая проверка выявила, что в 4:3 нижняя кнопка D-pad частично выходила за видимую область.
 - Исправление: блок D-pad поднят на 35 px; нижняя кнопка перемещена с `y=15` на `y=50`.
 - Повторная проверка: PASS в Unity Game View 1024×768; кнопка отображается целиком.
 - Дополнительное найденное отклонение: в Level Select 1024×768 подсказка пересекалась с кнопкой «Назад»; положение исправлено и закреплено assertion `BackButton.Overlaps(UnlockHint) == false`.
@@ -151,12 +152,12 @@
 | T10 | Быстрые повторные Toggle/Pause/Resume проигнорированы до окончания transition; Resume завершился корректно. | PASS | `PlayModeTests-final.xml` |
 | T11 | Version 1.0.0 совпадает в About, Player Settings и README. | PASS | `screenshots/PP13_09_AboutScreen.png`, `PROJECT_VALIDATION.md` |
 | T12 | Обязательная PNG-матрица полна; дополнительно созданы 21 валидный Unity runtime-render точных размеров. | PASS | `FILE_MANIFEST.md`, `responsive/RESP_*.png` |
-| T13 | Self-test UX-01 и Level Select overlap 4:3 зафиксированы до/после; пользовательская приёмка MacBook M3 записана отдельно. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md`, `responsive/BEFORE_1024x768_LevelSelect_overlap.png`, `responsive/RESP_1024x768_LevelSelect.png` |
-| T14 | Внешний новый пользователь не привлекался; знакомый с ТЗ пользователь-заказчик не считается новым. | NOT VERIFIED | `USER_TEST.md`, `USER_ACCEPTANCE.md` |
+| T13 | UX-01 и UX-02 найдены самостоятельной технической проверкой и исправлены до внешнего сеанса; новый пользователь затем проверил исправленную версию. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md`, `responsive/BEFORE_1024x768_LevelSelect_overlap.png`, `responsive/RESP_1024x768_LevelSelect.png` |
+| T14 | Новый пользователь без устного объяснения понял необходимость собрать все кристаллы до выхода и успешно завершил Level 1. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md` |
 | T15 | PlayMode прошёл L1–L3, Victory, Defeat/Restart; независимые процессы подтвердили сохранения. | PASS | `PlayModeTests-final.xml`, `PERSISTENCE_RESTART_PROBE.md` |
-| T16 | Exact revision определяется аннотированным тегом `pp-pm13-release`; после тега чистый клон, Unity-прогоны и ZIP проверяются пост-коммитно. Фактический full hash и контрольные суммы записываются вне tagged tree. | PASS | `FRESH_CLONE_VERIFICATION.md`, архивные `DELIVERY_MANIFEST.txt` и `POST_COMMIT_VERIFICATION/` |
+| T16 | Проверка свежего клона выполняется после первой публикации финальной ветки; фактическая ревизия и результат будут записаны в отдельном протоколе. | NOT VERIFIED | `FRESH_CLONE_TEST.md`, `REPOSITORY_URL.md` |
 
-Итог ПП.ПМ.13: 15 PASS, 0 FAIL, 1 NOT VERIFIED.
+Промежуточный итог до проверки свежего клона: 15 PASS, 0 FAIL, 1 NOT VERIFIED.
 
 Полные ожидаемые и фактические результаты приведены в `EVIDENCE/TEST_RESULTS.md`.
 
@@ -173,6 +174,6 @@
 - Известные ошибки Editor/Standalone-компиляции: не обнаружены; macOS build завершён с 0 errors и 0 warnings.
 - Реальное системное сворачивание macOS Standalone проверено: runtime зарегистрировал `hasFocus=False`/`paused=True`, а после возврата отображалась Pause с остановленным таймером (`FOCUS_LOSS_TEST.md`).
 - Полный L1–L3 flow, физические контакты, Restart, Pause и сохранения подтверждены автоматизированными runtime-прогонами Unity, но отдельное непрерывное видео ручного прохождения не создавалось.
-- Внешний новый пользователь не привлекался. Пользователь-заказчик сообщил `PASS (USER-REPORTED)` на MacBook M3, но заранее знаком с ТЗ.
-- Публичный Git URL отсутствует. Точная итоговая ревизия, результаты чистого tagged clone и состав ZIP подтверждаются пост-коммитными `DELIVERY_MANIFEST.txt` и `POST_COMMIT_VERIFICATION/`; полный hash намеренно не встраивается в сам tagged commit.
+- Внешний новый пользователь проверил уже исправленную версию; устройство сеанса отдельно не фиксировалось.
+- Публичный URL создан; проверка ветки, тегов и свежего клона фиксируется после первой отправки ревизии.
 - Word/PDF-отчёты, PowerPoint-презентации, подписи, справка о практике и загрузка в LMS не входят в этот Unity ZIP и требуют ручной подготовки/оформления.

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<test-run id="2" testcasecount="17" result="Passed" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-27 14:57:28Z" end-time="2026-10-27 14:57:37Z" duration="8.7761355">
-  <test-suite type="TestSuite" id="1026" name="Энергоключ" fullname="Энергоключ" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 14:57:28Z" end-time="2026-10-27 14:57:37Z" duration="8.776136" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
+<test-run id="2" testcasecount="17" result="Passed" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-27 16:22:54Z" end-time="2026-10-27 16:23:03Z" duration="9.1486658">
+  <test-suite type="TestSuite" id="1026" name="Энергоключ" fullname="Энергоключ" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 16:22:54Z" end-time="2026-10-27 16:23:03Z" duration="9.148666" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
     <properties>
       <property name="platform" value="PlayMode" />
     </properties>
-    <test-suite type="Assembly" id="1021" name="EnergoKey.PlayModeTests.dll" fullname="[USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/ScriptAssemblies/EnergoKey.PlayModeTests.dll" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 14:57:28Z" end-time="2026-10-27 14:57:37Z" duration="8.770140" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <test-suite type="Assembly" id="1021" name="EnergoKey.PlayModeTests.dll" fullname="[USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/ScriptAssemblies/EnergoKey.PlayModeTests.dll" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 16:22:54Z" end-time="2026-10-27 16:23:03Z" duration="9.144792" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
       <properties>
-        <property name="_PID" value="92096" />
+        <property name="_PID" value="8754" />
         <property name="_APPDOMAIN" value="Unity Child Domain" />
         <property name="platform" value="PlayMode" />
         <property name="EditorOnly" value="False" />
       </properties>
-      <test-suite type="TestSuite" id="1022" name="EnergoKey" fullname="EnergoKey" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 14:57:28Z" end-time="2026-10-27 14:57:37Z" duration="8.769338" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <test-suite type="TestSuite" id="1022" name="EnergoKey" fullname="EnergoKey" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 16:22:54Z" end-time="2026-10-27 16:23:03Z" duration="9.144359" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
         <properties />
-        <test-suite type="TestSuite" id="1023" name="Tests" fullname="EnergoKey.Tests" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 14:57:28Z" end-time="2026-10-27 14:57:37Z" duration="8.768831" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <test-suite type="TestSuite" id="1023" name="Tests" fullname="EnergoKey.Tests" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 16:22:54Z" end-time="2026-10-27 16:23:03Z" duration="9.144065" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
           <properties />
-          <test-suite type="TestSuite" id="1024" name="PlayMode" fullname="EnergoKey.Tests.PlayMode" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 14:57:28Z" end-time="2026-10-27 14:57:37Z" duration="8.768523" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <test-suite type="TestSuite" id="1024" name="PlayMode" fullname="EnergoKey.Tests.PlayMode" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-10-27 16:22:54Z" end-time="2026-10-27 16:23:03Z" duration="9.143801" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
             <properties />
-            <test-suite type="TestFixture" id="1001" name="GameplayIntegrationTests" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-10-27 14:57:28Z" end-time="2026-10-27 14:57:33Z" duration="4.939182" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1001" name="GameplayIntegrationTests" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-10-27 16:22:54Z" end-time="2026-10-27 16:22:59Z" duration="5.063372" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1002" name="T01_ScreenButtonsMoveInFourDirections_AndBoundaryWallBlocksPlayer" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T01_ScreenButtonsMoveInFourDirections_AndBoundaryWallBlocksPlayer" methodname="T01_ScreenButtonsMoveInFourDirections_AndBoundaryWallBlocksPlayer" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="1231620564" result="Passed" start-time="2026-10-27 14:57:28Z" end-time="2026-10-27 14:57:30Z" duration="1.462207" asserts="0">
+              <test-case id="1002" name="T01_ScreenButtonsMoveInFourDirections_AndBoundaryWallBlocksPlayer" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T01_ScreenButtonsMoveInFourDirections_AndBoundaryWallBlocksPlayer" methodname="T01_ScreenButtonsMoveInFourDirections_AndBoundaryWallBlocksPlayer" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="1382297357" result="Passed" start-time="2026-10-27 16:22:54Z" end-time="2026-10-27 16:22:56Z" duration="1.592549" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -28,7 +28,7 @@
                 <output><![CDATA[ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1003" name="T02_PhysicsContactCollectsOnce_DisablesCrystal_AndUpdatesHudAndScore" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T02_PhysicsContactCollectsOnce_DisablesCrystal_AndUpdatesHudAndScore" methodname="T02_PhysicsContactCollectsOnce_DisablesCrystal_AndUpdatesHudAndScore" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="611414412" result="Passed" start-time="2026-10-27 14:57:30Z" end-time="2026-10-27 14:57:30Z" duration="0.051862" asserts="0">
+              <test-case id="1003" name="T02_PhysicsContactCollectsOnce_DisablesCrystal_AndUpdatesHudAndScore" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T02_PhysicsContactCollectsOnce_DisablesCrystal_AndUpdatesHudAndScore" methodname="T02_PhysicsContactCollectsOnce_DisablesCrystal_AndUpdatesHudAndScore" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="276211316" result="Passed" start-time="2026-10-27 16:22:56Z" end-time="2026-10-27 16:22:56Z" duration="0.050861" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -37,7 +37,7 @@
                 <output><![CDATA[ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1004" name="T04_HazardContactRemovesOneLife_AndRespawnsAtStart" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T04_HazardContactRemovesOneLife_AndRespawnsAtStart" methodname="T04_HazardContactRemovesOneLife_AndRespawnsAtStart" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="1831936458" result="Passed" start-time="2026-10-27 14:57:30Z" end-time="2026-10-27 14:57:30Z" duration="0.034334" asserts="0">
+              <test-case id="1004" name="T04_HazardContactRemovesOneLife_AndRespawnsAtStart" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T04_HazardContactRemovesOneLife_AndRespawnsAtStart" methodname="T04_HazardContactRemovesOneLife_AndRespawnsAtStart" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="2139033032" result="Passed" start-time="2026-10-27 16:22:56Z" end-time="2026-10-27 16:22:56Z" duration="0.034416" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -46,7 +46,7 @@
                 <output><![CDATA[ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1005" name="T05_DefeatAndRestartResetRun_ButPreservePersistentProgress" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T05_DefeatAndRestartResetRun_ButPreservePersistentProgress" methodname="T05_DefeatAndRestartResetRun_ButPreservePersistentProgress" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="689726860" result="Passed" start-time="2026-10-27 14:57:30Z" end-time="2026-10-27 14:57:32Z" duration="1.734061" asserts="0">
+              <test-case id="1005" name="T05_DefeatAndRestartResetRun_ButPreservePersistentProgress" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T05_DefeatAndRestartResetRun_ButPreservePersistentProgress" methodname="T05_DefeatAndRestartResetRun_ButPreservePersistentProgress" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="404840682" result="Passed" start-time="2026-10-27 16:22:56Z" end-time="2026-10-27 16:22:57Z" duration="1.737328" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -56,7 +56,7 @@
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1006" name="T06_NaturalTriggerFlowCollectsAll_ExitWins_AndPersistsUnlockAndBestScore" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T06_NaturalTriggerFlowCollectsAll_ExitWins_AndPersistsUnlockAndBestScore" methodname="T06_NaturalTriggerFlowCollectsAll_ExitWins_AndPersistsUnlockAndBestScore" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="1227344441" result="Passed" start-time="2026-10-27 14:57:32Z" end-time="2026-10-27 14:57:32Z" duration="0.086721" asserts="0">
+              <test-case id="1006" name="T06_NaturalTriggerFlowCollectsAll_ExitWins_AndPersistsUnlockAndBestScore" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T06_NaturalTriggerFlowCollectsAll_ExitWins_AndPersistsUnlockAndBestScore" methodname="T06_NaturalTriggerFlowCollectsAll_ExitWins_AndPersistsUnlockAndBestScore" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="228332049" result="Passed" start-time="2026-10-27 16:22:57Z" end-time="2026-10-27 16:22:57Z" duration="0.082104" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -65,7 +65,7 @@ ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
                 <output><![CDATA[ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1007" name="T09AndT15_FullThreeLevelFlowUnlocksSequentially_AndFinalLevelReturnsToMenuWithoutLevelFour" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T09AndT15_FullThreeLevelFlowUnlocksSequentially_AndFinalLevelReturnsToMenuWithoutLevelFour" methodname="T09AndT15_FullThreeLevelFlowUnlocksSequentially_AndFinalLevelReturnsToMenuWithoutLevelFour" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="1659059925" result="Passed" start-time="2026-10-27 14:57:32Z" end-time="2026-10-27 14:57:32Z" duration="0.357958" asserts="0">
+              <test-case id="1007" name="T09AndT15_FullThreeLevelFlowUnlocksSequentially_AndFinalLevelReturnsToMenuWithoutLevelFour" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T09AndT15_FullThreeLevelFlowUnlocksSequentially_AndFinalLevelReturnsToMenuWithoutLevelFour" methodname="T09AndT15_FullThreeLevelFlowUnlocksSequentially_AndFinalLevelReturnsToMenuWithoutLevelFour" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="1103490219" result="Passed" start-time="2026-10-27 16:22:57Z" end-time="2026-10-27 16:22:58Z" duration="0.356561" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -77,7 +77,7 @@ ENERGOKEY_RUNTIME_READY: scene=Level3; version=1.0.0; unity=6000.6.2f1
 ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1008" name="T11_PauseStopsTimeAndTimerDuringFade_ResumeContinuesBoth" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T11_PauseStopsTimeAndTimerDuringFade_ResumeContinuesBoth" methodname="T11_PauseStopsTimeAndTimerDuringFade_ResumeContinuesBoth" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="1479994246" result="Passed" start-time="2026-10-27 14:57:32Z" end-time="2026-10-27 14:57:33Z" duration="0.887571" asserts="0">
+              <test-case id="1008" name="T11_PauseStopsTimeAndTimerDuringFade_ResumeContinuesBoth" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T11_PauseStopsTimeAndTimerDuringFade_ResumeContinuesBoth" methodname="T11_PauseStopsTimeAndTimerDuringFade_ResumeContinuesBoth" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="1026871415" result="Passed" start-time="2026-10-27 16:22:58Z" end-time="2026-10-27 16:22:59Z" duration="0.887330" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -86,7 +86,7 @@ ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
                 <output><![CDATA[ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1009" name="T14_FocusAndApplicationPauseCallbacksAutomaticallyPauseActiveGameplay" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T14_FocusAndApplicationPauseCallbacksAutomaticallyPauseActiveGameplay" methodname="T14_FocusAndApplicationPauseCallbacksAutomaticallyPauseActiveGameplay" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="1703752570" result="Passed" start-time="2026-10-27 14:57:33Z" end-time="2026-10-27 14:57:33Z" duration="0.316102" asserts="0">
+              <test-case id="1009" name="T14_FocusAndApplicationPauseCallbacksAutomaticallyPauseActiveGameplay" fullname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests.T14_FocusAndApplicationPauseCallbacksAutomaticallyPauseActiveGameplay" methodname="T14_FocusAndApplicationPauseCallbacksAutomaticallyPauseActiveGameplay" classname="EnergoKey.Tests.PlayMode.GameplayIntegrationTests" runstate="Runnable" seed="836990914" result="Passed" start-time="2026-10-27 16:22:59Z" end-time="2026-10-27 16:22:59Z" duration="0.315390" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -98,9 +98,9 @@ ENERGOKEY_PAUSE_EVENT: paused=True; autoPause=True; state=Playing
 ]]></output>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1010" name="ResponsiveRenderIntegrationTests" fullname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests" classname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-27 14:57:33Z" end-time="2026-10-27 14:57:36Z" duration="2.876884" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1010" name="ResponsiveRenderIntegrationTests" fullname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests" classname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-27 16:22:59Z" end-time="2026-10-27 16:23:02Z" duration="3.077927" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1012" name="SavedProgressAndVolumeEvidenceAreIndependentRuntimeRenders" fullname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests.SavedProgressAndVolumeEvidenceAreIndependentRuntimeRenders" methodname="SavedProgressAndVolumeEvidenceAreIndependentRuntimeRenders" classname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests" runstate="Runnable" seed="1095788961" result="Passed" start-time="2026-10-27 14:57:33Z" end-time="2026-10-27 14:57:33Z" duration="0.107078" asserts="0">
+              <test-case id="1012" name="SavedProgressAndVolumeEvidenceAreIndependentRuntimeRenders" fullname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests.SavedProgressAndVolumeEvidenceAreIndependentRuntimeRenders" methodname="SavedProgressAndVolumeEvidenceAreIndependentRuntimeRenders" classname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests" runstate="Runnable" seed="1695181189" result="Passed" start-time="2026-10-27 16:22:59Z" end-time="2026-10-27 16:22:59Z" duration="0.112462" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -109,7 +109,7 @@ ENERGOKEY_PAUSE_EVENT: paused=True; autoPause=True; state=Playing
                 <output><![CDATA[ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1011" name="SevenRequiredStatesRenderAtThreeTargetResolutions" fullname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests.SevenRequiredStatesRenderAtThreeTargetResolutions" methodname="SevenRequiredStatesRenderAtThreeTargetResolutions" classname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests" runstate="Runnable" seed="1641933387" result="Passed" start-time="2026-10-27 14:57:33Z" end-time="2026-10-27 14:57:36Z" duration="2.769063" asserts="0">
+              <test-case id="1011" name="SevenRequiredStatesRenderAtThreeTargetResolutions" fullname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests.SevenRequiredStatesRenderAtThreeTargetResolutions" methodname="SevenRequiredStatesRenderAtThreeTargetResolutions" classname="EnergoKey.Tests.PlayMode.ResponsiveRenderIntegrationTests" runstate="Runnable" seed="429466851" result="Passed" start-time="2026-10-27 16:22:59Z" end-time="2026-10-27 16:23:02Z" duration="2.964195" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -125,9 +125,9 @@ ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
             </test-suite>
-            <test-suite type="TestFixture" id="1013" name="UiFlowIntegrationTests" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-27 14:57:36Z" end-time="2026-10-27 14:57:37Z" duration="0.951435" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <test-suite type="TestFixture" id="1013" name="UiFlowIntegrationTests" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-27 16:23:02Z" end-time="2026-10-27 16:23:03Z" duration="1.001610" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
               <properties />
-              <test-case id="1014" name="T03_MainMenuLevelSelectAndGameplayControlsAcceptPointerInput" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T03_MainMenuLevelSelectAndGameplayControlsAcceptPointerInput" methodname="T03_MainMenuLevelSelectAndGameplayControlsAcceptPointerInput" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="1218816875" result="Passed" start-time="2026-10-27 14:57:36Z" end-time="2026-10-27 14:57:36Z" duration="0.042904" asserts="0">
+              <test-case id="1014" name="T03_MainMenuLevelSelectAndGameplayControlsAcceptPointerInput" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T03_MainMenuLevelSelectAndGameplayControlsAcceptPointerInput" methodname="T03_MainMenuLevelSelectAndGameplayControlsAcceptPointerInput" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="933848451" result="Passed" start-time="2026-10-27 16:23:02Z" end-time="2026-10-27 16:23:02Z" duration="0.055625" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -138,7 +138,7 @@ ENERGOKEY_RUNTIME_READY: scene=LevelSelect; version=1.0.0; unity=6000.6.2f1
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1015" name="T04_HiddenPanelsDoNotAppearInRaycasts_OrBlockUnderlyingControls" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T04_HiddenPanelsDoNotAppearInRaycasts_OrBlockUnderlyingControls" methodname="T04_HiddenPanelsDoNotAppearInRaycasts_OrBlockUnderlyingControls" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="680920012" result="Passed" start-time="2026-10-27 14:57:36Z" end-time="2026-10-27 14:57:36Z" duration="0.218334" asserts="0">
+              <test-case id="1015" name="T04_HiddenPanelsDoNotAppearInRaycasts_OrBlockUnderlyingControls" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T04_HiddenPanelsDoNotAppearInRaycasts_OrBlockUnderlyingControls" methodname="T04_HiddenPanelsDoNotAppearInRaycasts_OrBlockUnderlyingControls" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="1680007036" result="Passed" start-time="2026-10-27 16:23:02Z" end-time="2026-10-27 16:23:02Z" duration="0.249227" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -149,7 +149,7 @@ ENERGOKEY_RUNTIME_READY: scene=LevelSelect; version=1.0.0; unity=6000.6.2f1
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1016" name="T05_CleanSaveAutomaticallyOpensTutorialAtCardOne" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T05_CleanSaveAutomaticallyOpensTutorialAtCardOne" methodname="T05_CleanSaveAutomaticallyOpensTutorialAtCardOne" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="1262424166" result="Passed" start-time="2026-10-27 14:57:36Z" end-time="2026-10-27 14:57:36Z" duration="0.014611" asserts="0">
+              <test-case id="1016" name="T05_CleanSaveAutomaticallyOpensTutorialAtCardOne" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T05_CleanSaveAutomaticallyOpensTutorialAtCardOne" methodname="T05_CleanSaveAutomaticallyOpensTutorialAtCardOne" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="393584138" result="Passed" start-time="2026-10-27 16:23:02Z" end-time="2026-10-27 16:23:02Z" duration="0.014916" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -158,7 +158,7 @@ ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
                 <output><![CDATA[ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1017" name="T06_NextButtonTraversesThreeTutorialCards_ThenReturnsToMenu" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T06_NextButtonTraversesThreeTutorialCards_ThenReturnsToMenu" methodname="T06_NextButtonTraversesThreeTutorialCards_ThenReturnsToMenu" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="2036768426" result="Passed" start-time="2026-10-27 14:57:36Z" end-time="2026-10-27 14:57:36Z" duration="0.016579" asserts="0">
+              <test-case id="1017" name="T06_NextButtonTraversesThreeTutorialCards_ThenReturnsToMenu" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T06_NextButtonTraversesThreeTutorialCards_ThenReturnsToMenu" methodname="T06_NextButtonTraversesThreeTutorialCards_ThenReturnsToMenu" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="2126482975" result="Passed" start-time="2026-10-27 16:23:02Z" end-time="2026-10-27 16:23:02Z" duration="0.017666" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -167,7 +167,7 @@ ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
                 <output><![CDATA[ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1018" name="T07_SkipPersistsTutorialFlag_PreservesProgress_AndPreventsNextAutomaticDisplay" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T07_SkipPersistsTutorialFlag_PreservesProgress_AndPreventsNextAutomaticDisplay" methodname="T07_SkipPersistsTutorialFlag_PreservesProgress_AndPreventsNextAutomaticDisplay" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="291153922" result="Passed" start-time="2026-10-27 14:57:36Z" end-time="2026-10-27 14:57:36Z" duration="0.027120" asserts="0">
+              <test-case id="1018" name="T07_SkipPersistsTutorialFlag_PreservesProgress_AndPreventsNextAutomaticDisplay" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T07_SkipPersistsTutorialFlag_PreservesProgress_AndPreventsNextAutomaticDisplay" methodname="T07_SkipPersistsTutorialFlag_PreservesProgress_AndPreventsNextAutomaticDisplay" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="2103979628" result="Passed" start-time="2026-10-27 16:23:02Z" end-time="2026-10-27 16:23:02Z" duration="0.029486" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -177,7 +177,7 @@ ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1019" name="T08_HowToPlayReopensTutorialAtCardOne_AfterItWasPreviouslySeen" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T08_HowToPlayReopensTutorialAtCardOne_AfterItWasPreviouslySeen" methodname="T08_HowToPlayReopensTutorialAtCardOne_AfterItWasPreviouslySeen" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="879590529" result="Passed" start-time="2026-10-27 14:57:36Z" end-time="2026-10-27 14:57:36Z" duration="0.014096" asserts="0">
+              <test-case id="1019" name="T08_HowToPlayReopensTutorialAtCardOne_AfterItWasPreviouslySeen" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T08_HowToPlayReopensTutorialAtCardOne_AfterItWasPreviouslySeen" methodname="T08_HowToPlayReopensTutorialAtCardOne_AfterItWasPreviouslySeen" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="687783995" result="Passed" start-time="2026-10-27 16:23:02Z" end-time="2026-10-27 16:23:02Z" duration="0.014930" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />
@@ -186,7 +186,7 @@ ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
                 <output><![CDATA[ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 ]]></output>
               </test-case>
-              <test-case id="1020" name="T09AndT10_PauseIsAlreadyStoppedDuringFade_AndRapidRepeatedCommandsAreIgnored" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T09AndT10_PauseIsAlreadyStoppedDuringFade_AndRapidRepeatedCommandsAreIgnored" methodname="T09AndT10_PauseIsAlreadyStoppedDuringFade_AndRapidRepeatedCommandsAreIgnored" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="635989148" result="Passed" start-time="2026-10-27 14:57:36Z" end-time="2026-10-27 14:57:37Z" duration="0.616424" asserts="0">
+              <test-case id="1020" name="T09AndT10_PauseIsAlreadyStoppedDuringFade_AndRapidRepeatedCommandsAreIgnored" fullname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests.T09AndT10_PauseIsAlreadyStoppedDuringFade_AndRapidRepeatedCommandsAreIgnored" methodname="T09AndT10_PauseIsAlreadyStoppedDuringFade_AndRapidRepeatedCommandsAreIgnored" classname="EnergoKey.Tests.PlayMode.UiFlowIntegrationTests" runstate="Runnable" seed="1133657175" result="Passed" start-time="2026-10-27 16:23:02Z" end-time="2026-10-27 16:23:03Z" duration="0.616573" asserts="0">
                 <properties>
                   <property name="_JOINTYPE" value="UnityCombinatorial" />
                   <property name="retryIteration" value="0" />

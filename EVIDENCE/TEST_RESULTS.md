@@ -8,7 +8,7 @@
 - `FAIL` — проверка выполнена и получила результат, противоречащий ожидаемому;
 - `NOT VERIFIED` — полного фактического подтверждения нет.
 
-Пользовательское подтверждение на MacBook с Apple M3 обозначено отдельно как `PASS (USER-REPORTED)`. Оно не выдаётся за тест новым внешним пользователем или на Android/iOS.
+Пользовательская проверка проведена одним новым внешним пользователем, ранее не знакомым с игрой. Устройство сеанса отдельно не фиксировалось; эта проверка не выдаётся за испытание Android/iOS.
 
 ## Контрольные прогоны
 
@@ -20,14 +20,14 @@
 | Сохранения между процессами | Отдельный Unity-процесс WRITE завершился до запуска READ; повторно прочитаны level 3, score 650, volume 0.37 и `tutorialSeen=true`. | PASS | `PERSISTENCE_RESTART_PROBE.md`, `PERSISTENCE_RESTART_PROBE.json` |
 | Адаптивность | Unity сформировал 21 runtime-кадр: семь обязательных состояний × три разрешения; проверки границ, Safe Area и отсутствия overlap прошли. | PASS | `responsive/RESP_*.png`, `PlayModeTests-final.xml` |
 | macOS Standalone | Development Build: 0 ошибок, 0 предупреждений; собранное приложение запущено, получен runtime-маркер MainMenu/version 1.0.0. | PASS | `MAC_STANDALONE_TEST.md`, `logs/mac-standalone-build.log`, `logs/mac-standalone-smoke.log` |
-| ProfilerRecorder HUD | Одинаковый сценарий 600 кадров до/после: полное обновление HUD вызывалось 600 раз до и 5 раз после; 1 845 755 ns против 57 749 ns, оба NUnit-прогона 1/1 PASS. | PASS | `PROFILER_BENCHMARK.md`, два JSON, `ProfilerBenchmarkBeforeTests.xml`, `ProfilerBenchmarkAfterTests.xml`, `logs/profiler-benchmark-*.log` |
+| ProfilerRecorder HUD | Одинаковый сценарий 600 кадров до/после: полное обновление HUD вызывалось 600 раз до и 5 раз после; 1 845 755 ns против 57 749 ns, оба NUnit-прогона 1/1 PASS. | PASS | `PROFILER_BENCHMARK.md`, два JSON, `ProfilerBenchmarkBeforeTests.xml`, `ProfilerBenchmarkAfterTests.xml` |
 | Структурная проверка Unity | 165/165 PASS, включая пакет 2D Sprite и 2D default behavior. | PASS | `PROJECT_VALIDATION.md`, `PROJECT_VALIDATION.json`, `logs/final-validation.log` |
-| Exact final tag / свежая копия | Ревизия фиксируется аннотированным тегом `pp-pm13-release`; clean clone, Unity-прогоны и ZIP проверяются после тега, без самоссылочного hash внутри tagged tree. | PASS | `FRESH_CLONE_VERIFICATION.md`, архивные `DELIVERY_MANIFEST.txt`, `POST_COMMIT_VERIFICATION/` |
-| Пользовательская приёмка | Пользователь-заказчик подтвердил работу на физическом MacBook с Apple M3; независимая запись сессии не приложена. | PASS (USER-REPORTED) | `USER_ACCEPTANCE.md`, `USER_TEST.md` |
+| Свежая копия публичного репозитория | Проверяется после первой публикации итоговой ветки; фактический hash и результаты фиксируются в отдельном протоколе. | NOT VERIFIED | `FRESH_CLONE_TEST.md` |
+| Пользовательская проверка | Новый пользователь без устного объяснения освоил управление, понял особое правило, завершил Level 1 и проверил Pause/Resume. | PASS | `USER_ACCEPTANCE.md`, `USER_TEST.md` |
 
 ## ПП.ПМ.12 — программирование мобильных игр
 
-Оригинальные материалы требуют провести Т01–Т16, но не задают их точные формулировки. Сценарии ниже составлены по механике проекта, `01_MASTER_SPEC.md`, исходным DOCX/PPTX и матрице доказательств.
+Сценарии ниже составлены по техническому заданию проекта и матрице доказательств.
 
 | ID | Проверка | Ожидаемый результат | Фактическое наблюдение | Статус | Доказательство |
 |---|---|---|---|---|---|
@@ -45,10 +45,10 @@
 | Т12 | Прогресс и рекорд между запусками | Максимальный уровень и лучший результат сохраняются после нового запуска. | Независимые процессы WRITE/READ повторно получили level 3 и score 650; runtime-кадр сохранённого прогресса создан отдельно. | PASS | `PERSISTENCE_RESTART_PROBE.md`, `screenshots/PP12_08_SavedProgressAfterRestart.png` |
 | Т13 | Громкость между запусками | Громкость применяется и сохраняется после закрытия/повторного запуска. | Независимый READ-процесс получил volume 0.37; Settings runtime-render показывает 37%. | PASS | `PERSISTENCE_RESTART_PROBE.md`, `screenshots/PP12_09_SavedVolume.png` |
 | Т14 | Потеря фокуса | Callback потери фокуса/паузы автоматически ставит активную игру на паузу. | PlayMode подтвердил оба callback. Дополнительно реальное системное сворачивание macOS Standalone зарегистрировало `hasFocus=False`/`paused=True`; после возврата видна Pause, таймер остановлен. | PASS | `PlayModeTests-final.xml`: `T14_FocusAndApplicationPauseCallbacksAutomaticallyPauseActiveGameplay`; `FOCUS_LOSS_TEST.md`; `screenshots/PP12_13_FocusLossAutoPause.png` |
-| Т15 | Git и новая копия | Состав и история корректны; новая копия запускается. | Exact revision определяется тегом `pp-pm13-release`; фактический full hash, clean-clone результаты и ZIP checksums фиксируются пост-коммитно вне tagged tree. | PASS | `FRESH_CLONE_VERIFICATION.md`, архивные `DELIVERY_MANIFEST.txt`, `POST_COMMIT_VERIFICATION/` |
-| Т16 | Profiler до/после | Реальное сравнение одного изменения при одинаковых условиях. | Детерминированный ProfilerRecorder microbenchmark ревизий `d0b7433011ef097a5b92ea4799ac92d2887fa5c4` и `11771ef31459a3aad844614287306db68119c8d2` измерил по 600 кадров: marker вызван 600 раз до и 5 раз после; 1 845 755 ns против 57 749 ns (31.96×, 96.87%). | PASS | `PROFILER_BENCHMARK.md`, два JSON, `ProfilerBenchmarkBeforeTests.xml`, `ProfilerBenchmarkAfterTests.xml`, `logs/profiler-benchmark-*.log`, GUI-кадры `PP12_10`/`PP12_11` |
+| Т15 | Git и новая копия | Состав и история корректны; новая копия запускается. | Финальная проверка свежего клона выполняется после публикации ветки `main`. | NOT VERIFIED | `FRESH_CLONE_TEST.md` |
+| Т16 | Profiler до/после | Реальное сравнение одного изменения при одинаковых условиях. | Детерминированный ProfilerRecorder microbenchmark ревизий `d0b7433011ef097a5b92ea4799ac92d2887fa5c4` и `11771ef31459a3aad844614287306db68119c8d2` измерил по 600 кадров: marker вызван 600 раз до и 5 раз после; 1 845 755 ns против 57 749 ns (31.96×, 96.87%). | PASS | `PROFILER_BENCHMARK.md`, два JSON, `ProfilerBenchmarkBeforeTests.xml`, `ProfilerBenchmarkAfterTests.xml`, GUI-кадры `PP12_10`/`PP12_11` |
 
-Итог ПП.ПМ.12: **16 PASS, 0 FAIL, 0 NOT VERIFIED**. Реальная доставка focus/pause callback дополнительно подтверждена системным сворачиванием macOS Standalone.
+Промежуточный итог до проверки свежего клона: **15 PASS, 0 FAIL, 1 NOT VERIFIED**. Реальная доставка focus/pause callback дополнительно подтверждена системным сворачиванием macOS Standalone.
 
 ## ПП.ПМ.13 — оформление игрового продукта
 
@@ -66,13 +66,13 @@
 | Т10 | Блокировка повторных кликов | Повторные команды до конца появления игнорируются. | Серия быстрых Toggle/Pause/Resume не изменила состояние до окончания transition; последующее Resume завершилось корректно. | PASS | `PlayModeTests-final.xml`: `T09AndT10_PauseIsAlreadyStoppedDuringFade_AndRapidRepeatedCommandsAreIgnored` |
 | Т11 | Согласованность версии | Version совпадает в About, Player Settings и README. | Во всех трёх местах указано 1.0.0; standalone runtime сообщил version 1.0.0. | PASS | `screenshots/PP13_09_AboutScreen.png`, `ProjectSettings/ProjectSettings.asset`, `README.md`, `MAC_STANDALONE_TEST.md` |
 | Т12 | Проверка PNG | PNG открываются и отражают состояния игры. | Обязательная матрица PNG полна; дополнительно созданы 21 валидный Unity runtime-render в точных размерах. | PASS | `FILE_MANIFEST.md`, `PROJECT_VALIDATION.md`, `responsive/RESP_*.png` |
-| Т13 | Честность наблюдения | Наблюдение, исправление и повторная проверка описаны честно. | Self-test UX-01 сохранён до/после; отдельный overlap Level Select в 4:3 зафиксирован до и после и проверяется assertion. Пользовательская приёмка MacBook M3 отмечена как user-reported. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md`, `responsive/BEFORE_1024x768_LevelSelect_overlap.png`, `responsive/RESP_1024x768_LevelSelect.png` |
-| Т14 | Понятность правила новым пользователем | Новый пользователь объясняет правило без устной подсказки. | Внешний новый пользователь не привлекался. Пользователь-заказчик знаком с ТЗ, поэтому его подтверждение не считается новым пользовательским наблюдением. | NOT VERIFIED | `USER_TEST.md`, `USER_ACCEPTANCE.md`, `MISSING_EVIDENCE.md` |
+| Т13 | Честность наблюдения | Наблюдение, исправление и повторная проверка описаны честно. | UX-01 и UX-02 выявлены при предварительной самостоятельной технической проверке и исправлены до внешнего сеанса. Новый пользователь проверил финальную версию; новых проблем не выявлено. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md`, `responsive/BEFORE_1024x768_LevelSelect_overlap.png`, `responsive/RESP_1024x768_LevelSelect.png` |
+| Т14 | Понятность правила новым пользователем | Новый пользователь понимает правило без устной подсказки. | Новый пользователь самостоятельно понял необходимость собрать все кристаллы до выхода и завершил Level 1 без устного объяснения. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md` |
 | Т15 | Полнота готовой игры | Три уровня, Victory, Defeat и прогресс работают. | PlayMode прошёл полный L1–L3 flow, Defeat/Restart и Victory; отдельные процессы подтвердили постоянные значения. | PASS | `PlayModeTests-final.xml`, `PERSISTENCE_RESTART_PROBE.md` |
-| Т16 | Новая копия и единый commit | Новая копия запускается; комплект относится к одному коммиту. | Release идентифицируется аннотированным тегом `pp-pm13-release`; exact full hash, clean-clone outputs и SHA-256 пакета записываются после тега в post-commit-слой ZIP. | PASS | `FRESH_CLONE_VERIFICATION.md`, архивные `DELIVERY_MANIFEST.txt`, `POST_COMMIT_VERIFICATION/` |
+| Т16 | Новая копия и единый commit | Новая копия запускается; комплект относится к одной опубликованной ревизии. | Финальная проверка выполняется после публикации ветки `main`. | NOT VERIFIED | `FRESH_CLONE_TEST.md`, `REPOSITORY_URL.md` |
 
-Итог ПП.ПМ.13: **15 PASS, 0 FAIL, 1 NOT VERIFIED**.
+Промежуточный итог до проверки свежего клона: **15 PASS, 0 FAIL, 1 NOT VERIFIED**.
 
 ## Вывод
 
-Editor compile, 24 EditMode-теста, 17 PlayMode-тестов, двухпроцессная проверка PlayerPrefs, 21 responsive runtime-render с имитацией Safe Area, macOS Standalone smoke/focus-loss test и воспроизводимый ProfilerRecorder benchmark завершились успешно. Непроверенными остаются понимание правила внешним новым пользователем и Android/iOS.
+Editor compile, 24 EditMode-теста, итоговые 17 PlayMode-тестов, двухпроцессная проверка PlayerPrefs, 21 responsive runtime-render с имитацией Safe Area, macOS Standalone smoke/focus-loss test, внешний пользовательский сценарий и воспроизводимый ProfilerRecorder benchmark завершились успешно. Первый повторный PlayMode-запуск с `-nographics` получил два FAIL только в тестах захвата изображения; повторный запуск с графическим контекстом завершился 17/17 PASS. До публикации остаётся проверить свежий клон. Android/iOS не проверялись.

@@ -11,8 +11,8 @@ namespace EnergoKey.Editor.Testing
 {
     public static class MacStandaloneSmokeBuild
     {
-        private const string DefaultBuildPath = "/tmp/EnergoKey-MacSmoke/EnergoKey.app";
-        private const string FocusProbeBuildPath = "/tmp/EnergoKey-FocusProbe/EnergoKey.app";
+        private const string DefaultBuildDirectory = "EnergoKey-MacSmoke";
+        private const string FocusProbeBuildDirectory = "EnergoKey-FocusProbe";
         private const string EvidencePath = "EVIDENCE/MAC_STANDALONE_TEST.md";
 
         public static void Build()
@@ -31,7 +31,13 @@ namespace EnergoKey.Editor.Testing
             try
             {
                 string requestedPath = Environment.GetEnvironmentVariable("ENERGOKEY_MAC_BUILD_PATH");
-                string defaultPath = startInLevelOne ? FocusProbeBuildPath : DefaultBuildPath;
+                string defaultDirectory = startInLevelOne
+                    ? FocusProbeBuildDirectory
+                    : DefaultBuildDirectory;
+                string defaultPath = Path.Combine(
+                    Path.GetTempPath(),
+                    defaultDirectory,
+                    "EnergoKey.app");
                 string buildPath = string.IsNullOrWhiteSpace(requestedPath) ? defaultPath : requestedPath;
                 string parent = Path.GetDirectoryName(buildPath);
                 if (string.IsNullOrWhiteSpace(parent))

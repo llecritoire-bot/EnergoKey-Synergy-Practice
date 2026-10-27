@@ -1,6 +1,6 @@
-sandbox_extension_issue_file_to_process failed for /tmp/EnergoKey-MacSmoke/EnergoKey.app: 1 (Operation not permitted)
-Mono path[0] = '/tmp/EnergoKey-MacSmoke/EnergoKey.app/Contents/Resources/Data/Managed'
-Mono config path = '/tmp/EnergoKey-MacSmoke/EnergoKey.app/Contents/MonoBleedingEdge/etc'
+sandbox_extension_issue_file_to_process failed for [TEMP_WORKSPACE]/EnergoKey.app: 1 (Operation not permitted)
+Mono path[0] = '[TEMP_WORKSPACE]/EnergoKey.app/Contents/Resources/Data/Managed'
+Mono config path = '[TEMP_WORKSPACE]/EnergoKey.app/Contents/MonoBleedingEdge/etc'
 CodeReloadManager initialized
 Found 2 interfaces on host : 0) [LOCAL_IPV4] 1) [LOCAL_IPV4]
 Player connection [8357805952]  Target information:
@@ -20,7 +20,7 @@ Metal devices available: 1
 Using device Apple M3 (high power)
 Initialize engine version: 6000.6.2f1 (770e33f6875c)
 [EntityIdStore] init: VM path (explicit commit), pageSize=16384, blockCount=262144, entitiesPerBlock=1024, slots reserved=4294967296 bytes
-[Subsystems] Discovering subsystems at path /tmp/EnergoKey-MacSmoke/EnergoKey.app/Contents/Resources/Data/UnitySubsystems
+[Subsystems] Discovering subsystems at path [TEMP_WORKSPACE]/EnergoKey.app/Contents/Resources/Data/UnitySubsystems
 GfxDevice: creating device client; kGfxThreadingModeThreaded
 Initializing Metal device caps: Apple M3
 Mac GPU Family: 2

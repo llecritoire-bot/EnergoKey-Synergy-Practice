@@ -7,12 +7,12 @@ Darwin version:          27.0.0
 Architecture:            arm64
 Running under Rosetta:   NO
 Available memory:        16384 MB
-Date:                    2026-10-27T14:57:24Z
+Date:                    2026-10-27T16:22:50Z
 Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/NetCoreRuntime/dotnet
-VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 92105)
-VBCSCompiler prewarm took 2.59 ms
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 8763)
+VBCSCompiler prewarm took 2.18 ms
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-[LOCAL_USER]" at "2026-10-27T14:57:24.433069Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-[LOCAL_USER]" at "2026-10-27T16:22:50.168801Z"
 Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/PackageManager/Server/UnityPackageManager
 
 COMMAND LINE ARGUMENTS:
@@ -69,9 +69,9 @@ Successfully changed project path to: [USER_HOME]/Desktop/untitled folder 2/Ener
 Logging is directed to a specific file, skipping project log.
 Player connection [8357805952]  Target information:
 
-Player connection [8357805952]  * "[IP] [LOCAL_IPV4] [Port] 55504 [Flags] 2 [Guid] 3019558121 [EditorId] 3019558121 [Version] 1048832 [Id] OSXEditor(0,[LOCAL_HOST]) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [8357805952]  * "[IP] [LOCAL_IPV4] [Port] 55504 [Flags] 2 [Guid] 2797567489 [EditorId] 2797567489 [Version] 1048832 [Id] OSXEditor(0,[LOCAL_HOST]) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
-Player connection [8357805952]  * "[IP] [LOCAL_IPV4] [Port] 55504 [Flags] 2 [Guid] 3019558121 [EditorId] 3019558121 [Version] 1048832 [Id] OSXEditor(0,[LOCAL_HOST]) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [8357805952]  * "[IP] [LOCAL_IPV4] [Port] 55504 [Flags] 2 [Guid] 2797567489 [EditorId] 2797567489 [Version] 1048832 [Id] OSXEditor(0,[LOCAL_HOST]) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
 Player connection [8357805952] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [8357805952] Host joined alternative multi-casting on [225.0.0.222:34997]...
@@ -84,8 +84,8 @@ Input System module state changed to: Initialized.
   Correlation Id:          [UNITY_CORRELATION_ID]
   External correlation Id: [UNITY_EXTERNAL_CORRELATION_ID]
   Machine Id:              [UNITY_MACHINE_ID]
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-[LOCAL_USER]" (connect: 0.00s, validation: 0.00s, handshake: 0.26s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-[LOCAL_USER]-notifications" at "2026-10-27T14:57:24.690906Z"
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-[LOCAL_USER]" (connect: 0.00s, validation: 0.00s, handshake: 0.31s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-[LOCAL_USER]-notifications" at "2026-10-27T16:22:50.47771Z"
 [Licensing::Module] Error: Access token is unavailable; failed to update
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
@@ -94,10 +94,7 @@ Input System module state changed to: Initialized.
   Type: Assigned
   Expiration: Unlimited
 [Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
-[Licensing::Module] Licensing Background thread has ended after 0.26s
-[Package Manager] Connected to IPC stream "Upm-92096" after 0.2 seconds.
-[Licensing::Client] Successfully resolved entitlement details
-Library Redirect Path: Library/
+[Licensing::Module] Licensing Background thread has ended after 0.31s
 Initialising UDS system complete:
   - System type: Client
   - Resource namespace: 56df3026d3a14d69986dc5cfe36b4d9e
@@ -106,6 +103,9 @@ Initialising UDS system complete:
   - Command buffer size: 8192
   - Hashmap size: 4194304
   - Service connected: false
+[Package Manager] Connected to IPC stream "Upm-8754" after 0.1 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
 Launching Unity Data Store - /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/Unity.DataStore 
 Unity Data Store artifact dir = Library/DataStore, working dir = [USER_HOME]/Desktop/untitled folder 2/EnergoKey[Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
@@ -135,35 +135,35 @@ Mono path[0] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Res
 Mono path[1] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/BCLExtensions/runtime/netstandard2.1'
 Mono path[2] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=[LOCAL_IPV4]:56096
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=[LOCAL_IPV4]:56754
 CodeReloadManager initialized
 ImportWorker Server TCP listen port: 0
 AcceleratorClientConnectionCallback - disconnected - :0
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Registered in 0.000284 seconds.
+Registered in 0.000345 seconds.
 Native extension for OSXStandalone target not found
 Package Manager log level set to [2]
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.323 seconds
-Domain Reload Profiling: 598ms
-	BeginReloadAssembly (68ms)
-		CreateAndSetChildDomain (20ms)
+- Finished resetting the current domain, in  0.353 seconds
+Domain Reload Profiling: 621ms
+	BeginReloadAssembly (56ms)
+		CreateAndSetChildDomain (9ms)
 	RebuildCommonClasses (3ms)
 	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (28ms)
-	LoadAllAssembliesAndSetupDomain (165ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (168ms)
 		LoadAssemblies (47ms)
-		TypeCache.Refresh (119ms)
-			TypeCache.ScanAssembly (110ms)
+		TypeCache.Refresh (121ms)
+			TypeCache.ScanAssembly (112ms)
 		AnalyzeDomain (0ms)
-	FinalizeReload (324ms)
+	FinalizeReload (354ms)
 		SetupLoadedEditorAssemblies (0ms)
 			BeforeProcessingInitializeOnLoad (52ms)
-			ProcessInitializeOnLoadAttributes (49ms)
-			ProcessInitializeOnLoadMethodAttributes (113ms)
+			ProcessInitializeOnLoadAttributes (46ms)
+			ProcessInitializeOnLoadMethodAttributes (146ms)
 [Licensing::Client] Successfully resolved entitlement details
 Application.AssetDatabase Initial Refresh Start
 [Package Manager] Restoring resolved packages state from cache
@@ -217,146 +217,104 @@ Application.AssetDatabase Initial Refresh Start
     com.unity.ext.nunit@2.1.0 (location: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Library/PackageCache/com.unity.ext.nunit@0198eae3b53e)
 [Subsystems] No new subsystems found in resolved package list.
 [Package Manager] Done registering packages in 0.00 seconds
-[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
 Starting: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/200b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
 WorkingDir: [USER_HOME]/Desktop/untitled folder 2/EnergoKey
 DisplayProgressbar: Compiling Scripts
-ExitCode: 0 Duration: 0s452ms
-[262/306    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
-[290/306    0s] Csc Library/Bee/artifacts/200b0aE.dag/EnergoKey.Runtime.dll (+2 others)
-[294/306    0s] ILPostProcess Library/Bee/artifacts/200b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
-Processing assembly Library/Bee/artifacts/200b0aE.dag/Assembly-CSharp-Editor.dll, with 140 defines and 309 references
-processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor
-1 processor(s) skipped this assembly
-[295/306    0s] ILPostProcess Library/Bee/artifacts/200b0aE.dag/post-processed/EnergoKey.PlayModeTests.dll (+pdb)
-Processing assembly Library/Bee/artifacts/200b0aE.dag/EnergoKey.PlayModeTests.dll, with 142 defines and 293 references
-processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor
-1 processor(s) skipped this assembly
-[296/306    0s] ILPostProcess Library/Bee/artifacts/200b0aE.dag/post-processed/EnergoKey.EditModeTests.dll (+pdb)
-Processing assembly Library/Bee/artifacts/200b0aE.dag/EnergoKey.EditModeTests.dll, with 140 defines and 301 references
-processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor
-1 processor(s) skipped this assembly
-[297/306    0s] ILPostProcess Library/Bee/artifacts/200b0aE.dag/post-processed/EnergoKey.Runtime.dll (+pdb)
-Processing assembly Library/Bee/artifacts/200b0aE.dag/EnergoKey.Runtime.dll, with 142 defines and 292 references
-processors: zzzUnity.Burst.CodeGen.BurstILPostProcessor
-1 processor(s) skipped this assembly
-[304/306    0s] CopyFiles Library/ScriptAssemblies/EnergoKey.Runtime.dll
-[305/306    0s] CopyFiles Library/ScriptAssemblies/EnergoKey.Runtime.pdb
-*** Tundra build success (0.44 seconds), 8 items updated, 306 evaluated
-AssetDatabase: script compilation time: 0.792276s
+ExitCode: 0 Duration: 0s136ms
+[266/306    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.12 seconds), 1 items updated, 306 evaluated
+AssetDatabase: script compilation time: 0.668054s
 Begin MonoManager ReloadAssembly
-Total cache size 80852548
-Total cache size after purge 80852548, took 00:00:00.0411204
+Total cache size 89649476
+Total cache size after purge 89649476, took 00:00:00.0511354
 Native extension for OSXStandalone target not found
 ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.241 seconds
-Domain Reload Profiling: 511ms
-	BeginReloadAssembly (109ms)
-		DisableScriptedObjects (9ms)
-		CreateAndSetChildDomain (24ms)
+- Finished resetting the current domain, in  0.237 seconds
+Domain Reload Profiling: 532ms
+	BeginReloadAssembly (124ms)
+		DisableScriptedObjects (10ms)
+		CreateAndSetChildDomain (31ms)
 	RebuildCommonClasses (5ms)
 	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (20ms)
-	LoadAllAssembliesAndSetupDomain (125ms)
-		LoadAssemblies (100ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (131ms)
+		LoadAssemblies (115ms)
 		TypeCache.Refresh (15ms)
 			TypeCache.ScanAssembly (10ms)
-		AnalyzeDomain (7ms)
+		AnalyzeDomain (6ms)
 			BuildScriptInfoCaches (5ms)
-	FinalizeReload (241ms)
+	FinalizeReload (237ms)
 		SetupLoadedEditorAssemblies (0ms)
 			BeforeProcessingInitializeOnLoad (54ms)
-			ProcessInitializeOnLoadAttributes (50ms)
-			ProcessInitializeOnLoadMethodAttributes (23ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
+			ProcessInitializeOnLoadAttributes (49ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
 Starting new worker id: 0 with log in [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Logs/AssetImportWorkerHW0.log
-Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/UnityShaderCompiler
 
-Asset Pipeline Refresh (id=52afff4efcdbd4ba889bddc30c4c573e): Total: 1.519 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+Asset Pipeline Refresh (id=5d40335bb36b6418dbef40949d09394f): Total: 1.352 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
 	(Values over 0.05ms)
 	Summary:
 		Imports: total=0 (actual=0, local cache=0, cache server=0)
-		Asset DB Process Time: managed=0 ms, native=354 ms
-		Asset DB Callback time: managed=66 ms, native=15 ms
-		Scripting: domain reloads=1, domain reload time=283 ms, compile time=793 ms, other=5 ms
+		Asset DB Process Time: managed=0 ms, native=351 ms
+		Asset DB Callback time: managed=15 ms, native=3 ms
+		Scripting: domain reloads=1, domain reload time=308 ms, compile time=669 ms, other=4 ms
 		Project Asset Count: scripts=302, non-scripts=198
-		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
 		Scan Filter Count: 1
-	InvokePackagesCallback: 5.899ms
-	ApplyChangesToAssetFolders: 0.202ms
-	Scan: 69.682ms
-	Collect global state as custom dependencies: 5.612ms
-	OnSourceAssetsModified: 0.281ms
-	CategorizeScriptCompilationAssets: 4.039ms
-	ProcessAssetsWithTransientArtifactChanges: 6.963ms
-	CategorizeAssets: 3.487ms
-	CompileScripts: 793.371ms
-	ImportOutOfDateAssets: 243.260ms (241.770ms without children)
-		UnloadImportedAssets: 0.130ms
-		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.060ms
-		ImportSchedulerStart: 1.299ms
-	PostProcessAllAssets: 67.183ms
-		VCAutoAddAssetPostprocess 0.388ms
-		MonoPostProcessAllAssets: 66.593ms
-			AssetPostprocessor.OnPostprocessAllAssets 33.783ms
-			SyncVS.PostprocessSyncProject 7.595ms
-			StyleCatalogPostProcessor.OnPostprocessAllAssets 4.669ms
-			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 4.288ms
-			BuilderAssetPostprocessor.OnPostprocessAllAssets 3.904ms
-			SpriteSlicePostprocessor.OnPostprocessAllAssets 1.317ms
-			AssetChangedListener.OnPostprocessAllAssets 0.988ms
-			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 0.788ms
-			EditModeScopePostprocessor.OnPostprocessAllAssets 0.528ms
-			SpeedTree9Postprocessor.OnPostprocessAllAssets 0.404ms
-			TextAssetPostProcessor.OnPostprocessAllAssets 0.298ms
-			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.297ms
-			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.290ms
-			AudioMixerPostprocessor.OnPostprocessAllAssets 0.149ms
-			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.141ms
-			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.127ms
-			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.115ms
-			AssetEvents.OnPostprocessAllAssets 0.112ms
-			ThemePostprocessor.OnPostprocessAllAssets 0.083ms
-			SpeedTreePostProcessor.OnPostprocessAllAssets 0.083ms
-			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.071ms
-			ConfigAssetsTracker.OnPostprocessAllAssets 0.063ms
-			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.062ms
-			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.052ms
-	PostAssetChangesProfiler: 9.272ms
-	UnloadStreamsBegin: 0.773ms
-	GenerateScriptTypeHashes: 0.698ms
-	GenerateScriptTypeSerializationHashes: 1.699ms
-	Untracked: 306.677ms
+	InvokePackagesCallback: 4.255ms
+	ApplyChangesToAssetFolders: 0.188ms
+	Scan: 63.916ms
+	Collect global state as custom dependencies: 5.962ms
+	CategorizeScriptCompilationAssets: 4.552ms
+	ProcessAssetsWithTransientArtifactChanges: 6.318ms
+	CategorizeAssets: 3.478ms
+	CompileScripts: 669.149ms
+	ImportOutOfDateAssets: 239.341ms (237.703ms without children)
+		UnloadImportedAssets: 0.145ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.059ms
+		ImportSchedulerStart: 1.433ms
+	PostProcessAllAssets: 15.059ms
+		MonoPostProcessAllAssets: 15.009ms
+			SyncVS.PostprocessSyncProject 5.431ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 3.906ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.432ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 0.424ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.149ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.103ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.077ms
+	UnloadStreamsBegin: 0.907ms
+	GenerateScriptTypeHashes: 0.652ms
+	GenerateScriptTypeSerializationHashes: 1.590ms
+	Untracked: 337.358ms
 
 Application.AssetDatabase Initial Refresh End
-Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
-Scanning for USB devices : 0.024ms
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.05 seconds
+Scanning for USB devices : 0.036ms
 Initializing Unity extensions:
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-Энергоключ
-2026-10-27 21:57:27.335 Unity[92096:2079346] NSEventModifierFlagFunction specified to -setKeyEquivalentModifierMask: for item <NSMenuItem: 0x76c74aae40 Toggle Pause, ke='Command-F7'>, but is only supported for system-provided menu items; will not be used
-2026-10-27 21:57:27.337 Unity[92096:2079346] NSEventModifierFlagFunction specified to -setKeyEquivalentModifierMask: for item <NSMenuItem: 0x76c43ef8e0 SDF, ke='Command-F12'>, but is only supported for system-provided menu items; will not be used
+2026-10-27 23:22:53.035 Unity[8754:2211934] NSEventModifierFlagFunction specified to -setKeyEquivalentModifierMask: for item <NSMenuItem: 0x79554bada0 Toggle Pause, ke='Command-F7'>, but is only supported for system-provided menu items; will not be used
+2026-10-27 23:22:53.037 Unity[8754:2211934] NSEventModifierFlagFunction specified to -setKeyEquivalentModifierMask: for item <NSMenuItem: 0x79520e3840 SDF, ke='Command-F12'>, but is only supported for system-provided menu items; will not be used
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 955 unused Assets / (436.2 KB). Loaded Objects now: 1699.
-Memory consumption went from 141.1 MB to 140.6 MB.
-Total: 4.998750 ms (FindLiveObjects: 0.143458 ms CreateObjectMapping: 0.018709 ms MarkObjects: 4.510666 ms  DeleteObjects: 0.271417 ms)
+Unloading 955 unused Assets / (0.6 MB). Loaded Objects now: 1699.
+Memory consumption went from 141.2 MB to 140.7 MB.
+Total: 5.081833 ms (FindLiveObjects: 0.145958 ms CreateObjectMapping: 0.017667 ms MarkObjects: 4.616125 ms  DeleteObjects: 0.249333 ms)
 
-2026-10-27 21:57:27.372 Unity[92096:2079346] NSEventModifierFlagFunction specified to -setKeyEquivalentModifierMask: for item <NSMenuItem: 0x76c3c05fe0 Toggle Pause, ke='Command-F7'>, but is only supported for system-provided menu items; will not be used
-2026-10-27 21:57:27.375 Unity[92096:2079346] NSEventModifierFlagFunction specified to -setKeyEquivalentModifierMask: for item <NSMenuItem: 0x76c43ef480 SDF, ke='Command-F12'>, but is only supported for system-provided menu items; will not be used
-[Project] Loading completed in 2.951 seconds
-	Project init time: 				2.776 seconds
+[Project] Loading completed in 2.930 seconds
+	Project init time: 				2.614 seconds
 		Template init time: 		0.000 seconds
-		Package Manager init time: 		0.152 seconds
-		Asset Database init time: 		0.101 seconds
+		Package Manager init time: 		0.131 seconds
+		Asset Database init time: 		0.100 seconds
 		Global illumination init time: 	0.000 seconds
-		Assemblies load time: 			0.613 seconds
-		Unity extensions init time: 	0.002 seconds
-		Asset Database refresh time: 	1.519 seconds
-	Scene opening time: 			0.066 seconds
-##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1793113047378,"processId":92096,"projectLoad":2.950789125,"projectInit":2.775937459,"templateInit":0.0,"packageManagerInit":0.152321334,"assetDatabaseInit":0.100552833,"globalIlluminationInit":0.000425292,"assembliesLoad":0.613408834,"unityExtensionsInit":0.001674667,"assetDatabaseRefresh":1.518625042,"sceneOpening":0.065513917}
-##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1793113047378,"processId":92096,"editorVersion":"6000.6.2f1 (770e33f6875c)","branch":"6000.6/staging","buildType":"Release","platform":"OSX"}
+		Assemblies load time: 			0.637 seconds
+		Unity extensions init time: 	0.003 seconds
+		Asset Database refresh time: 	1.352 seconds
+	Scene opening time: 			0.084 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1793118173094,"processId":8754,"projectLoad":2.9303338340000002,"projectInit":2.61418925,"templateInit":0.0,"packageManagerInit":0.13116075,"assetDatabaseInit":0.09979325,"globalIlluminationInit":0.000469417,"assembliesLoad":0.6367755,"unityExtensionsInit":0.002898042,"assetDatabaseRefresh":1.352037333,"sceneOpening":0.084126458}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1793118173094,"processId":8754,"editorVersion":"6000.6.2f1 (770e33f6875c)","branch":"6000.6/staging","buildType":"Release","platform":"OSX"}
 Subscribe to USB device events
 [Licensing::Client] Successfully resolved entitlement details
 Running tests for ExecutionSettings with details:
@@ -388,16 +346,16 @@ UnityEditor.EditorApplication:Internal_CallUpdateFunctions () (at [USER_HOME]/bu
 Start Indexing on Editor startup
 [Indexing] Starting Initial Indexing for Assets
 [UnityConnectServicesConfig] config is NOT valid, switching to default
-Created GICache directory at [USER_HOME]/Library/Caches/com.unity3d.UnityEditor/GiCache. Took: 0.014s, timestamps: [2.959 - 2.973]
+Created GICache directory at [USER_HOME]/Library/Caches/com.unity3d.UnityEditor/GiCache. Took: 0.010s, timestamps: [2.932 - 2.942]
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 0 unused Assets / (Unknown). Loaded Objects now: 1848.
-Memory consumption went from 143.4 MB to 143.4 MB.
-Total: 5.784584 ms (FindLiveObjects: 0.089000 ms CreateObjectMapping: 0.010125 ms MarkObjects: 5.629000 ms  DeleteObjects: 0.004250 ms)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1848.
+Memory consumption went from 143.8 MB to 143.8 MB.
+Total: 5.745209 ms (FindLiveObjects: 0.094000 ms CreateObjectMapping: 0.016334 ms MarkObjects: 5.577458 ms  DeleteObjects: 0.004042 ms)
 
-Importing 'GUID: 5027cc7c36ecb451bad1384cfc8b18ae - Path: Assets/InitTestScene64302114-73ca-4079-ba12-0796beb747ea.unity' with importer (DefaultImporter)
-Imported 'GUID: 5027cc7c36ecb451bad1384cfc8b18ae' -> (Import Result ID: '14824984fdbffbcc62c5ad5bae476535') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=ccdcc2f1a8aef8faa38e7eac322c873c DependenciesID=35085bfe4c1adc53c8f0ee77aa79b8fa StaticDependenciesID=43bb2ddb2893d36e0abebe0bd21e40b6 
-Asset Pipeline Refresh (id=2950f5a3d220042b4bf07120363f783c): Total: 0.009 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
-Thread 0x7101baf000 may have been prematurely finalized
+Importing 'GUID: f723a153016094caaac76aa1c67a3770 - Path: Assets/InitTestScenef6581be4-e8ce-40a1-9aeb-08dedf4794c9.unity' with importer (DefaultImporter)
+Imported 'GUID: f723a153016094caaac76aa1c67a3770' -> (Import Result ID: '43f9d43be3d34ec7686671c5f4d20164') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=9ec96eccfd922a65fe72d57ba9948ae8 DependenciesID=7e8090fb8b736446316ca3bb5676210b StaticDependenciesID=fc857d1c2899a320305cbd010aeffced 
+Asset Pipeline Refresh (id=806f6a1e3fa764dc2817fa29860484f3): Total: 0.026 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Thread 0x7502c47000 may have been prematurely finalized
 Reloading assemblies for play mode.
 Reloading assemblies after forced synchronous recompile.
 Begin MonoManager ReloadAssembly
@@ -405,97 +363,94 @@ Worker ready: AssetImportWorkerHW0 0
 Native extension for OSXStandalone target not found
 ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.412 seconds
-Domain Reload Profiling: 767ms
-	BeginReloadAssembly (230ms)
-		DisableScriptedObjects (13ms)
-		CreateAndSetChildDomain (151ms)
-	RebuildCommonClasses (7ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (25ms)
-	LoadAllAssembliesAndSetupDomain (77ms)
-		LoadAssemblies (50ms)
+- Finished resetting the current domain, in  0.336 seconds
+Domain Reload Profiling: 654ms
+	BeginReloadAssembly (213ms)
+		DisableScriptedObjects (11ms)
+		CreateAndSetChildDomain (138ms)
+	RebuildCommonClasses (6ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (21ms)
+	LoadAllAssembliesAndSetupDomain (66ms)
+		LoadAssemblies (49ms)
 		TypeCache.Refresh (4ms)
 		AnalyzeDomain (2ms)
-	FinalizeReload (412ms)
+	FinalizeReload (337ms)
 		SetupLoadedEditorAssemblies (0ms)
-			BeforeProcessingInitializeOnLoad (63ms)
-			ProcessInitializeOnLoadAttributes (69ms)
-			ProcessInitializeOnLoadMethodAttributes (91ms)
-		AwakeInstancesAfterBackupRestoration (22ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (47ms)
+			ProcessInitializeOnLoadMethodAttributes (71ms)
+		AwakeInstancesAfterBackupRestoration (16ms)
 No restricted APIs configured; Validation skipped.
-Checking 2 assemblies for restricted APIs found 0 usage(s) in 2 ms
+Checking 2 assemblies for restricted APIs found 0 usage(s) in 1 ms
 
-Asset Pipeline Refresh (id=b385bc9363fc5471787eee6143e3f32a): Total: 0.933 seconds - Initiated by StopAssetImportingV2(ForceSynchronousImport | ForceDomainReload)
+Asset Pipeline Refresh (id=d9675dcb93f01401d8fde7a4127c926a): Total: 0.789 seconds - Initiated by StopAssetImportingV2(ForceSynchronousImport | ForceDomainReload)
 	(Values over 0.05ms)
 	Summary:
 		Imports: total=0 (actual=0, local cache=0, cache server=0)
-		Asset DB Process Time: managed=0 ms, native=447 ms
-		Asset DB Callback time: managed=100 ms, native=14 ms
-		Scripting: domain reloads=1, domain reload time=369 ms, compile time=1 ms, other=0 ms
+		Asset DB Process Time: managed=0 ms, native=366 ms
+		Asset DB Callback time: managed=74 ms, native=12 ms
+		Scripting: domain reloads=1, domain reload time=334 ms, compile time=1 ms, other=0 ms
 		Project Asset Count: scripts=302, non-scripts=199
 		Asset File Changes: new=0, changed=0, moved=0, deleted=0
 		Scan Filter Count: 0
-	InvokePackagesCallback: 0.905ms
-	ApplyChangesToAssetFolders: 0.140ms
-	Collect global state as custom dependencies: 0.298ms
-	ProcessAssetsWithTransientArtifactChanges: 15.427ms
-	CategorizeAssets: 3.900ms
-	CompileScripts: 1.071ms
-	ImportOutOfDateAssets: 412.934ms (412.707ms without children)
-		UnloadImportedAssets: 0.052ms
+	InvokePackagesCallback: 0.944ms
+	ApplyChangesToAssetFolders: 0.104ms
+	Collect global state as custom dependencies: 0.254ms
+	ProcessAssetsWithTransientArtifactChanges: 11.552ms
+	CategorizeAssets: 2.532ms
+	CompileScripts: 0.915ms
+	ImportOutOfDateAssets: 337.491ms (337.286ms without children)
 		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.054ms
-		ImportSchedulerStart: 0.117ms
-	PostProcessAllAssets: 114.186ms
-		PostProcessCallbackCreateDeferredMaterials 2.468ms
-		ShaderAssetModifiedCallback 1.367ms
-		AssemblyValidation.PostprocessAllAssets 0.931ms
-		RaytracingShaderImportPostprocess 0.800ms
-		SpeedTreeImporter.PostprocessAllAssets 0.715ms
-		ComputeShaderImportPostprocess 0.586ms
-		BlockShaderImporter.PostprocessAllAssets 0.304ms
-		LocalizationDatabase.AssetDatabasePostprocessCallback 0.274ms
-		MonoPostProcessAllAssets: 99.526ms
-			SyncVS.PostprocessSyncProject 59.300ms
-			StyleCatalogPostProcessor.OnPostprocessAllAssets 7.182ms
-			AssetPostprocessor.OnPostprocessAllAssets 5.009ms
-			BuilderAssetPostprocessor.OnPostprocessAllAssets 4.507ms
-			SpriteSlicePostprocessor.OnPostprocessAllAssets 3.865ms
-			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 3.357ms
-			TextAssetPostProcessor.OnPostprocessAllAssets 2.411ms
-			AssetChangedListener.OnPostprocessAllAssets 1.985ms
-			SpeedTree9Postprocessor.OnPostprocessAllAssets 1.282ms
-			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 0.952ms
-			SpeedTreePostProcessor.OnPostprocessAllAssets 0.504ms
-			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.335ms
-			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.330ms
-			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.308ms
-			EditModeScopePostprocessor.OnPostprocessAllAssets 0.286ms
-			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.213ms
-			AudioMixerPostprocessor.OnPostprocessAllAssets 0.174ms
-			AssetEvents.OnPostprocessAllAssets 0.152ms
-			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.146ms
-			ThemePostprocessor.OnPostprocessAllAssets 0.122ms
-			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.075ms
-			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.066ms
-			ConfigAssetsTracker.OnPostprocessAllAssets 0.063ms
-			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.061ms
-	PostAssetChangesProfiler: 0.692ms
-	GenerateScriptTypeHashes: 0.823ms
-	GenerateScriptTypeSerializationHashes: 1.954ms
-	Untracked: 381.537ms
+		ImportSchedulerStart: 0.104ms
+	PostProcessAllAssets: 86.263ms
+		PostProcessCallbackCreateDeferredMaterials 2.210ms
+		ShaderAssetModifiedCallback 1.240ms
+		AssemblyValidation.PostprocessAllAssets 0.787ms
+		ComputeShaderImportPostprocess 0.539ms
+		RaytracingShaderImportPostprocess 0.533ms
+		SpeedTreeImporter.PostprocessAllAssets 0.476ms
+		LocalizationDatabase.AssetDatabasePostprocessCallback 0.253ms
+		BlockShaderImporter.PostprocessAllAssets 0.242ms
+		MonoPostProcessAllAssets: 74.269ms
+			SyncVS.PostprocessSyncProject 45.848ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 5.863ms
+			AssetPostprocessor.OnPostprocessAllAssets 4.215ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 3.626ms
+			SpriteSlicePostprocessor.OnPostprocessAllAssets 2.367ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 2.314ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 1.741ms
+			AssetChangedListener.OnPostprocessAllAssets 1.454ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 0.623ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 0.506ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.242ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.216ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 0.135ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.134ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.124ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.121ms
+			AssetEvents.OnPostprocessAllAssets 0.109ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.091ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.083ms
+			ThemePostprocessor.OnPostprocessAllAssets 0.077ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.058ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.055ms
+	PostAssetChangesProfiler: 0.539ms
+	GenerateScriptTypeHashes: 0.573ms
+	GenerateScriptTypeSerializationHashes: 1.373ms
+	Untracked: 346.981ms
 
 Loaded scene 'Temp/__Backupscenes/0.backup'
-	Deserialize:            0.573 ms
-	Integration:            16.353 ms
+	Deserialize:            0.450 ms
+	Integration:            15.190 ms
 	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.003 ms
-	Total Operation Time:   16.930 ms
+	Thread Wait Time:       0.005 ms
+	Total Operation Time:   15.645 ms
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [Licensing::Client] Successfully resolved entitlement details
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.247375 ms
+UnloadTime: 0.211459 ms
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -508,17 +463,17 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            1.139 ms
-	Integration:            48.123 ms
-	Integration of assets:  0.007 ms
-	Thread Wait Time:       0.004 ms
-	Total Operation Time:   49.273 ms
-Unloading 807 unused Assets / (134.1 KB). Loaded Objects now: 2188.
-Memory consumption went from 149.2 MB to 149.1 MB.
-Total: 6.439250 ms (FindLiveObjects: 0.151750 ms CreateObjectMapping: 0.018000 ms MarkObjects: 6.097583 ms  DeleteObjects: 0.116334 ms)
+	Deserialize:            0.718 ms
+	Integration:            40.419 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.085 ms
+	Total Operation Time:   41.226 ms
+Unloading 807 unused Assets / (265.7 KB). Loaded Objects now: 2188.
+Memory consumption went from 150.0 MB to 149.7 MB.
+Total: 5.305333 ms (FindLiveObjects: 0.139417 ms CreateObjectMapping: 0.017000 ms MarkObjects: 4.992958 ms  DeleteObjects: 0.100250 ms)
 
 Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.657458 ms
+UnloadTime: 2.373917 ms
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -531,17 +486,17 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.353 ms
-	Integration:            9.474 ms
+	Deserialize:            0.232 ms
+	Integration:            8.195 ms
 	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.106 ms
-	Total Operation Time:   9.933 ms
-Unloading 20 unused Assets / (116.2 KB). Loaded Objects now: 2192.
-Memory consumption went from 138.1 MB to 138.0 MB.
-Total: 4.986416 ms (FindLiveObjects: 0.108583 ms CreateObjectMapping: 0.009792 ms MarkObjects: 4.783833 ms  DeleteObjects: 0.025792 ms)
+	Thread Wait Time:       0.110 ms
+	Total Operation Time:   8.537 ms
+Unloading 20 unused Assets / (117.4 KB). Loaded Objects now: 2192.
+Memory consumption went from 137.6 MB to 137.5 MB.
+Total: 4.910625 ms (FindLiveObjects: 0.108458 ms CreateObjectMapping: 0.009459 ms MarkObjects: 4.719041 ms  DeleteObjects: 0.018959 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.385500 ms
+UnloadTime: 0.389250 ms
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -554,63 +509,17 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.239 ms
-	Integration:            6.368 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.069 ms
-	Total Operation Time:   6.677 ms
-Unloading 20 unused Assets / (25.1 KB). Loaded Objects now: 2193.
-Memory consumption went from 137.5 MB to 137.5 MB.
-Total: 4.917750 ms (FindLiveObjects: 0.105167 ms CreateObjectMapping: 0.008834 ms MarkObjects: 4.728083 ms  DeleteObjects: 0.018500 ms)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.432125 ms
-ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.369 ms
-	Integration:            5.702 ms
-	Integration of assets:  0.002 ms
-	Thread Wait Time:       0.001 ms
-	Total Operation Time:   6.075 ms
-Unloading 20 unused Assets / (24.8 KB). Loaded Objects now: 2194.
-Memory consumption went from 136.2 MB to 136.2 MB.
-Total: 4.962708 ms (FindLiveObjects: 0.106292 ms CreateObjectMapping: 0.009416 ms MarkObjects: 4.766000 ms  DeleteObjects: 0.022167 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.433875 ms
-ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.472 ms
-	Integration:            6.215 ms
+	Deserialize:            0.203 ms
+	Integration:            6.093 ms
 	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.350 ms
-	Total Operation Time:   7.037 ms
-Unloading 21 unused Assets / (65.8 KB). Loaded Objects now: 2195.
-Memory consumption went from 123.3 MB to 123.2 MB.
-Total: 5.114375 ms (FindLiveObjects: 0.109334 ms CreateObjectMapping: 0.010209 ms MarkObjects: 4.893250 ms  DeleteObjects: 0.043459 ms)
+	Thread Wait Time:       0.057 ms
+	Total Operation Time:   6.354 ms
+Unloading 20 unused Assets / (24.8 KB). Loaded Objects now: 2193.
+Memory consumption went from 137.1 MB to 137.0 MB.
+Total: 4.798459 ms (FindLiveObjects: 0.105417 ms CreateObjectMapping: 0.009583 ms MarkObjects: 4.612708 ms  DeleteObjects: 0.016542 ms)
 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.371583 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.434042 ms
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -623,17 +532,63 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.225 ms
-	Integration:            6.178 ms
+	Deserialize:            0.205 ms
+	Integration:            6.315 ms
+	Integration of assets:  0.000 ms
+	Thread Wait Time:       0.068 ms
+	Total Operation Time:   6.588 ms
+Unloading 20 unused Assets / (24.8 KB). Loaded Objects now: 2194.
+Memory consumption went from 135.8 MB to 135.8 MB.
+Total: 5.100166 ms (FindLiveObjects: 0.115083 ms CreateObjectMapping: 0.010042 ms MarkObjects: 4.898292 ms  DeleteObjects: 0.022292 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.427542 ms
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/Level1.unity'
+	Deserialize:            0.303 ms
+	Integration:            6.294 ms
 	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.006 ms
-	Total Operation Time:   6.410 ms
+	Thread Wait Time:       3.112 ms
+	Total Operation Time:   9.710 ms
+Unloading 21 unused Assets / (65.8 KB). Loaded Objects now: 2195.
+Memory consumption went from 123.0 MB to 122.9 MB.
+Total: 5.039000 ms (FindLiveObjects: 0.116917 ms CreateObjectMapping: 0.010708 ms MarkObjects: 4.817167 ms  DeleteObjects: 0.037875 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.390000 ms
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/Level1.unity'
+	Deserialize:            0.176 ms
+	Integration:            6.072 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.053 ms
+	Total Operation Time:   6.301 ms
 Unloading 20 unused Assets / (25.1 KB). Loaded Objects now: 2195.
-Memory consumption went from 122.7 MB to 122.7 MB.
-Total: 5.709584 ms (FindLiveObjects: 0.111583 ms CreateObjectMapping: 0.010125 ms MarkObjects: 5.503417 ms  DeleteObjects: 0.027708 ms)
+Memory consumption went from 122.4 MB to 122.3 MB.
+Total: 4.708209 ms (FindLiveObjects: 0.105625 ms CreateObjectMapping: 0.009875 ms MarkObjects: 4.522625 ms  DeleteObjects: 0.013792 ms)
 
 Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.381500 ms
+UnloadTime: 0.449292 ms
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -646,17 +601,17 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.188 ms
-	Integration:            6.457 ms
-	Integration of assets:  0.001 ms
+	Deserialize:            0.192 ms
+	Integration:            6.087 ms
+	Integration of assets:  0.000 ms
 	Thread Wait Time:       0.068 ms
-	Total Operation Time:   6.714 ms
-Unloading 22 unused Assets / (428.8 KB). Loaded Objects now: 2197.
-Memory consumption went from 121.6 MB to 121.2 MB.
-Total: 4.981583 ms (FindLiveObjects: 0.110208 ms CreateObjectMapping: 0.009542 ms MarkObjects: 4.773042 ms  DeleteObjects: 0.033625 ms)
+	Total Operation Time:   6.347 ms
+Unloading 22 unused Assets / (426.7 KB). Loaded Objects now: 2197.
+Memory consumption went from 121.3 MB to 120.9 MB.
+Total: 4.889917 ms (FindLiveObjects: 0.109708 ms CreateObjectMapping: 0.009917 ms MarkObjects: 4.679708 ms  DeleteObjects: 0.033292 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.422291 ms
+UnloadTime: 0.383833 ms
 ENERGOKEY_RUNTIME_READY: scene=Level2; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -669,17 +624,17 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level2.unity'
-	Deserialize:            0.978 ms
-	Integration:            6.131 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.006 ms
-	Total Operation Time:   7.117 ms
-Unloading 22 unused Assets / (429.0 KB). Loaded Objects now: 2216.
-Memory consumption went from 120.5 MB to 120.0 MB.
-Total: 4.882541 ms (FindLiveObjects: 0.106125 ms CreateObjectMapping: 0.009209 ms MarkObjects: 4.683541 ms  DeleteObjects: 0.027541 ms)
+	Deserialize:            0.965 ms
+	Integration:            6.203 ms
+	Integration of assets:  0.000 ms
+	Thread Wait Time:       0.063 ms
+	Total Operation Time:   7.230 ms
+Unloading 22 unused Assets / (428.1 KB). Loaded Objects now: 2216.
+Memory consumption went from 121.1 MB to 120.7 MB.
+Total: 4.914875 ms (FindLiveObjects: 0.108750 ms CreateObjectMapping: 0.009375 ms MarkObjects: 4.708459 ms  DeleteObjects: 0.030583 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.386125 ms
+UnloadTime: 0.391958 ms
 ENERGOKEY_RUNTIME_READY: scene=Level3; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -692,17 +647,17 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level3.unity'
-	Deserialize:            0.969 ms
-	Integration:            6.193 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.064 ms
-	Total Operation Time:   7.228 ms
-Unloading 22 unused Assets / (426.0 KB). Loaded Objects now: 2239.
-Memory consumption went from 120.4 MB to 120.0 MB.
-Total: 5.286291 ms (FindLiveObjects: 0.105834 ms CreateObjectMapping: 0.008875 ms MarkObjects: 5.076166 ms  DeleteObjects: 0.040875 ms)
+	Deserialize:            0.989 ms
+	Integration:            6.287 ms
+	Integration of assets:  0.000 ms
+	Thread Wait Time:       0.063 ms
+	Total Operation Time:   7.340 ms
+Unloading 22 unused Assets / (429.0 KB). Loaded Objects now: 2239.
+Memory consumption went from 121.1 MB to 120.7 MB.
+Total: 4.852000 ms (FindLiveObjects: 0.108833 ms CreateObjectMapping: 0.009084 ms MarkObjects: 4.650083 ms  DeleteObjects: 0.027125 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.393167 ms
+UnloadTime: 0.380958 ms
 ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -715,17 +670,17 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.481 ms
-	Integration:            9.068 ms
+	Deserialize:            0.486 ms
+	Integration:            8.869 ms
 	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.068 ms
-	Total Operation Time:   9.618 ms
-Unloading 11 unused Assets / (1.6 MB). Loaded Objects now: 2077.
-Memory consumption went from 120.0 MB to 118.4 MB.
-Total: 4.865167 ms (FindLiveObjects: 0.109041 ms CreateObjectMapping: 0.009542 ms MarkObjects: 4.657250 ms  DeleteObjects: 0.030708 ms)
+	Thread Wait Time:       0.063 ms
+	Total Operation Time:   9.418 ms
+Unloading 11 unused Assets / (270.0 KB). Loaded Objects now: 2077.
+Memory consumption went from 120.7 MB to 120.5 MB.
+Total: 4.948459 ms (FindLiveObjects: 0.113917 ms CreateObjectMapping: 0.010625 ms MarkObjects: 4.734000 ms  DeleteObjects: 0.031875 ms)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.427959 ms
+UnloadTime: 0.438083 ms
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -738,17 +693,17 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.216 ms
-	Integration:            6.753 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.036 ms
-	Total Operation Time:   7.005 ms
+	Deserialize:            0.186 ms
+	Integration:            6.798 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.034 ms
+	Total Operation Time:   7.019 ms
 Unloading 20 unused Assets / (25.1 KB). Loaded Objects now: 2197.
-Memory consumption went from 120.6 MB to 120.6 MB.
-Total: 5.109541 ms (FindLiveObjects: 0.216917 ms CreateObjectMapping: 0.018500 ms MarkObjects: 4.792625 ms  DeleteObjects: 0.019166 ms)
+Memory consumption went from 121.3 MB to 121.3 MB.
+Total: 4.903042 ms (FindLiveObjects: 0.105917 ms CreateObjectMapping: 0.008875 ms MarkObjects: 4.711084 ms  DeleteObjects: 0.019708 ms)
 
 Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.386250 ms
+UnloadTime: 0.410042 ms
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -761,14 +716,14 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.217 ms
-	Integration:            6.381 ms
+	Deserialize:            0.213 ms
+	Integration:            5.966 ms
 	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.070 ms
-	Total Operation Time:   6.669 ms
+	Thread Wait Time:       0.069 ms
+	Total Operation Time:   6.249 ms
 Unloading 24 unused Assets / (269.9 KB). Loaded Objects now: 2193.
-Memory consumption went from 119.9 MB to 119.7 MB.
-Total: 4.978250 ms (FindLiveObjects: 0.118959 ms CreateObjectMapping: 0.010458 ms MarkObjects: 4.751917 ms  DeleteObjects: 0.041041 ms)
+Memory consumption went from 120.7 MB to 120.4 MB.
+Total: 4.822834 ms (FindLiveObjects: 0.105042 ms CreateObjectMapping: 0.009292 ms MarkObjects: 4.616292 ms  DeleteObjects: 0.037000 ms)
 
 ENERGOKEY_FOCUS_EVENT: hasFocus=False; autoPause=True; state=Playing
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
@@ -827,352 +782,7 @@ UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr
 (Filename: Assets/Scripts/UI/PauseController.cs Line: 294)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.382083 ms
-ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.225 ms
-	Integration:            5.048 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.059 ms
-	Total Operation Time:   5.333 ms
-Unloading 9 unused Assets / (1.2 MB). Loaded Objects now: 2073.
-Memory consumption went from 119.3 MB to 118.2 MB.
-Total: 4.974792 ms (FindLiveObjects: 0.106166 ms CreateObjectMapping: 0.008917 ms MarkObjects: 4.768500 ms  DeleteObjects: 0.034250 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.447583 ms
-ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.346 ms
-	Integration:            5.316 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.056 ms
-	Total Operation Time:   5.718 ms
-Unloading 1 unused Assets / (2.5 KB). Loaded Objects now: 2074.
-Memory consumption went from 118.4 MB to 118.4 MB.
-Total: 5.450084 ms (FindLiveObjects: 0.114667 ms CreateObjectMapping: 0.009417 ms MarkObjects: 5.254916 ms  DeleteObjects: 0.015250 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.356333 ms
-ENERGOKEY_RUNTIME_READY: scene=LevelSelect; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/LevelSelect.unity'
-	Deserialize:            0.432 ms
-	Integration:            4.967 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.052 ms
-	Total Operation Time:   5.452 ms
-Unloading 2 unused Assets / (26.2 KB). Loaded Objects now: 1982.
-Memory consumption went from 118.3 MB to 118.3 MB.
-Total: 4.976792 ms (FindLiveObjects: 0.105666 ms CreateObjectMapping: 0.009500 ms MarkObjects: 4.782375 ms  DeleteObjects: 0.022708 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.200000 ms
-ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.228 ms
-	Integration:            5.978 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.082 ms
-	Total Operation Time:   6.288 ms
-Unloading 21 unused Assets / (195.2 KB). Loaded Objects now: 2192.
-Memory consumption went from 120.6 MB to 120.4 MB.
-Total: 5.034875 ms (FindLiveObjects: 0.110084 ms CreateObjectMapping: 0.009250 ms MarkObjects: 4.819833 ms  DeleteObjects: 0.037500 ms)
-
-Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.367667 ms
-ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.198 ms
-	Integration:            5.841 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.190 ms
-	Total Operation Time:   6.230 ms
-Unloading 20 unused Assets / (25.1 KB). Loaded Objects now: 2192.
-Memory consumption went from 119.8 MB to 119.8 MB.
-Total: 4.965792 ms (FindLiveObjects: 0.108458 ms CreateObjectMapping: 0.009375 ms MarkObjects: 4.764417 ms  DeleteObjects: 0.027583 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.420625 ms
-ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.208 ms
-	Integration:            5.960 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.248 ms
-	Total Operation Time:   6.417 ms
-Unloading 20 unused Assets / (25.1 KB). Loaded Objects now: 2192.
-Memory consumption went from 119.8 MB to 119.8 MB.
-Total: 4.985250 ms (FindLiveObjects: 0.117625 ms CreateObjectMapping: 0.010000 ms MarkObjects: 4.777792 ms  DeleteObjects: 0.022417 ms)
-
-Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.397583 ms
-ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.216 ms
-	Integration:            5.964 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.218 ms
-	Total Operation Time:   6.399 ms
-Unloading 22 unused Assets / (427.4 KB). Loaded Objects now: 2194.
-Memory consumption went from 120.4 MB to 120.0 MB.
-Total: 5.551000 ms (FindLiveObjects: 0.160083 ms CreateObjectMapping: 0.013167 ms MarkObjects: 5.281666 ms  DeleteObjects: 0.039250 ms)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.408667 ms
-ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.226 ms
-	Integration:            5.145 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.237 ms
-	Total Operation Time:   5.609 ms
-Unloading 11 unused Assets / (1.3 MB). Loaded Objects now: 2074.
-Memory consumption went from 119.9 MB to 118.6 MB.
-Total: 5.453750 ms (FindLiveObjects: 0.111541 ms CreateObjectMapping: 0.009417 ms MarkObjects: 5.215708 ms  DeleteObjects: 0.058500 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.354166 ms
-ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.212 ms
-	Integration:            4.918 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.054 ms
-	Total Operation Time:   5.184 ms
-Unloading 1 unused Assets / (2.5 KB). Loaded Objects now: 2075.
-Memory consumption went from 118.5 MB to 118.5 MB.
-Total: 5.052666 ms (FindLiveObjects: 0.111458 ms CreateObjectMapping: 0.009000 ms MarkObjects: 4.858959 ms  DeleteObjects: 0.011833 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.315292 ms
-ENERGOKEY_RUNTIME_READY: scene=LevelSelect; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/LevelSelect.unity'
-	Deserialize:            0.237 ms
-	Integration:            4.353 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.036 ms
-	Total Operation Time:   4.627 ms
-Unloading 1 unused Assets / (2.5 KB). Loaded Objects now: 1984.
-Memory consumption went from 118.5 MB to 118.5 MB.
-Total: 4.834292 ms (FindLiveObjects: 0.104833 ms CreateObjectMapping: 0.009083 ms MarkObjects: 4.660375 ms  DeleteObjects: 0.005041 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.191709 ms
-ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.207 ms
-	Integration:            6.505 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.030 ms
-	Total Operation Time:   6.742 ms
-Unloading 20 unused Assets / (24.8 KB). Loaded Objects now: 2195.
-Memory consumption went from 120.8 MB to 120.8 MB.
-Total: 4.934000 ms (FindLiveObjects: 0.113917 ms CreateObjectMapping: 0.009458 ms MarkObjects: 4.733917 ms  DeleteObjects: 0.018708 ms)
-
-Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.389333 ms
-ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.202 ms
-	Integration:            5.364 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.080 ms
-	Total Operation Time:   5.647 ms
-Unloading 9 unused Assets / (1.2 MB). Loaded Objects now: 2075.
-Memory consumption went from 119.7 MB to 118.5 MB.
-Total: 4.875875 ms (FindLiveObjects: 0.107709 ms CreateObjectMapping: 0.009083 ms MarkObjects: 4.668792 ms  DeleteObjects: 0.031917 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.287917 ms
-ENERGOKEY_RUNTIME_READY: scene=LevelSelect; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/LevelSelect.unity'
-	Deserialize:            0.169 ms
-	Integration:            4.134 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.066 ms
-	Total Operation Time:   4.370 ms
-Unloading 1 unused Assets / (2.5 KB). Loaded Objects now: 1992.
-Memory consumption went from 118.5 MB to 118.5 MB.
-Total: 5.042750 ms (FindLiveObjects: 0.116708 ms CreateObjectMapping: 0.010666 ms MarkObjects: 4.852167 ms  DeleteObjects: 0.007458 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.214125 ms
-ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.208 ms
-	Integration:            6.136 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.030 ms
-	Total Operation Time:   6.376 ms
-Unloading 20 unused Assets / (24.8 KB). Loaded Objects now: 2195.
-Memory consumption went from 120.7 MB to 120.7 MB.
-Total: 4.835291 ms (FindLiveObjects: 0.104500 ms CreateObjectMapping: 0.009084 ms MarkObjects: 4.641375 ms  DeleteObjects: 0.021875 ms)
-
-Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.368791 ms
-ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.193 ms
-	Integration:            5.188 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.078 ms
-	Total Operation Time:   5.458 ms
-Unloading 10 unused Assets / (1.2 MB). Loaded Objects now: 2074.
-Memory consumption went from 119.7 MB to 118.5 MB.
-Total: 5.406750 ms (FindLiveObjects: 0.110541 ms CreateObjectMapping: 0.009458 ms MarkObjects: 5.172458 ms  DeleteObjects: 0.057000 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.302583 ms
+UnloadTime: 0.404833 ms
 ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -1186,16 +796,16 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 
 Loaded scene 'Assets/Scenes/MainMenu.unity'
 	Deserialize:            0.213 ms
-	Integration:            5.177 ms
-	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.031 ms
-	Total Operation Time:   5.422 ms
-Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 2074.
-Memory consumption went from 118.5 MB to 118.5 MB.
-Total: 5.255416 ms (FindLiveObjects: 0.113000 ms CreateObjectMapping: 0.009083 ms MarkObjects: 5.070209 ms  DeleteObjects: 0.008250 ms)
+	Integration:            5.320 ms
+	Integration of assets:  0.000 ms
+	Thread Wait Time:       0.055 ms
+	Total Operation Time:   5.589 ms
+Unloading 9 unused Assets / (0.8 MB). Loaded Objects now: 2073.
+Memory consumption went from 120.1 MB to 119.3 MB.
+Total: 4.782584 ms (FindLiveObjects: 0.105416 ms CreateObjectMapping: 0.009334 ms MarkObjects: 4.587791 ms  DeleteObjects: 0.026416 ms)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.297833 ms
+UnloadTime: 0.451584 ms
 ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -1208,41 +818,18 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.198 ms
-	Integration:            4.862 ms
-	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.034 ms
-	Total Operation Time:   5.095 ms
-Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 2075.
-Memory consumption went from 118.5 MB to 118.5 MB.
-Total: 4.883375 ms (FindLiveObjects: 0.111083 ms CreateObjectMapping: 0.009375 ms MarkObjects: 4.698292 ms  DeleteObjects: 0.006750 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.311334 ms
-ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
-UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
-UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
-UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
-
-(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
-
-Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.203 ms
-	Integration:            5.028 ms
+	Deserialize:            0.202 ms
+	Integration:            5.452 ms
 	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.033 ms
-	Total Operation Time:   5.265 ms
-Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 2075.
-Memory consumption went from 118.6 MB to 118.6 MB.
-Total: 4.751833 ms (FindLiveObjects: 0.102333 ms CreateObjectMapping: 0.009167 ms MarkObjects: 4.577833 ms  DeleteObjects: 0.005083 ms)
+	Thread Wait Time:       0.053 ms
+	Total Operation Time:   5.706 ms
+Unloading 1 unused Assets / (2.5 KB). Loaded Objects now: 2074.
+Memory consumption went from 119.1 MB to 119.1 MB.
+Total: 4.877583 ms (FindLiveObjects: 0.103667 ms CreateObjectMapping: 0.008750 ms MarkObjects: 4.704125 ms  DeleteObjects: 0.006500 ms)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.329833 ms
-ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
+UnloadTime: 0.346834 ms
+ENERGOKEY_RUNTIME_READY: scene=LevelSelect; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
 UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
@@ -1253,18 +840,18 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
-Loaded scene 'Assets/Scenes/MainMenu.unity'
-	Deserialize:            0.231 ms
-	Integration:            5.289 ms
+Loaded scene 'Assets/Scenes/LevelSelect.unity'
+	Deserialize:            0.380 ms
+	Integration:            5.030 ms
 	Integration of assets:  0.001 ms
-	Thread Wait Time:       0.036 ms
-	Total Operation Time:   5.558 ms
-Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 2075.
-Memory consumption went from 118.5 MB to 118.5 MB.
-Total: 4.881916 ms (FindLiveObjects: 0.105500 ms CreateObjectMapping: 0.009042 ms MarkObjects: 4.705458 ms  DeleteObjects: 0.004958 ms)
+	Thread Wait Time:       0.047 ms
+	Total Operation Time:   5.457 ms
+Unloading 2 unused Assets / (25.3 KB). Loaded Objects now: 1982.
+Memory consumption went from 119.1 MB to 119.0 MB.
+Total: 15.898959 ms (FindLiveObjects: 0.103875 ms CreateObjectMapping: 0.009625 ms MarkObjects: 4.645000 ms  DeleteObjects: 11.051584 ms)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.306292 ms
+UnloadTime: 0.206750 ms
 ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
 UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
@@ -1277,34 +864,402 @@ SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
 (Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
 
 Loaded scene 'Assets/Scenes/Level1.unity'
-	Deserialize:            0.212 ms
-	Integration:            6.400 ms
+	Deserialize:            0.218 ms
+	Integration:            6.350 ms
 	Integration of assets:  0.000 ms
-	Thread Wait Time:       0.036 ms
-	Total Operation Time:   6.649 ms
-Unloading 20 unused Assets / (25.1 KB). Loaded Objects now: 2195.
-Memory consumption went from 120.8 MB to 120.7 MB.
-Total: 5.314584 ms (FindLiveObjects: 0.113750 ms CreateObjectMapping: 0.009042 ms MarkObjects: 5.115417 ms  DeleteObjects: 0.020334 ms)
+	Thread Wait Time:       0.048 ms
+	Total Operation Time:   6.617 ms
+Unloading 21 unused Assets / (186.2 KB). Loaded Objects now: 2192.
+Memory consumption went from 121.3 MB to 121.1 MB.
+Total: 5.019334 ms (FindLiveObjects: 0.110125 ms CreateObjectMapping: 0.009833 ms MarkObjects: 4.797542 ms  DeleteObjects: 0.041125 ms)
 
-Thread 0x7112587000 may have been prematurely finalized
+Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.403333 ms
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/Level1.unity'
+	Deserialize:            0.190 ms
+	Integration:            6.049 ms
+	Integration of assets:  0.000 ms
+	Thread Wait Time:       0.182 ms
+	Total Operation Time:   6.421 ms
+Unloading 20 unused Assets / (25.1 KB). Loaded Objects now: 2192.
+Memory consumption went from 120.5 MB to 120.5 MB.
+Total: 4.943042 ms (FindLiveObjects: 0.111333 ms CreateObjectMapping: 0.009625 ms MarkObjects: 4.747792 ms  DeleteObjects: 0.020125 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.570042 ms
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/Level1.unity'
+	Deserialize:            0.398 ms
+	Integration:            6.853 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.102 ms
+	Total Operation Time:   7.353 ms
+Unloading 20 unused Assets / (14.1 KB). Loaded Objects now: 2192.
+Memory consumption went from 120.5 MB to 120.5 MB.
+Total: 5.689375 ms (FindLiveObjects: 0.142959 ms CreateObjectMapping: 0.009916 ms MarkObjects: 5.449500 ms  DeleteObjects: 0.027958 ms)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.216167 ms
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/Level1.unity'
+	Deserialize:            3.659 ms
+	Integration:            15.325 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.199 ms
+	Total Operation Time:   19.184 ms
+Unloading 22 unused Assets / (427.2 KB). Loaded Objects now: 2194.
+Memory consumption went from 121.2 MB to 120.8 MB.
+Total: 7.286917 ms (FindLiveObjects: 0.181542 ms CreateObjectMapping: 0.010708 ms MarkObjects: 6.980959 ms  DeleteObjects: 0.056209 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.177958 ms
+ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/MainMenu.unity'
+	Deserialize:            0.961 ms
+	Integration:            10.314 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.009 ms
+	Total Operation Time:   11.285 ms
+Unloading 11 unused Assets / (1.0 MB). Loaded Objects now: 2074.
+Memory consumption went from 225.1 MB to 224.1 MB.
+Total: 7.153416 ms (FindLiveObjects: 0.263875 ms CreateObjectMapping: 0.013750 ms MarkObjects: 6.697375 ms  DeleteObjects: 0.123458 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.455583 ms
+ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/MainMenu.unity'
+	Deserialize:            0.681 ms
+	Integration:            6.362 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.003 ms
+	Total Operation Time:   7.047 ms
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 2075.
+Memory consumption went from 223.6 MB to 223.6 MB.
+Total: 5.544542 ms (FindLiveObjects: 0.146750 ms CreateObjectMapping: 0.010416 ms MarkObjects: 5.322208 ms  DeleteObjects: 0.010791 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.351625 ms
+ENERGOKEY_RUNTIME_READY: scene=LevelSelect; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/LevelSelect.unity'
+	Deserialize:            0.240 ms
+	Integration:            5.104 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.123 ms
+	Total Operation Time:   5.468 ms
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 1984.
+Memory consumption went from 223.7 MB to 223.7 MB.
+Total: 5.256333 ms (FindLiveObjects: 0.112083 ms CreateObjectMapping: 0.010458 ms MarkObjects: 5.066834 ms  DeleteObjects: 0.009708 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.209209 ms
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/Level1.unity'
+	Deserialize:            0.233 ms
+	Integration:            7.821 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       1.381 ms
+	Total Operation Time:   9.435 ms
+Unloading 20 unused Assets / (25.1 KB). Loaded Objects now: 2195.
+Memory consumption went from 225.9 MB to 225.9 MB.
+Total: 4.866458 ms (FindLiveObjects: 0.109875 ms CreateObjectMapping: 0.010084 ms MarkObjects: 4.670166 ms  DeleteObjects: 0.018584 ms)
+
+Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.453000 ms
+ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/MainMenu.unity'
+	Deserialize:            0.349 ms
+	Integration:            6.058 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.114 ms
+	Total Operation Time:   6.522 ms
+Unloading 9 unused Assets / (99.3 KB). Loaded Objects now: 2075.
+Memory consumption went from 224.9 MB to 224.8 MB.
+Total: 6.225041 ms (FindLiveObjects: 0.134916 ms CreateObjectMapping: 0.012792 ms MarkObjects: 5.969584 ms  DeleteObjects: 0.052292 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.433875 ms
+ENERGOKEY_RUNTIME_READY: scene=LevelSelect; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/LevelSelect.unity'
+	Deserialize:            0.554 ms
+	Integration:            5.301 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.002 ms
+	Total Operation Time:   5.858 ms
+Unloading 1 unused Assets / (12.5 KB). Loaded Objects now: 1992.
+Memory consumption went from 223.7 MB to 223.7 MB.
+Total: 5.730917 ms (FindLiveObjects: 0.120292 ms CreateObjectMapping: 0.010750 ms MarkObjects: 5.530417 ms  DeleteObjects: 0.015458 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.264709 ms
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/Level1.unity'
+	Deserialize:            0.324 ms
+	Integration:            35.044 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.006 ms
+	Total Operation Time:   35.375 ms
+Unloading 20 unused Assets / (12.9 KB). Loaded Objects now: 2195.
+Memory consumption went from 225.9 MB to 225.9 MB.
+Total: 5.528750 ms (FindLiveObjects: 0.120542 ms CreateObjectMapping: 0.010208 ms MarkObjects: 5.309792 ms  DeleteObjects: 0.032666 ms)
+
+Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.548750 ms
+ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/MainMenu.unity'
+	Deserialize:            0.327 ms
+	Integration:            5.781 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.076 ms
+	Total Operation Time:   6.186 ms
+Unloading 11 unused Assets / (1.2 MB). Loaded Objects now: 2073.
+Memory consumption went from 224.8 MB to 223.6 MB.
+Total: 4.911875 ms (FindLiveObjects: 0.102792 ms CreateObjectMapping: 0.009833 ms MarkObjects: 4.701625 ms  DeleteObjects: 0.044291 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.313375 ms
+ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/MainMenu.unity'
+	Deserialize:            0.222 ms
+	Integration:            5.796 ms
+	Integration of assets:  0.000 ms
+	Thread Wait Time:       0.032 ms
+	Total Operation Time:   6.051 ms
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 2073.
+Memory consumption went from 223.6 MB to 223.6 MB.
+Total: 5.060417 ms (FindLiveObjects: 0.118250 ms CreateObjectMapping: 0.013750 ms MarkObjects: 4.866709 ms  DeleteObjects: 0.007458 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.394292 ms
+ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/MainMenu.unity'
+	Deserialize:            0.242 ms
+	Integration:            5.849 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.051 ms
+	Total Operation Time:   6.143 ms
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 2074.
+Memory consumption went from 223.6 MB to 223.6 MB.
+Total: 5.032625 ms (FindLiveObjects: 0.107958 ms CreateObjectMapping: 0.009542 ms MarkObjects: 4.854000 ms  DeleteObjects: 0.007333 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.326708 ms
+ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/MainMenu.unity'
+	Deserialize:            0.196 ms
+	Integration:            5.529 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.623 ms
+	Total Operation Time:   6.349 ms
+Unloading 1 unused Assets / (2.7 KB). Loaded Objects now: 2074.
+Memory consumption went from 223.7 MB to 223.6 MB.
+Total: 4.877000 ms (FindLiveObjects: 0.105583 ms CreateObjectMapping: 0.009375 ms MarkObjects: 4.700708 ms  DeleteObjects: 0.005667 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.341334 ms
+ENERGOKEY_RUNTIME_READY: scene=MainMenu; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/MainMenu.unity'
+	Deserialize:            0.244 ms
+	Integration:            5.316 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.034 ms
+	Total Operation Time:   5.595 ms
+Unloading 1 unused Assets / (50.4 KB). Loaded Objects now: 2074.
+Memory consumption went from 223.6 MB to 223.6 MB.
+Total: 5.168542 ms (FindLiveObjects: 0.128708 ms CreateObjectMapping: 0.010500 ms MarkObjects: 4.968750 ms  DeleteObjects: 0.007417 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.315125 ms
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+SceneBootstrap:Awake () (at Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: Assets/Scripts/Core/SceneBootstrap.cs Line: 27)
+
+Loaded scene 'Assets/Scenes/Level1.unity'
+	Deserialize:            0.198 ms
+	Integration:            6.562 ms
+	Integration of assets:  0.000 ms
+	Thread Wait Time:       0.033 ms
+	Total Operation Time:   6.793 ms
+Unloading 20 unused Assets / (25.1 KB). Loaded Objects now: 2194.
+Memory consumption went from 225.8 MB to 225.8 MB.
+Total: 5.266625 ms (FindLiveObjects: 0.112708 ms CreateObjectMapping: 0.011167 ms MarkObjects: 5.065458 ms  DeleteObjects: 0.024042 ms)
+
+Thread 0x178e37000 may have been prematurely finalized
 Saving results to: [USER_HOME]/Desktop/untitled folder 2/EnergoKey/EVIDENCE/PlayModeTests-final.xml
 Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
 Loaded scene 'Temp/__Backupscenes/0.backup'
-	Deserialize:            0.250 ms
-	Integration:            3.158 ms
+	Deserialize:            3.071 ms
+	Integration:            7.176 ms
 	Integration of assets:  0.001 ms
 	Thread Wait Time:       0.006 ms
-	Total Operation Time:   3.416 ms
-Unloading 16 unused Assets / (5.2 MB). Loaded Objects now: 1862.
-Memory consumption went from 119.8 MB to 114.5 MB.
-Total: 5.443792 ms (FindLiveObjects: 0.096958 ms CreateObjectMapping: 0.009125 ms MarkObjects: 5.198583 ms  DeleteObjects: 0.074292 ms)
+	Total Operation Time:   10.254 ms
+Unloading 15 unused Assets / (197.6 KB). Loaded Objects now: 1862.
+Memory consumption went from 224.8 MB to 224.6 MB.
+Total: 5.357792 ms (FindLiveObjects: 0.116917 ms CreateObjectMapping: 0.011000 ms MarkObjects: 5.102167 ms  DeleteObjects: 0.073791 ms)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 0 unused Assets / (0 B). Loaded Objects now: 1864.
-Memory consumption went from 114.6 MB to 114.6 MB.
-Total: 5.100375 ms (FindLiveObjects: 0.079084 ms CreateObjectMapping: 0.009333 ms MarkObjects: 4.956208 ms  DeleteObjects: 0.003417 ms)
+Memory consumption went from 219.6 MB to 219.6 MB.
+Total: 5.623750 ms (FindLiveObjects: 0.088459 ms CreateObjectMapping: 0.011416 ms MarkObjects: 5.465917 ms  DeleteObjects: 0.002875 ms)
 
-Asset Pipeline Refresh (id=a143927a287b24edcb95732d67749031): Total: 0.006 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=1f01f259db6414cdebbbae0ed0876fe5): Total: 0.048 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 DisplayProgressbar: Undo
 Test run completed. Exiting with code 0 (Ok). Run completed.
 UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
@@ -1319,29 +1274,29 @@ UnityEditor.EditorApplication:Internal_CallUpdateFunctions () (at [USER_HOME]/bu
 
 (Filename: ./Library/PackageCache/com.unity.test-framework@7a3849e09bd0/UnityEditor.TestRunner/CommandLineTest/Executer.cs Line: 81)
 
-MonoPathRemapper: Attempts to remap: 14744; Successful remaps: 2452
+MonoPathRemapper: Attempts to remap: 15064; Successful remaps: 2452
 Serialized file version minimum: 23, current 23
-Thread 0x16e42f000 may have been prematurely finalized
+Thread 0x7513b13000 may have been prematurely finalized
 Importing 'GUID: 00000000000000004000000000000000 - Path: ProjectSettings/ProjectSettings.asset' with importer (LibraryAssetImporter)
-Imported 'GUID: 00000000000000004000000000000000' -> (Import Result ID: '12998b4a8e5c4b72d74466aff65ceeda') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=054c890a8f4b6dddbea933bc5e4b7df4 DependenciesID=e3b0f7ddc38d6038722237d9be1d236b StaticDependenciesID=9792ee62522fed60bfc5ee6e287878e9 
-Asset Pipeline Refresh (id=5c187dca81f7a43a6bfa1e10a4a66777): Total: 0.006 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Imported 'GUID: 00000000000000004000000000000000' -> (Import Result ID: '12998b4a8e5c4b72d74466aff65ceeda') in 0.004 seconds [static dependencies only]. Details - ImportResultOutputID=054c890a8f4b6dddbea933bc5e4b7df4 DependenciesID=e3b0f7ddc38d6038722237d9be1d236b StaticDependenciesID=9792ee62522fed60bfc5ee6e287878e9 
+Asset Pipeline Refresh (id=662bdc985832b4ab8a3e69aad2c1fdb3): Total: 0.009 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
 Input System module state changed to: ShutdownInProgress.
 Input Polling Thread exited.
 Input System module state changed to: Shutdown.
-Shutting down MSBuild server...
-Shutting down VB/C# compiler server...
-Thread 0x17eadf000 may have been prematurely finalized
-Thread 0x17ea53000 may have been prematurely finalized
+Thread 0x173f1f000 may have been prematurely finalized
+Thread 0x173e93000 may have been prematurely finalized
 [Physics::Module] Cleanup current backend.
 [Physics::Module] Id: 0xf2b8ea05
 [Licensing::IpcConnector] LicenseClient-[LOCAL_USER]-notifications channel disconnected successfully.
 [Licensing::IpcConnector] LicenseClient-[LOCAL_USER] channel disconnected successfully.
+Shutting down MSBuild server...
+Shutting down VB/C# compiler server...
 VB/C# compiler server shut down successfully.
 MSBuild server shut down successfully.
-Shut down UDS service system complete
 Lingering sessions upon destruction of worker manager
 Unity Data Store service was successfully shut down
 UDS shutting down local client system
+Shut down UDS service system complete
 AcceleratorClientConnectionCallback - disconnected - :0
 Cleanup mono
 CodeReloadManager destroyed

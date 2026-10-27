@@ -75,6 +75,7 @@ REDACTIONS = {
     "hostname": "[LOCAL_HOST]",
     "license_client_username": "[LOCAL_USER]",
     "local_ipv4": "[LOCAL_IPV4]",
+    "temporary_path": "[TEMP_WORKSPACE]",
     "unity_machine_id": "[UNITY_MACHINE_ID]",
     "unity_session_id": "[UNITY_SESSION_ID]",
     "unity_correlation_id": "[UNITY_CORRELATION_ID]",
@@ -99,6 +100,9 @@ UNIX_USER_HOME_RE = re.compile(
 WINDOWS_USER_HOME_RE = re.compile(
     r"(?i)(?<![A-Za-z0-9_])(?:[A-Z]:[\\/]+Users[\\/]+)"
     r"[^\\/\s\"'<>|:]+"
+)
+TEMP_WORKSPACE_RE = re.compile(
+    r"(?<![A-Za-z0-9_])/(?:private/)?tmp/[^/\s\"'<>:]+"
 )
 
 LOCAL_HOST_RE = re.compile(
@@ -261,6 +265,13 @@ def sanitize_text(text: str) -> tuple[str, Counter[str]]:
     for pattern in (WINDOWS_USER_HOME_RE, UNIX_USER_HOME_RE):
         text, count = _sub_counted(text, pattern, REDACTIONS["user_home"])
         counts["user_home"] += count
+
+    text, count = _sub_counted(
+        text,
+        TEMP_WORKSPACE_RE,
+        REDACTIONS["temporary_path"],
+    )
+    counts["temporary_path"] += count
 
     # Keep the result compact for callers and stable for reporting.
     return text, Counter({key: value for key, value in counts.items() if value})

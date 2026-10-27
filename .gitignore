@@ -7,6 +7,8 @@
 !EVIDENCE/logs/
 !EVIDENCE/logs/**
 [Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
 .gradle/
 .vs/
 .idea/
@@ -16,6 +18,7 @@
 *.slnx
 *.suo
 *.user
+*.userprefs
 *.pidb
 *.booproj
 *.svd
@@ -28,4 +31,30 @@ crashlytics-build.properties
 .DS_Store
 __pycache__/
 *.py[cod]
+
+# Local archives, backups, credentials and authentication traces
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.bundle
+*.bak
+*.backup
+*~
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+token*.txt
+auth*.log
+
+# Source assignment packages and local hand-off material
+/source_requirements/
+/source_assignment_pack*/
 

@@ -32,7 +32,7 @@ Prefab: `Player`, `Collectible`, `Hazard`, `UIButton`.
 | `MAC_STANDALONE_TEST.md` | macOS Standalone Development Build собран и запущен |
 | `FOCUS_LOSS_TEST.md` | Реальное системное сворачивание macOS Standalone вызвало автоматическую Pause |
 
-Связанные журналы находятся в `EVIDENCE/logs`, включая итоговую компиляцию, EditMode, PlayMode, structural validation, Profiler benchmark, macOS build/runtime и focus-loss.
+Связанные журналы находятся в `EVIDENCE/logs`, включая итоговую компиляцию, EditMode, PlayMode, structural validation, macOS build/runtime и focus-loss. Для Profiler сохранены JSON, NUnit XML, воспроизводимый harness и снимки до/после; временные полные логи удалены из сдаваемой версии.
 
 ## Скриншоты и responsive renders
 
@@ -73,12 +73,11 @@ Prefab: `Player`, `Collectible`, `Hazard`, `UIButton`.
 
 - `REPORT_DATA.md` — фактические данные для последующих отчётов;
 - `TEST_RESULTS.md` — результаты Т01–Т16;
-- `USER_TEST.md` и `USER_ACCEPTANCE.md` — самостоятельная проверка и дословное пользовательское подтверждение;
+- `USER_TEST.md` и `USER_ACCEPTANCE.md` — протокол реальной проверки новым пользователем;
 - `FINAL_STATUS.md` — сверка с чек-листом;
-- `PRIVACY_SANITIZATION.md` — протокол очистки локальных путей и Unity ID;
 - `MISSING_EVIDENCE.md` — честно обозначенные внешние ограничения.
 
-MacBook с Apple M3 зафиксирован как физический компьютер macOS, а не как мобильное Android/iOS-устройство. Пользователь-заказчик не обозначается как новый внешний пользователь.
+MacBook с Apple M3 зафиксирован как физический компьютер macOS, а не как мобильное Android/iOS-устройство. Устройство внешнего пользовательского сеанса отдельно не фиксировалось.
 
 ## Git и итоговая упаковка
 
@@ -91,6 +90,6 @@ MacBook с Apple M3 зафиксирован как физический ком�
 - `profiler-before`;
 - `pp-pm13-release`.
 
-Точный полный hash неизменяемого тега `pp-pm13-release`, результат проверки свежей tagged-копии и SHA-256 итогового ZIP фиксируются после завершения commit/tag в файлах `DELIVERY_MANIFEST.txt` и `POST_COMMIT_VERIFICATION`, расположенных рядом с проектом внутри итогового архива. Этот манифест намеренно не заявляет конкретный final hash до такой пост-коммитной проверки.
+Публичный репозиторий, основная ветка, проверенная ревизия и опубликованные теги указаны в `REPOSITORY_URL.md`. Результат новой чистой копии фиксируется в `FRESH_CLONE_TEST.md`; состав итогового архива — в `ARCHIVE_CONTENTS.md` и внешнем файле SHA-256.
 
 В итоговый ZIP не должны входить `Library`, `Temp`, `Logs`, `obj`, `UserSettings`, `Build` и `Builds`.

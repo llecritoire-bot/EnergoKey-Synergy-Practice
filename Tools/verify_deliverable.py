@@ -353,10 +353,7 @@ def find_matrix(root: Path, explicit: Optional[str]) -> Optional[Path]:
             candidate = Path.cwd() / candidate
         return candidate.resolve()
 
-    candidates = (
-        root / "Documentation" / "03_SCREENSHOT_MATRIX.md",
-        root.parent / "codex_synergy_practice_pack" / "03_SCREENSHOT_MATRIX.md",
-    )
+    candidates = (root / "Documentation" / "03_SCREENSHOT_MATRIX.md",)
     for candidate in candidates:
         if candidate.is_file():
             return candidate.resolve()
@@ -1639,9 +1636,8 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument(
         "--matrix",
         help=(
-            "Path to 03_SCREENSHOT_MATRIX.md. If omitted, the verifier tries "
-            "Documentation/03_SCREENSHOT_MATRIX.md and then "
-            "../codex_synergy_practice_pack/03_SCREENSHOT_MATRIX.md."
+            "Path to 03_SCREENSHOT_MATRIX.md. If omitted, the verifier uses "
+            "Documentation/03_SCREENSHOT_MATRIX.md."
         ),
     )
     return parser.parse_args(argv)

@@ -38,7 +38,7 @@
 
 - `PROFILER_BENCHMARK_BEFORE.json` — SHA-256 `1c87eb606f37cc151abc90569440de387b8be71f66808ffcf66e6e33caab7d3f`.
 - `PROFILER_BENCHMARK_AFTER.json` — SHA-256 `b38ed0fd9ecad8f796683c477416aa458d2d8f1b69834b4fd213392f197ac734`.
-- `ProfilerBenchmarkBeforeTests.xml` и `ProfilerBenchmarkAfterTests.xml` — NUnit `1/1 PASS` для каждого запуска; полные очищенные логи находятся в `logs/profiler-benchmark-before.log` и `logs/profiler-benchmark-after.log`.
+- `ProfilerBenchmarkBeforeTests.xml` и `ProfilerBenchmarkAfterTests.xml` — NUnit `1/1 PASS` для каждого запуска. Локальные пути в XML заменены нейтральным маркером `[TEMP_WORKTREE]`; числовые результаты и статусы не изменялись.
 - `profiler_benchmark/HudProfilerBenchmarkTests.cs.txt` и `profiler_benchmark/EnergoKey.ProfilerBenchmark.asmdef.txt` — сохранённый воспроизводимый harness. Для повтора скопируйте их в `Assets/Tests/ProfilerBenchmark` каждого worktree и уберите суффикс `.txt`.
 
 Файлы JSON намеренно не содержат локальных путей, hostname, IP, Unity session/machine ID или имени пользователя.
