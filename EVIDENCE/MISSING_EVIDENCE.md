@@ -89,18 +89,21 @@ Gameplay фактически показан в 1280×720, 1440×720 и 1024×76
 
 Что сделать вручную: открыть семь экранов по очереди в каждом из трёх Game View-разрешений и проверить читаемость, кликабельность, отсутствие наложений и обрезаний. При необходимости сохранить контактный лист или 21 кадр.
 
-## 8. Тегированная Git-ревизия, свежий клон и ZIP
+## 8. Exact final tag и ZIP после проверенного candidate clone
 
-Статус: `NOT VERIFIED`.
+Статус candidate fresh clone: `PASS`.
+
+Чистая копия commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` имела 0 строк `git status --short`, прошла batch compile с кодом 0, EditMode 24/24 и structural validation 165/165. См. `FRESH_CLONE_VERIFICATION.md`.
+
+Статус exact final tag и ZIP: `NOT VERIFIED`.
 
 Для закрытия проверки требуется:
 
 1. Убедиться, что аннотированный тег `pp-pm13-release` указывает на окончательный commit, и получить полный hash командой `git rev-list -n 1 pp-pm13-release`.
-2. Клонировать именно тегированную ревизию в новый каталог.
-3. Запустить batch compile, EditMode tests и structural validation в клоне.
-4. Создать ZIP из чистой копии.
-5. Проверить, что в ZIP нет `Library`, `Temp`, `Logs`, `obj`, `UserSettings`, `Build`, `Builds`.
-6. Записать лог клонирования/проверок, размер и SHA-256 ZIP.
+2. При необходимости повторить короткую проверку уже точной tagged revision, если она отличается от проверенного candidate commit.
+3. Создать ZIP из окончательной чистой копии.
+4. Проверить, что в ZIP нет `Library`, `Temp`, `Logs`, `obj`, `UserSettings`, `Build`, `Builds`.
+5. Записать полный tag hash, размер и SHA-256 ZIP.
 
 ## 9. Доступный преподавателю Git-репозиторий
 
@@ -131,6 +134,7 @@ Gameplay фактически показан в 1280×720, 1440×720 и 1024×76
 - Unity 6000.6.2f1 batch compile: PASS;
 - 24/24 EditMode-теста: PASS;
 - 165/165 структурные проверки, включая конфигурацию 2D: PASS;
+- свежая копия candidate commit `91bff8f861632c1846e512aa57306d21d4e9d3f1`: compile PASS, 24/24 tests, 165/165 validation;
 - 54/54 обязательных имени скриншотов и 3 дополнительные карточки обучения;
 - настоящие Profiler-кадры с видимыми одиночными значениями 3.63 ms и 1.19 ms;
 - self-test D-pad до/после;

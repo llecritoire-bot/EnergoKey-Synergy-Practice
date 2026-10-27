@@ -1,6 +1,6 @@
 # Манифест файлов «Энергоключ»
 
-Снимок состава: 27 октября 2026 года. Окончательная ревизия поставки идентифицируется аннотированным тегом `pp-pm13-release`; отдельная fresh-clone проверка перечислена как `NOT VERIFIED`.
+Снимок состава: 27 октября 2026 года. Чистая копия candidate commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` проверена успешно. Окончательная ревизия поставки идентифицируется будущим аннотированным тегом `pp-pm13-release`; тег и итоговый ZIP пока проверяются отдельно.
 
 ## Основной состав проекта
 
@@ -16,6 +16,9 @@
 | PNG в `Release` | 9 | icon, promo, mockup и 6 игровых кадров |
 | EditMode tests | 24/24 Passed | `EditModeTests-final.xml` |
 | Unity structural checks | 165/165 Passed | `PROJECT_VALIDATION.md` |
+| Candidate fresh-clone tests | 24/24 Passed | `FreshCloneTests-candidate.xml` |
+| Candidate fresh-clone validation | 165/165 Passed | `logs/fresh-clone-candidate-validation.log` |
+| Candidate read-only verifier | 27 PASS, 1 FAIL, 3 NOT VERIFIED | FAIL относится только к будущему `pp-pm13-release` |
 
 Структурная проверка Unity подтверждает наличие всех сцен и `.meta`, первый Build Settings scene `MainMenu`, четыре prefab, импорт графики/звука, размеры release-материалов и документы. Дополнительно подтверждены пакет `com.unity.2d.sprite` и режим `m_DefaultBehaviorMode: 1`. Итог: `165 PASS, 0 FAIL`.
 
@@ -31,6 +34,7 @@
 | `README.md` | Инструкция проекта | Есть |
 | `Release/` | Материалы представления продукта | Есть |
 | `EVIDENCE/` | Скриншоты, тесты, протоколы и логи | Есть |
+| `EVIDENCE/FRESH_CLONE_VERIFICATION.md` | Фактический протокол чистой candidate-копии | Есть |
 
 ## Матрица скриншотов
 
@@ -109,9 +113,15 @@
 | `EVIDENCE/screenshots/TUTORIAL_01_Controls.png` | 821514 | `3636def0caef60259498f1c73d54931767a888091fc866ba445c743ec2d27fcc` |
 | `EVIDENCE/screenshots/TUTORIAL_02_SpecialRule.png` | 842882 | `2220d98750b7f8bb428625973c0500a4520bb5c2ee5c7b80e8e82c09ab8038c0` |
 | `EVIDENCE/screenshots/TUTORIAL_03_Completion.png` | 878101 | `b49dd8a951a63849fc972f9ef08a11c20b281583f0b2e7bebe216e7cfabfcdbc` |
+| `EVIDENCE/FRESH_CLONE_VERIFICATION.md` | 5817 | `602b0aea507f0c0a32ad3fdf362f555649737959958032a905ed2d417f6b2805` |
+| `EVIDENCE/FreshCloneTests-candidate.xml` | 21908 | `5446aa51d3ad12e5bae54e6bc7e572d9d015bed3d5589eaf641580b1dab7717b` |
+| `EVIDENCE/logs/fresh-clone-candidate-verifier.log` | 3754 | `381feaec6e42d6f3019a6c07358bd189a9524d97e3a928be4037612e3c4f0002` |
+| `EVIDENCE/logs/fresh-clone-candidate-compile.log` | 298084 | `22ba120bf22e6345fa7b558350fbb5c9bd561dfea91d79648ea0efa02569da32` |
+| `EVIDENCE/logs/fresh-clone-candidate-tests.log` | 26367 | `0e3c259794ee48ea58caad0a094bf47cac23ab9f03acacb917f0a1584ae54143` |
+| `EVIDENCE/logs/fresh-clone-candidate-validation.log` | 21951 | `a7c835c69edb2e2583bce3a259f76537aaa0960cff5baed48bbb8efd16215da6` |
 
 ## Git-исключения и упаковка
 
 `git ls-files` не показывает файлов внутри `Library`, `Temp`, `Logs`, `obj`, `UserSettings`, `Build` или `Builds`. Эти каталоги могут существовать в рабочей копии как локальные продукты Unity, но не отслеживаются Git и должны быть исключены из итогового ZIP.
 
-В составе доказательств отсутствуют лог запуска чистой копии ревизии `pp-pm13-release`, размер и SHA-256 итогового ZIP. Эти проверки остаются `NOT VERIFIED`; см. `MISSING_EVIDENCE.md`.
+Чистая копия candidate commit проверена; протокол и логи приложены. Exact tagged revision `pp-pm13-release`, размер и SHA-256 итогового ZIP ещё не подтверждены и остаются `NOT VERIFIED`; см. `MISSING_EVIDENCE.md`.

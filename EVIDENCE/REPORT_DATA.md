@@ -104,8 +104,14 @@
 - profiler-before commit/tag: `profiler-before` → `f616afd3be9b8586eba9f7d76af568f11bd2e9c3`.
 - Commit событийного HUD: `2c60fe4ea10b9e95401f5909dffa915f09d407cd`.
 - Идентификатор финальной ревизии: аннотированный тег `pp-pm13-release`; полный hash разрешается командой `git rev-list -n 1 pp-pm13-release`. Hash намеренно не встраивается в саму tagged revision, чтобы не создавать самоссылочное изменение; наличие и разрешение тега являются отдельной проверкой упаковки.
-- Дата клонирования новой копии: NOT VERIFIED.
-- Результат запуска новой копии: NOT VERIFIED.
+- Проверенный candidate commit: `91bff8f861632c1846e512aa57306d21d4e9d3f1`.
+- Дата fresh-clone проверки candidate: 27 октября 2026 года.
+- Путь временной копии: `/private/tmp/energokey-candidate.Aa5d3b/EnergoKey`.
+- Чистота до Unity: PASS, `git status --short` — 0 строк.
+- Read-only verifier: 27 PASS, 1 FAIL, 3 NOT VERIFIED; единственный FAIL — отсутствие будущего `pp-pm13-release`.
+- Результат запуска candidate-копии: PASS — compile exit 0, EditMode 24/24, structural validation 165/165.
+- Exact final tag и итоговый ZIP: NOT VERIFIED.
+- Протокол: `EVIDENCE/FRESH_CLONE_VERIFICATION.md`.
 
 ## Profiler
 
@@ -143,7 +149,7 @@
 | T13 | Честный self-test с реальной проблемой 4:3 и кадрами до/после. | PASS | `USER_TEST.md`, `screenshots/PP13_10_BeforeUserFix.png`, `screenshots/PP13_11_AfterUserFix.png` |
 | T14 | Правило показано, но понимание новым пользователем не проверено. | NOT VERIFIED | `screenshots/TUTORIAL_02_SpecialRule.png` |
 | T15 | Отдельные состояния трёх уровней, Victory, Defeat и сохранений показаны; полного прохождения с перезапуском нет. | NOT VERIFIED | `TEST_RESULTS.md` |
-| T16 | В Evidence отсутствует лог запуска новой чистой копии ревизии `pp-pm13-release`. | NOT VERIFIED | fresh-clone лог отсутствует |
+| T16 | Чистая копия candidate commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` успешно прошла compile, EditMode 24/24 и validation 165/165. Exact final tag/ZIP проверяются отдельно. | PASS | `FRESH_CLONE_VERIFICATION.md`, `FreshCloneTests-candidate.xml`, `logs/fresh-clone-candidate-*.log` |
 
 Полные ожидаемые и фактические результаты приведены в `EVIDENCE/TEST_RESULTS.md`.
 
@@ -159,5 +165,5 @@
 - Известные ошибки финальной компиляции: не обнаружены; batch compile завершился кодом 0.
 - Не подтверждены непрерывным ручным сценарием: полное прохождение L1–L3, естественные столкновения Player с кристаллом/опасностью/выходом, Restart, потеря фокуса, сохранения после закрытия приложения, быстрые повторные клики Pause.
 - Внешний новый пользователь не привлекался.
-- Публичный Git URL отсутствует; итоговая ревизия разрешается через тег `pp-pm13-release`, а fresh-clone проверка остаётся `NOT VERIFIED` до появления отдельного лога.
+- Публичный Git URL отсутствует; fresh clone candidate commit проверен, но итоговая ревизия через тег `pp-pm13-release` и ZIP остаются `NOT VERIFIED`.
 - Word/PDF-отчёты, PowerPoint-презентации, подписи, справка о практике и загрузка в LMS не входят в этот Unity ZIP и требуют ручной подготовки/оформления.
