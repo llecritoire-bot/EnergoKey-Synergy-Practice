@@ -1,104 +1,81 @@
-# Проверка свежей копии candidate commit
+# Итоговый протокол проверки exact `pp-pm13-release`
 
-Дата проверки: 27 октября 2026 года.
+Дата протокола: 27 октября 2026 года.
 
 ## Объект проверки
 
-| Поле | Фактическое значение |
-|---|---|
-| Candidate commit | `91bff8f861632c1846e512aa57306d21d4e9d3f1` |
-| Временный путь клона | `/private/tmp/energokey-candidate.Aa5d3b/EnergoKey` |
-| Unity | `6000.6.2f1` (`770e33f6875c`) |
-| Среда | macOS 27.0 (26A428), arm64, без Rosetta |
-| Статус до запуска Unity | Чистая рабочая копия; `git status --short` вернул 0 строк |
-| Общий результат candidate fresh clone | PASS для компиляции, EditMode tests и structural validation |
+Финальная поставка идентифицируется аннотированным Git-тегом `pp-pm13-release`. Проверяется точная ревизия, на которую указывает этот тег после завершения всех файлов проекта и Evidence.
 
-Проверка относится именно к указанному candidate commit. Она не выдаётся за проверку будущего аннотированного тега `pp-pm13-release` или итогового ZIP.
-
-## Проверки Git и комплекта
-
-Read-only verifier подтвердил HEAD candidate commit и чистое рабочее дерево:
-
-- `git.head`: PASS, `91bff8f861632c1846e512aa57306d21d4e9d3f1`;
-- `git.clean_worktree`: PASS;
-- итог verifier: `PASS=27`, `FAIL=1`, `NOT VERIFIED=3`;
-- единственный `FAIL`: отсутствует будущий тег `pp-pm13-release`;
-- `NOT VERIFIED`: автоматический verifier не доказывает визуальную подлинность скриншотов, runtime-версию About и соответствие README текущему candidate HEAD.
-
-Последние три пункта описывают границы автоматического verifier. Реальный кадр About и визуальный набор проверяются отдельными Evidence-артефактами, но результат самого verifier здесь не повышается задним числом.
-
-Доказательство: `EVIDENCE/logs/fresh-clone-candidate-verifier.log`.
-
-Проверочные команды для Git/verifier:
+Полный hash финального commit намеренно не записывается внутрь самой tagged revision: добавление такого значения изменило бы commit и создало самоссылку. После постановки тега фактический hash определяется командой:
 
 ```bash
-cd "/tmp/energokey-candidate.Aa5d3b/EnergoKey"
-git rev-parse HEAD
-git status --short
-python3 Tools/verify_deliverable.py
+git rev-list -n 1 pp-pm13-release
 ```
 
-## Unity batch compile
+Он вместе с результатами exact-tag проверки фиксируется вне tagged tree:
 
-Фактический результат: PASS. Unity завершил процесс с кодом 0; лог содержит `*** Tundra build success`; ошибок компилятора C# не обнаружено.
+- в `DELIVERY_MANIFEST.txt` внутри итогового ZIP;
+- в каталоге `POST_COMMIT_VERIFICATION/` внутри итогового ZIP;
+- SHA-256 самого ZIP — во внешнем sidecar-файле рядом с архивом.
 
-Команда по аргументам, записанным самим Unity в лог:
+## Последовательность post-commit проверки
+
+1. Завершить финальный commit и создать/переставить аннотированный тег `pp-pm13-release` именно на него.
+2. Разрешить полный hash тега и проверить, что тип объекта тега — `tag`, а commit тега совпадает с упаковываемой ревизией.
+3. Создать отдельный чистый клон репозитория и checkout exact `pp-pm13-release`.
+4. До запуска Unity убедиться, что `git status --porcelain` пуст.
+5. В tagged clone выполнить read-only verifier комплекта.
+6. Запустить Unity 6000.6.2f1 batch compile.
+7. Запустить финальные EditMode и PlayMode tests.
+8. Запустить structural validation.
+9. Упаковать проект только из exact tagged clone, исключив `Library`, `Temp`, `Logs`, `obj`, `UserSettings`, `Build` и `Builds`.
+10. Проверить список и целостность ZIP, вычислить SHA-256.
+11. Записать фактические команды, коды возврата, количества тестов, полный commit hash и контрольные суммы в post-commit-слой поставки.
+
+Минимальные Git-проверки:
 
 ```bash
-"/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/MacOS/Unity" \
-  -batchmode -nographics -quit \
-  -projectPath "/tmp/energokey-candidate.Aa5d3b/EnergoKey" \
-  -logFile "[USER_HOME]/Desktop/untitled folder 2/EnergoKey/EVIDENCE/logs/fresh-clone-candidate-compile.log"
+RELEASE_HASH=$(git rev-list -n 1 pp-pm13-release)
+test "$(git cat-file -t pp-pm13-release)" = tag
+test -n "$RELEASE_HASH"
+
+git clone --no-hardlinks "[REPOSITORY]" "[TEMP_TAGGED_CLONE]"
+git -C "[TEMP_TAGGED_CLONE]" checkout --detach pp-pm13-release
+test "$(git -C "[TEMP_TAGGED_CLONE]" rev-parse HEAD)" = "$RELEASE_HASH"
+test -z "$(git -C "[TEMP_TAGGED_CLONE]" status --porcelain)"
 ```
 
-Доказательство: `EVIDENCE/logs/fresh-clone-candidate-compile.log`.
+Временный путь намеренно обозначен placeholder: локальный путь конкретного запуска не является частью доказательства и не должен попадать в сдаваемые файлы.
 
-## EditMode tests
+## Что должен содержать post-commit-слой ZIP
 
-Фактический результат: PASS, 24/24; 0 Failed, 0 Skipped. Начало прогона: `2026-10-27 14:02:48Z`. Лог содержит `Running tests`, `Saving results` и `Test run completed` с кодом 0.
+`DELIVERY_MANIFEST.txt` должен указывать:
 
-Команда по аргументам Unity:
+- точный 40-символьный hash `pp-pm13-release`;
+- подтверждение annotated tag и совпадения tag/упакованного HEAD;
+- результат чистоты клона до Unity;
+- результаты verifier, compile, EditMode, PlayMode и structural validation;
+- отсутствие запрещённых каталогов;
+- перечень файлов `POST_COMMIT_VERIFICATION/` с SHA-256;
+- SHA-256 внешнего итогового ZIP sidecar.
 
-```bash
-"/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/MacOS/Unity" \
-  -batchmode -nographics \
-  -projectPath "/tmp/energokey-candidate.Aa5d3b/EnergoKey" \
-  -runTests -testPlatform EditMode \
-  -testResults "[USER_HOME]/Desktop/untitled folder 2/EnergoKey/EVIDENCE/FreshCloneTests-candidate.xml" \
-  -logFile "[USER_HOME]/Desktop/untitled folder 2/EnergoKey/EVIDENCE/logs/fresh-clone-candidate-tests.log"
-```
+`POST_COMMIT_VERIFICATION/` должен содержать фактические логи и XML именно exact tagged clone. Их имена и контрольные суммы перечисляются в `DELIVERY_MANIFEST.txt`; эти файлы не добавляются обратно в tagged commit, чтобы не менять проверенную ревизию.
 
-Доказательства:
+## Связанные доказательства до упаковки
 
-- `EVIDENCE/FreshCloneTests-candidate.xml`;
-- `EVIDENCE/logs/fresh-clone-candidate-tests.log`.
+- `EditModeTests-final.xml` и `logs/editmode-tests-final.log`;
+- `PlayModeTests-final.xml` и `logs/playmode-tests-final.log`;
+- `PROJECT_VALIDATION.md`, `PROJECT_VALIDATION.json` и validation log;
+- `PROFILER_BENCHMARK_BEFORE.json`, `PROFILER_BENCHMARK_AFTER.json`;
+- `ProfilerBenchmarkBeforeTests.xml`, `ProfilerBenchmarkAfterTests.xml`;
+- `logs/profiler-benchmark-before.log`, `logs/profiler-benchmark-after.log`;
+- `PERSISTENCE_RESTART_PROBE.md` / `.json`;
+- `MAC_STANDALONE_TEST.md` и `FOCUS_LOSS_TEST.md`.
 
-## Structural validation
+## Честные ограничения
 
-Фактический результат: PASS, 165/165. Лог содержит `ENERGOKEY_VALIDATION_PASS: 165/165 checks passed`.
-
-Команда по аргументам Unity:
-
-```bash
-"/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/MacOS/Unity" \
-  -batchmode -nographics -quit \
-  -projectPath "/tmp/energokey-candidate.Aa5d3b/EnergoKey" \
-  -executeMethod EnergoKey.Editor.EnergoKeyValidation.RunAll \
-  -logFile "[USER_HOME]/Desktop/untitled folder 2/EnergoKey/EVIDENCE/logs/fresh-clone-candidate-validation.log"
-```
-
-Доказательство: `EVIDENCE/logs/fresh-clone-candidate-validation.log`.
-
-## Контрольные суммы
-
-| Файл | Байты | SHA-256 |
-|---|---:|---|
-| `EVIDENCE/FreshCloneTests-candidate.xml` | 21908 | `5446aa51d3ad12e5bae54e6bc7e572d9d015bed3d5589eaf641580b1dab7717b` |
-| `EVIDENCE/logs/fresh-clone-candidate-verifier.log` | 3754 | `381feaec6e42d6f3019a6c07358bd189a9524d97e3a928be4037612e3c4f0002` |
-| `EVIDENCE/logs/fresh-clone-candidate-compile.log` | 298084 | `22ba120bf22e6345fa7b558350fbb5c9bd561dfea91d79648ea0efa02569da32` |
-| `EVIDENCE/logs/fresh-clone-candidate-tests.log` | 26367 | `0e3c259794ee48ea58caad0a094bf47cac23ab9f03acacb917f0a1584ae54143` |
-| `EVIDENCE/logs/fresh-clone-candidate-validation.log` | 21951 | `a7c835c69edb2e2583bce3a259f76537aaa0960cff5baed48bbb8efd16215da6` |
-
-## Ограничение результата
-
-Candidate commit успешно проверен в чистой копии. Exact final tag и итоговый ZIP проверяются отдельно после финального commit: необходимо разрешить полный hash через `git rev-list -n 1 pp-pm13-release`, клонировать tagged revision и записать размер/SHA-256 архива. До этого тег, hash окончательной ревизии и ZIP остаются `NOT VERIFIED`.
+- публичный GitHub/GitLab URL отсутствует;
+- физические Android/iOS-устройства и мобильные builds не проверялись;
+- внешний новый пользователь не привлекался;
+- пользователь-заказчик подтвердил работу на MacBook Apple M3, но он не считается новым внешним пользователем;
+- Word/PDF/PPTX, подписи и загрузка в LMS остаются внешними административными действиями.

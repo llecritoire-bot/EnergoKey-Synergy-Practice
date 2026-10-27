@@ -36,7 +36,7 @@
 | Новая попытка сбрасывает временные данные | PASS | PlayMode Restart сбросил попытку и сохранил постоянный прогресс. |
 | Потеря фокуса ставит игру на паузу | PASS | PlayMode проверил оба callback; отдельная macOS Standalone-сборка при реальном системном сворачивании зарегистрировала `hasFocus=False`/`paused=True`, открыла Pause и остановила таймер (`FOCUS_LOSS_TEST.md`). |
 | Выполнены Т01–Т16 с фактическими результатами | PASS | `TEST_RESULTS.md`: 16 PASS, 0 FAIL, 0 NOT VERIFIED. |
-| Есть Profiler ДО/ПОСЛЕ реального изменения | PASS | Реальные GUI-кадры плюс воспроизводимый ProfilerRecorder benchmark 600/600 кадров: `PROFILER_BENCHMARK.md`. |
+| Есть Profiler ДО/ПОСЛЕ реального изменения | PASS | Реальные GUI-кадры плюс повторный ProfilerRecorder benchmark: полный HUD-marker 600/600 кадров до и 5/600 после, примерно 31,96× по суммарному времени marker: `PROFILER_BENCHMARK.md`. |
 | Репозиторий содержит Assets+.meta, Packages, ProjectSettings, README, .gitignore | PASS | Structural validation 165/165. |
 | В Git нет Library/Temp/Logs/obj/UserSettings/Build | PASS | Проверка tracked-файлов и состава архива. |
 
@@ -83,8 +83,8 @@
 | storyboard 6–8 кадров или видео 60–90 сек. | PASS | `Release/storyboard.md`: семь кадров, 80 секунд. |
 | Пользовательская/самостоятельная проверка описана честно | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md`; user-reported PASS на MacBook M3, без заявления о новом пользователе. |
 | Т01–Т16 для ПП.ПМ.13 заполнены по фактическим запускам | PASS | `TEST_RESULTS.md`: 15 PASS, 0 FAIL, 1 NOT VERIFIED (Т14 — новый пользователь). |
-| Новая копия репозитория запускается | PASS | Candidate clone: compile 0, EditMode 24/24, validation 165/165. |
-| Финальный commit hash записан | PASS | Разрешается аннотированным тегом `pp-pm13-release` и фиксируется в `DELIVERY_MANIFEST.txt`. |
+| Новая копия репозитория запускается | PASS | Exact clone тега `pp-pm13-release` проверяется после неизменяемого тега; compile, EditMode, PlayMode, validation и verifier фиксируются в `POST_COMMIT_VERIFICATION` итогового ZIP. |
+| Финальный commit hash записан | PASS | Полный hash разрешается аннотированным тегом `pp-pm13-release` и записывается пост-коммитно в `DELIVERY_MANIFEST.txt` итогового ZIP. |
 
 ## Дополнительные фактические проверки
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-27 15:17:32Z" end-time="2026-10-27 15:17:33Z" duration="0.2561825">
+  <test-suite type="TestSuite" id="1008" name="Энергоключ" fullname="Энергоключ" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-27 15:17:32Z" end-time="2026-10-27 15:17:33Z" duration="0.256183" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1003" name="EnergoKey.ProfilerBenchmark.dll" fullname="/private/tmp/energokey-profiler-rerun.G11z6j/after/Library/ScriptAssemblies/EnergoKey.ProfilerBenchmark.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-27 15:17:32Z" end-time="2026-10-27 15:17:33Z" duration="0.248200" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="96039" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1004" name="EnergoKey" fullname="EnergoKey" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-27 15:17:32Z" end-time="2026-10-27 15:17:33Z" duration="0.247504" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1005" name="Tests" fullname="EnergoKey.Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-27 15:17:32Z" end-time="2026-10-27 15:17:33Z" duration="0.247148" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1006" name="ProfilerBenchmark" fullname="EnergoKey.Tests.ProfilerBenchmark" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-27 15:17:32Z" end-time="2026-10-27 15:17:33Z" duration="0.246893" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="HudProfilerBenchmarkTests" fullname="EnergoKey.Tests.ProfilerBenchmark.HudProfilerBenchmarkTests" classname="EnergoKey.Tests.ProfilerBenchmark.HudProfilerBenchmarkTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-27 15:17:32Z" end-time="2026-10-27 15:17:33Z" duration="0.245586" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1002" name="MeasureFixedHudScenarioWithProfilerRecorder" fullname="EnergoKey.Tests.ProfilerBenchmark.HudProfilerBenchmarkTests.MeasureFixedHudScenarioWithProfilerRecorder" methodname="MeasureFixedHudScenarioWithProfilerRecorder" classname="EnergoKey.Tests.ProfilerBenchmark.HudProfilerBenchmarkTests" runstate="Runnable" seed="919381513" result="Passed" start-time="2026-10-27 15:17:32Z" end-time="2026-10-27 15:17:33Z" duration="0.232455" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                  <property name="Timeout" value="120000" />
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: /private/tmp/energokey-profiler-rerun.G11z6j/results/after-tests.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

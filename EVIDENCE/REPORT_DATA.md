@@ -13,7 +13,7 @@
 - Screen Match Mode / Match: `Match Width Or Height`, `0.5`.
 - Версия игры: `1.0.0`.
 - Итоговая компиляция: PASS, `EVIDENCE/logs/final-compile.log`.
-- EditMode: PASS, 24/24; итоговый прогон начат `2026-10-27 13:59:08Z`, `EVIDENCE/EditModeTests-final.xml`, `EVIDENCE/logs/editmode-tests-final.log`.
+- EditMode: PASS, 24/24; итоговый прогон начат `2026-10-27 14:55:35Z`, `EVIDENCE/EditModeTests-final.xml`, `EVIDENCE/logs/editmode-tests-final.log`.
 - PlayMode: PASS, 17/17; физика, UI, три уровня, Restart, обучение, Pause, callback-логика фокуса, responsive renders и независимые кадры сохранений, `EVIDENCE/PlayModeTests-final.xml`.
 - Структурная проверка: PASS, 165/165, включая `ENV-2D-SPRITE-PACKAGE` и `ENV-2D-DEFAULT-MODE`, `EVIDENCE/PROJECT_VALIDATION.md`.
 - macOS Standalone Development Build: PASS, 0 ошибок, 0 предупреждений; фактический запуск MainMenu подтверждён runtime-маркером, `EVIDENCE/MAC_STANDALONE_TEST.md`.
@@ -100,32 +100,26 @@
 ## Git
 
 - URL: отсутствует; публичный удалённый репозиторий не создавался.
-- Первый рабочий прототип: `3ca04d3`.
-- Тег прототипа: `up-pm12-prototype` → `29ffcf0812c3308e3e4ec85f645c88e8a3d8bbd2`.
-- Тег трёх уровней: `pp-pm12-three-levels` → `816092b00750fcb556d9996a8dfe7c01e77a8d85`.
-- Тег до визуального стиля: `pm13-before-visual-style` → `816092b00750fcb556d9996a8dfe7c01e77a8d85`.
-- Тег оформленного этапа: `up-pm13-styled` → `f616afd3be9b8586eba9f7d76af568f11bd2e9c3`.
-- profiler-before commit/tag: `profiler-before` → `f616afd3be9b8586eba9f7d76af568f11bd2e9c3`.
-- Commit событийного HUD: `2c60fe4ea10b9e95401f5909dffa915f09d407cd`.
-- Идентификатор финальной ревизии: аннотированный тег `pp-pm13-release`; полный hash разрешается командой `git rev-list -n 1 pp-pm13-release`. Hash намеренно не встраивается в саму tagged revision, чтобы не создавать самоссылочное изменение; наличие и разрешение тега являются отдельной проверкой упаковки.
-- Проверенный candidate commit: `91bff8f861632c1846e512aa57306d21d4e9d3f1`.
-- Дата fresh-clone проверки candidate: 27 октября 2026 года.
-- Путь временной копии: `/private/tmp/energokey-candidate.Aa5d3b/EnergoKey`.
-- Чистота до Unity: PASS, `git status --short` — 0 строк.
-- Read-only verifier candidate-копии: 27 PASS, 1 FAIL, 3 NOT VERIFIED; единственный FAIL возник потому, что на candidate-этапе release-тег ещё не существовал.
-- Результат запуска candidate-копии: PASS — compile exit 0, EditMode 24/24, structural validation 165/165.
-- Exact final tag и итоговый ZIP проверяются пост-коммитно; полный hash и результат tagged-clone/архивной проверки фиксируются в аннотации `pp-pm13-release` и `DELIVERY_MANIFEST.txt`, чтобы не создавать самоссылочное изменение tagged commit.
-- Протокол: `EVIDENCE/FRESH_CLONE_VERIFICATION.md`.
+- Первый рабочий прототип: `74ca90f5b76beb09c239c98e9516cb91c79b5727`.
+- Тег прототипа: `up-pm12-prototype` → `6f7f133e526319f6c0a184514ff9bc1a99b6bb5a`.
+- Тег трёх уровней: `pp-pm12-three-levels` → `47064d82b5b13fa1600ad69d2ee5432cea02da0e`.
+- Тег до визуального стиля: `pm13-before-visual-style` → `47064d82b5b13fa1600ad69d2ee5432cea02da0e`.
+- Тег оформленного этапа: `up-pm13-styled` → `d0b7433011ef097a5b92ea4799ac92d2887fa5c4`.
+- Тег `profiler-before` → `d0b7433011ef097a5b92ea4799ac92d2887fa5c4`.
+- Commit событийного HUD: `11771ef31459a3aad844614287306db68119c8d2`.
+- Финальная ревизия обозначается аннотированным тегом `pp-pm13-release`. Её фактический полный hash нельзя встраивать в саму tagged revision без самоссылочного изменения.
+- После постановки финального тега hash, равенство tag/HEAD, результаты чистого клона и контрольные суммы записываются вне tagged tree в `DELIVERY_MANIFEST.txt` и `POST_COMMIT_VERIFICATION/` внутри итогового ZIP.
+- Процедура exact-tag проверки: `EVIDENCE/FRESH_CLONE_VERIFICATION.md`.
 
 ## Profiler
 
 - Изменение: HUD переведён с полного обновления каждый кадр на подписку `GameController.StateChanged`; таймер обновляется только при смене секунды.
-- Сравниваемые ревизии: `f616afd3be9b8586eba9f7d76af568f11bd2e9c3` до и `2c60fe4ea10b9e95401f5909dffa915f09d407cd` после.
+- Сравниваемые ревизии: `d0b7433011ef097a5b92ea4799ac92d2887fa5c4` до и `11771ef31459a3aad844614287306db68119c8d2` после.
 - Одинаковый сценарий: 120 кадров прогрева, затем 600 измеренных кадров; один HUD, четыре Text и пять одинаковых изменений состояния.
-- До: marker полного HUD refresh присутствовал в 600/600 кадрах, суммарно 1 158 419 ns.
-- После: marker событийного refresh присутствовал в 5/600 кадрах, суммарно 40 085 ns.
-- В одинаковом microbenchmark число полных обновлений снизилось с 600 до 5, суммарное время целевого marker — примерно в 28.90 раза. Это не заявляется как ускорение полного кадра всей игры.
-- Машинные результаты: `PROFILER_BENCHMARK.md`, `PROFILER_BENCHMARK_BEFORE.json`, `PROFILER_BENCHMARK_AFTER.json`.
+- До: marker полного HUD refresh присутствовал в 600/600 кадрах, суммарно 1 845 755 ns.
+- После: marker событийного refresh присутствовал в 5/600 кадрах, суммарно 57 749 ns.
+- В одинаковом microbenchmark число полных обновлений снизилось с 600 до 5, суммарное время целевого marker уменьшилось примерно в 31.96 раза (на 96.87%). Это не заявляется как ускорение полного кадра всей игры.
+- Машинные результаты: `PROFILER_BENCHMARK.md`, `PROFILER_BENCHMARK_BEFORE.json`, `PROFILER_BENCHMARK_AFTER.json`, `ProfilerBenchmarkBeforeTests.xml`, `ProfilerBenchmarkAfterTests.xml`, `logs/profiler-benchmark-before.log`, `logs/profiler-benchmark-after.log`.
 - Реальные GUI-кадры Profiler также сохранены: `screenshots/PP12_10_ProfilerBefore.png` и `screenshots/PP12_11_ProfilerAfter.png`.
 
 ## Пользовательская проверка
@@ -160,7 +154,7 @@
 | T13 | Self-test UX-01 и Level Select overlap 4:3 зафиксированы до/после; пользовательская приёмка MacBook M3 записана отдельно. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md`, `responsive/BEFORE_1024x768_LevelSelect_overlap.png`, `responsive/RESP_1024x768_LevelSelect.png` |
 | T14 | Внешний новый пользователь не привлекался; знакомый с ТЗ пользователь-заказчик не считается новым. | NOT VERIFIED | `USER_TEST.md`, `USER_ACCEPTANCE.md` |
 | T15 | PlayMode прошёл L1–L3, Victory, Defeat/Restart; независимые процессы подтвердили сохранения. | PASS | `PlayModeTests-final.xml`, `PERSISTENCE_RESTART_PROBE.md` |
-| T16 | Чистая копия candidate commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` успешно прошла compile, EditMode 24/24 и validation 165/165. Exact tagged clone и ZIP дополнительно проверяются пост-коммитно с записью в `DELIVERY_MANIFEST.txt`. | PASS | `FRESH_CLONE_VERIFICATION.md`, `FreshCloneTests-candidate.xml`, `logs/fresh-clone-candidate-*.log`, архивный `DELIVERY_MANIFEST.txt` |
+| T16 | Exact revision определяется аннотированным тегом `pp-pm13-release`; после тега чистый клон, Unity-прогоны и ZIP проверяются пост-коммитно. Фактический full hash и контрольные суммы записываются вне tagged tree. | PASS | `FRESH_CLONE_VERIFICATION.md`, архивные `DELIVERY_MANIFEST.txt` и `POST_COMMIT_VERIFICATION/` |
 
 Итог ПП.ПМ.13: 15 PASS, 0 FAIL, 1 NOT VERIFIED.
 
@@ -180,5 +174,5 @@
 - Реальное системное сворачивание macOS Standalone проверено: runtime зарегистрировал `hasFocus=False`/`paused=True`, а после возврата отображалась Pause с остановленным таймером (`FOCUS_LOSS_TEST.md`).
 - Полный L1–L3 flow, физические контакты, Restart, Pause и сохранения подтверждены автоматизированными runtime-прогонами Unity, но отдельное непрерывное видео ручного прохождения не создавалось.
 - Внешний новый пользователь не привлекался. Пользователь-заказчик сообщил `PASS (USER-REPORTED)` на MacBook M3, но заранее знаком с ТЗ.
-- Публичный Git URL отсутствует; fresh clone candidate commit подтверждён внутренними логами, а точная итоговая ревизия и состав ZIP подтверждаются пост-коммитным `DELIVERY_MANIFEST.txt` и аннотацией `pp-pm13-release`.
+- Публичный Git URL отсутствует. Точная итоговая ревизия, результаты чистого tagged clone и состав ZIP подтверждаются пост-коммитными `DELIVERY_MANIFEST.txt` и `POST_COMMIT_VERIFICATION/`; полный hash намеренно не встраивается в сам tagged commit.
 - Word/PDF-отчёты, PowerPoint-презентации, подписи, справка о практике и загрузка в LMS не входят в этот Unity ZIP и требуют ручной подготовки/оформления.

@@ -2,7 +2,7 @@
     "schema": "energokey-profiler-benchmark-v1",
     "status": "PASS",
     "stage": "after-event-driven",
-    "revision": "2c60fe4ea10b9e95401f5909dffa915f09d407cd",
+    "revision": "11771ef31459a3aad844614287306db68119c8d2",
     "unityVersion": "6000.6.2f1",
     "processor": "Apple M3",
     "marker": "EnergoKey.HUD.EventRefresh",
@@ -13,11 +13,11 @@
     "notificationCount": 5,
     "recorderSampleCount": 5,
     "activeMarkerFrames": 5,
-    "totalNanoseconds": 40085,
-    "meanPerMeasuredFrameNanoseconds": 66.80833333333334,
-    "meanPerActiveMarkerFrameNanoseconds": 8017.0,
-    "medianActiveFrameNanoseconds": 7792,
-    "p95ActiveFrameNanoseconds": 9083,
-    "minimumActiveFrameNanoseconds": 7542,
-    "maximumActiveFrameNanoseconds": 9083
+    "totalNanoseconds": 57749,
+    "meanPerMeasuredFrameNanoseconds": 96.24833333333333,
+    "meanPerActiveMarkerFrameNanoseconds": 11549.8,
+    "medianActiveFrameNanoseconds": 10500,
+    "p95ActiveFrameNanoseconds": 15458,
+    "minimumActiveFrameNanoseconds": 8708,
+    "maximumActiveFrameNanoseconds": 15458
 }

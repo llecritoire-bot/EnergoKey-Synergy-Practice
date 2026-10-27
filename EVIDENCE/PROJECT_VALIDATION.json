@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion": "1.0",
-    "generatedAtUtc": "2026-10-27T14:58:15.9646590Z",
+    "generatedAtUtc": "2026-10-27T15:23:14.8736640Z",
     "unityVersion": "6000.6.2f1",
     "projectRoot": "[USER_HOME]/Desktop/untitled folder 2/EnergoKey",
     "overallStatus": "PASS",
@@ -1390,8 +1390,8 @@
         },
         {
             "path": "README.md",
-            "bytes": 16453,
-            "sha256": "7ae0e134b6ebe46a1acb2c08fd4377b513b182ecf834e41ff8e11ed42b8f4ffa"
+            "bytes": 16718,
+            "sha256": "be77e71d0c9b5d241d99b98ac36fdcb1cac88e15172aa60416dd6df0773ea8ef"
         },
         {
             "path": "Release/Docs/CHANGELOG.md",
