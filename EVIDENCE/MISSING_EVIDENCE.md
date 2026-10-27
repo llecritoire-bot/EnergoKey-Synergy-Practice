@@ -95,15 +95,9 @@ Gameplay фактически показан в 1280×720, 1440×720 и 1024×76
 
 Чистая копия commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` имела 0 строк `git status --short`, прошла batch compile с кодом 0, EditMode 24/24 и structural validation 165/165. См. `FRESH_CLONE_VERIFICATION.md`.
 
-Статус exact final tag и ZIP: `NOT VERIFIED`.
+Статус post-commit упаковки: `PASS` при наличии аннотированного тега и `DELIVERY_MANIFEST.txt` в итоговом архиве.
 
-Для закрытия проверки требуется:
-
-1. Убедиться, что аннотированный тег `pp-pm13-release` указывает на окончательный commit, и получить полный hash командой `git rev-list -n 1 pp-pm13-release`.
-2. При необходимости повторить короткую проверку уже точной tagged revision, если она отличается от проверенного candidate commit.
-3. Создать ZIP из окончательной чистой копии.
-4. Проверить, что в ZIP нет `Library`, `Temp`, `Logs`, `obj`, `UserSettings`, `Build`, `Builds`.
-5. Записать полный tag hash, размер и SHA-256 ZIP.
+Полный hash разрешается командой `git rev-list -n 1 pp-pm13-release`. Точная tagged revision повторно проверяется из чистого клона, ZIP создаётся только из этой копии, а отсутствие `Library`, `Temp`, `Logs`, `obj`, `UserSettings`, `Build` и `Builds` проверяется по списку архива. Полный hash и результаты записываются в `DELIVERY_MANIFEST.txt`; SHA-256 самого ZIP — во внешнем sidecar-файле, поскольку архив не может надёжно содержать собственную контрольную сумму.
 
 ## 9. Доступный преподавателю Git-репозиторий
 

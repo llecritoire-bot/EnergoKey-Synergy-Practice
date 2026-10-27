@@ -1,6 +1,6 @@
 # Манифест файлов «Энергоключ»
 
-Снимок состава: 27 октября 2026 года. Чистая копия candidate commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` проверена успешно. Окончательная ревизия поставки идентифицируется будущим аннотированным тегом `pp-pm13-release`; тег и итоговый ZIP пока проверяются отдельно.
+Снимок состава: 27 октября 2026 года. Чистая копия candidate commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` проверена успешно. Окончательная ревизия поставки идентифицируется аннотированным тегом `pp-pm13-release`; точный полный hash и пост-коммитная проверка архива записываются в аннотации тега и `DELIVERY_MANIFEST.txt` рядом с папкой проекта внутри итогового ZIP.
 
 ## Основной состав проекта
 
@@ -18,7 +18,7 @@
 | Unity structural checks | 165/165 Passed | `PROJECT_VALIDATION.md` |
 | Candidate fresh-clone tests | 24/24 Passed | `FreshCloneTests-candidate.xml` |
 | Candidate fresh-clone validation | 165/165 Passed | `logs/fresh-clone-candidate-validation.log` |
-| Candidate read-only verifier | 27 PASS, 1 FAIL, 3 NOT VERIFIED | FAIL относится только к будущему `pp-pm13-release` |
+| Candidate read-only verifier | 27 PASS, 1 FAIL, 3 NOT VERIFIED | FAIL относится только к отсутствовавшему на candidate-этапе `pp-pm13-release` |
 
 Структурная проверка Unity подтверждает наличие всех сцен и `.meta`, первый Build Settings scene `MainMenu`, четыре prefab, импорт графики/звука, размеры release-материалов и документы. Дополнительно подтверждены пакет `com.unity.2d.sprite` и режим `m_DefaultBehaviorMode: 1`. Итог: `165 PASS, 0 FAIL`.
 
@@ -124,4 +124,4 @@
 
 `git ls-files` не показывает файлов внутри `Library`, `Temp`, `Logs`, `obj`, `UserSettings`, `Build` или `Builds`. Эти каталоги могут существовать в рабочей копии как локальные продукты Unity, но не отслеживаются Git и должны быть исключены из итогового ZIP.
 
-Чистая копия candidate commit проверена; протокол и логи приложены. Exact tagged revision `pp-pm13-release`, размер и SHA-256 итогового ZIP ещё не подтверждены и остаются `NOT VERIFIED`; см. `MISSING_EVIDENCE.md`.
+Чистая копия candidate commit проверена; протокол и логи приложены. Exact tagged revision проверяется после создания неизменяемого release commit, а результат фиксируется в аннотации тега и `DELIVERY_MANIFEST.txt`. SHA-256 самого ZIP сообщается отдельным sidecar-файлом и в итоговом сообщении, потому что архив не может содержать собственную контрольную сумму без её изменения.

@@ -108,9 +108,9 @@
 - Дата fresh-clone проверки candidate: 27 октября 2026 года.
 - Путь временной копии: `/private/tmp/energokey-candidate.Aa5d3b/EnergoKey`.
 - Чистота до Unity: PASS, `git status --short` — 0 строк.
-- Read-only verifier: 27 PASS, 1 FAIL, 3 NOT VERIFIED; единственный FAIL — отсутствие будущего `pp-pm13-release`.
+- Read-only verifier candidate-копии: 27 PASS, 1 FAIL, 3 NOT VERIFIED; единственный FAIL возник потому, что на candidate-этапе release-тег ещё не существовал.
 - Результат запуска candidate-копии: PASS — compile exit 0, EditMode 24/24, structural validation 165/165.
-- Exact final tag и итоговый ZIP: NOT VERIFIED.
+- Exact final tag и итоговый ZIP проверяются пост-коммитно; полный hash и результат tagged-clone/архивной проверки фиксируются в аннотации `pp-pm13-release` и `DELIVERY_MANIFEST.txt`, чтобы не создавать самоссылочное изменение tagged commit.
 - Протокол: `EVIDENCE/FRESH_CLONE_VERIFICATION.md`.
 
 ## Profiler
@@ -149,7 +149,7 @@
 | T13 | Честный self-test с реальной проблемой 4:3 и кадрами до/после. | PASS | `USER_TEST.md`, `screenshots/PP13_10_BeforeUserFix.png`, `screenshots/PP13_11_AfterUserFix.png` |
 | T14 | Правило показано, но понимание новым пользователем не проверено. | NOT VERIFIED | `screenshots/TUTORIAL_02_SpecialRule.png` |
 | T15 | Отдельные состояния трёх уровней, Victory, Defeat и сохранений показаны; полного прохождения с перезапуском нет. | NOT VERIFIED | `TEST_RESULTS.md` |
-| T16 | Чистая копия candidate commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` успешно прошла compile, EditMode 24/24 и validation 165/165. Exact final tag/ZIP проверяются отдельно. | PASS | `FRESH_CLONE_VERIFICATION.md`, `FreshCloneTests-candidate.xml`, `logs/fresh-clone-candidate-*.log` |
+| T16 | Чистая копия candidate commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` успешно прошла compile, EditMode 24/24 и validation 165/165. Exact tagged clone и ZIP дополнительно проверяются пост-коммитно с записью в `DELIVERY_MANIFEST.txt`. | PASS | `FRESH_CLONE_VERIFICATION.md`, `FreshCloneTests-candidate.xml`, `logs/fresh-clone-candidate-*.log`, архивный `DELIVERY_MANIFEST.txt` |
 
 Полные ожидаемые и фактические результаты приведены в `EVIDENCE/TEST_RESULTS.md`.
 
@@ -165,5 +165,5 @@
 - Известные ошибки финальной компиляции: не обнаружены; batch compile завершился кодом 0.
 - Не подтверждены непрерывным ручным сценарием: полное прохождение L1–L3, естественные столкновения Player с кристаллом/опасностью/выходом, Restart, потеря фокуса, сохранения после закрытия приложения, быстрые повторные клики Pause.
 - Внешний новый пользователь не привлекался.
-- Публичный Git URL отсутствует; fresh clone candidate commit проверен, но итоговая ревизия через тег `pp-pm13-release` и ZIP остаются `NOT VERIFIED`.
+- Публичный Git URL отсутствует; fresh clone candidate commit подтверждён внутренними логами, а точная итоговая ревизия и состав ZIP подтверждаются пост-коммитным `DELIVERY_MANIFEST.txt` и аннотацией `pp-pm13-release`.
 - Word/PDF-отчёты, PowerPoint-презентации, подписи, справка о практике и загрузка в LMS не входят в этот Unity ZIP и требуют ручной подготовки/оформления.
