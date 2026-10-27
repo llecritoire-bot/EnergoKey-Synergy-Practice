@@ -1,0 +1,13 @@
+{
+    "status": "PASS",
+    "unityVersion": "6000.6.2f1",
+    "phaseOneUtc": "2026-10-27T14:30:13.8209410Z",
+    "phaseTwoUtc": "2026-10-27T14:30:23.0844320Z",
+    "processCount": 2,
+    "unlockedLevel": 3,
+    "bestScore": 650,
+    "masterVolume": 0.3700000047683716,
+    "tutorialSeen": true,
+    "valuesMatched": true,
+    "isolatedKeysCleaned": true
+}

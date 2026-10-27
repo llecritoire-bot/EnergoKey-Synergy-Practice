@@ -17,8 +17,9 @@
 | Базовое разрешение UI | 1280×720, `Scale With Screen Size`, match 0.5 |
 | Версия продукта | 1.0.0 |
 | Локальные сохранения | `PlayerPrefs` через `SaveService` |
+| Проверенный физический компьютер | MacBook с Apple M3 |
 
-Точная версия Editor записана в `ProjectSettings/ProjectVersion.txt`, версия продукта — в `ProjectSettings/ProjectSettings.asset`. Проект действительно открывался в Unity 6000.6.2f1; для него получены снимки Editor, Game View и Profiler. Открывать и пересохранять проект более старым Editor не следует.
+Точная версия Editor записана в `ProjectSettings/ProjectVersion.txt`, версия продукта — в `ProjectSettings/ProjectSettings.asset`. Проект открывался в Unity 6000.6.2f1; для него получены снимки Editor, Game View и Profiler. Дополнительно macOS Standalone Development Build собран без ошибок/предупреждений и запущен на физическом MacBook Apple M3. Открывать и пересохранять проект более старым Editor не следует.
 
 ## Как запустить
 
@@ -81,13 +82,15 @@ Editor-only клавиши F2–F6 и F8 помогают выставлять �
 | `energokey.masterVolume` | 0.8 | общая громкость 0–1 |
 | `energokey.tutorialSeen` | 0 | обучение пройдено или пропущено |
 
-Новая попытка сбрасывает только данные текущего уровня. Повторный просмотр обучения не меняет открытые уровни и рекорд.
+Новая попытка сбрасывает только данные текущего уровня. Повторный просмотр обучения не меняет открытые уровни и рекорд. Сохранение level 3, score 650, volume 0.37 и `tutorialSeen=true` подтверждено двумя независимыми Unity-процессами WRITE/READ; подробности — `EVIDENCE/PERSISTENCE_RESTART_PROBE.md`.
 
 ## Экраны и адаптация
 
 Реализованы Main Menu, Level Select, Gameplay, Pause, Victory, Defeat, Settings, Tutorial и About. При первом запуске Tutorial показывает три карточки: управление, правило закрытого выхода, опасности и завершение игры. Кнопка «Как играть» всегда открывает обучение с первой карточки.
 
-Canvas рассчитан на 1280×720. Компоновка проверялась в Game View при 1280×720 (16:9), 1440×720 (18:9) и 1024×768 (4:3). `SafeAreaAdapter` работает с `Screen.safeArea`; в Editor доступна имитация области 6% / 6% / 88% / 88%. Это проверка в Editor, а не испытание на физическом телефоне.
+Canvas рассчитан на 1280×720. Unity PlayMode сформировал 21 фактический runtime-render: Main Menu, Level Select, Gameplay, Pause, Victory, Defeat и Settings при 1280×720 (16:9), 1440×720 (18:9) и 1024×768 (4:3). Для каждого состояния проверены границы видимых элементов и Safe Area. Обнаруженное пересечение подсказки и кнопки «Назад» в Level Select 4:3 исправлено и закреплено автоматической проверкой; кадры до/после находятся в `EVIDENCE/responsive`.
+
+`SafeAreaAdapter` работает с `Screen.safeArea`; в Editor доступна имитация области 6% / 6% / 88% / 88%. Это проверка средствами Unity, а не испытание на физическом Android/iOS-устройстве.
 
 ## Ресурсы
 
@@ -97,9 +100,17 @@ PNG и WAV созданы для этой учебной работы скрип
 
 ## Проверки и доказательства
 
-Сохранённый `EVIDENCE/EditModeTests-final.xml` содержит финальный фактический прогон Unity Test Runner от 27 октября 2026 года: 24 из 24 EditMode-тестов прошли, ошибок и пропусков нет. Ему соответствует `EVIDENCE/logs/editmode-tests-final.log` со строкой `Test run completed` и кодом 0.
+Сохранённый `EVIDENCE/EditModeTests-final.xml` содержит итоговый прогон Unity Test Runner: 24 из 24 EditMode-тестов прошли. `EVIDENCE/PlayModeTests-final.xml` содержит 17 из 17 пройденных runtime integration-тестов: управление, физические контакты, Restart, полный L1–L3 flow, UI, обучение, Pause, callback-логика фокуса, responsive renders и независимые кадры сохранений. Соответствующие логи завершились кодом 0.
 
-Фактические результаты ручных сценариев находятся в `EVIDENCE/TEST_RESULTS.md`, построчная сверка с заданием — в `EVIDENCE/FINAL_STATUS.md`. `EVIDENCE/REPORT_DATA.md` предназначен для подготовки Word-отчётов, а `EVIDENCE/FILE_MANIFEST.md` фиксирует состав поставки. Если результат нельзя было получить, он отмечен `NOT VERIFIED` и перечислен в `EVIDENCE/MISSING_EVIDENCE.md`.
+Дополнительные фактические проверки:
+
+- `EVIDENCE/PERSISTENCE_RESTART_PROBE.md` — PlayerPrefs между двумя последовательными независимыми Unity-процессами;
+- `EVIDENCE/responsive/RESP_*.png` — 21 runtime-render, семь состояний × три разрешения;
+- `EVIDENCE/MAC_STANDALONE_TEST.md` — macOS Standalone build с 0 errors/0 warnings и фактический runtime marker;
+- `EVIDENCE/PROFILER_BENCHMARK.md` — детерминированный ProfilerRecorder benchmark до/после;
+- `EVIDENCE/USER_ACCEPTANCE.md` — дословная пользовательская приёмка на MacBook M3 с честными границами.
+
+Фактические результаты ручных и автоматизированных runtime-сценариев находятся в `EVIDENCE/TEST_RESULTS.md`, построчная сверка с заданием — в `EVIDENCE/FINAL_STATUS.md`. `EVIDENCE/REPORT_DATA.md` предназначен для подготовки Word-отчётов, а `EVIDENCE/FILE_MANIFEST.md` фиксирует состав поставки. Если результат нельзя было получить, он отмечен `NOT VERIFIED` и перечислен в `EVIDENCE/MISSING_EVIDENCE.md`.
 
 Для проверки файлов без запуска Unity:
 
@@ -111,9 +122,9 @@ python3 Tools/verify_deliverable.py
 
 ### Profiler
 
-`EVIDENCE/screenshots/PP12_10_ProfilerBefore.png` и `PP12_11_ProfilerAfter.png` — реальные снимки Unity Profiler до и после перевода HUD с обновления каждый кадр на событийное обновление. На выбранных одиночных CPU-кадрах показаны 3.63 ms до и 1.19 ms после.
+`EVIDENCE/screenshots/PP12_10_ProfilerBefore.png` и `PP12_11_ProfilerAfter.png` — реальные снимки Unity Profiler до и после перевода HUD с покадрового обновления на событийное. Их одиночные CPU-кадры сохранены как визуальное доказательство, но строгий вывод строится не по ним.
 
-Это два representative single frames, а не серия замеров: по ним нельзя делать статистический вывод о среднем ускорении или обещать конкретный процент прироста. Снимки подтверждают сам запуск Profiler и различие реализаций. Для строгого сравнения нужны повторные выборки одинакового участка, одинаковый набор модулей и агрегированные значения.
+Для сопоставимого измерения выполнен детерминированный microbenchmark через `Unity.Profiling.ProfilerRecorder`: одинаковый harness, 120 кадров прогрева и 600 измеренных кадров на каждой ревизии, пять одинаковых изменений состояния. Полный HUD-marker вызывался 600 раз до и 5 раз после; суммарное время целевого marker — 1 158 419 ns и 40 085 ns соответственно. Это подтверждает сокращение работы HUD, но не обещает такое же ускорение полного кадра игры. Полный протокол и JSON находятся в `EVIDENCE/PROFILER_BENCHMARK.md`.
 
 ## Release
 
@@ -157,10 +168,11 @@ git rev-parse pp-pm13-release^{commit}
 
 ## Ограничения
 
-- Физическое мобильное устройство и Android/iOS build не проверялись. Наличие рабочего Editor-проекта не заменяет запуск установленного приложения.
-- Safe Area проверена только имитацией в Unity Editor.
-- Внешний новый пользователь не привлекался. Выполнена самостоятельная проверка; внешняя проверка остаётся необходимой.
-- Снимки Profiler не являются статистическим benchmark.
+- Физические Android/iOS-устройства и мобильные builds не проверялись. macOS Standalone успешно собран и запущен на физическом MacBook Apple M3, но MacBook не является мобильным устройством.
+- Safe Area подтверждена имитацией и bounds assertions Unity, не системной Safe Area телефона/планшета.
+- Потеря фокуса проверена и PlayMode-callback тестом, и реальным системным сворачиванием macOS Standalone: приложение открыло Pause и остановило таймер (`EVIDENCE/FOCUS_LOSS_TEST.md`).
+- Внешний новый пользователь не привлекался. Пользователь-заказчик сообщил `PASS (USER-REPORTED)` на MacBook M3, но заранее знаком с заданием.
+- ProfilerRecorder benchmark измеряет целевой HUD-marker, а не полное время кадра всей игры.
 - Демонстрационное видео не создавалось; вместо него подготовлен допустимый storyboard на 80 секунд.
 - Публичного Git remote нет.
 

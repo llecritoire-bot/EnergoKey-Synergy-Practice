@@ -1,0 +1,140 @@
+sandbox_extension_issue_file_to_process failed for /tmp/EnergoKey-FocusProbe/EnergoKey.app: 1 (Operation not permitted)
+Mono path[0] = '/tmp/EnergoKey-FocusProbe/EnergoKey.app/Contents/Resources/Data/Managed'
+Mono config path = '/tmp/EnergoKey-FocusProbe/EnergoKey.app/Contents/MonoBleedingEdge/etc'
+CodeReloadManager initialized
+Found 2 interfaces on host : 0) [LOCAL_IPV4] 1) [LOCAL_IPV4]
+Player connection [8357805952]  Target information:
+
+Player connection [8357805952]  * "[IP] [LOCAL_IPV4] [Port] 55000 [Flags] 2 [Guid] 466055451 [EditorId] 1207963401 [Version] 1048832 [Id] OSXPlayer(1,[LOCAL_HOST]) [Debug] 0 [PackageName] OSXPlayer [ProjectName] Энергоключ" 
+
+Player connection [8357805952]  * "[IP] [LOCAL_IPV4] [Port] 55000 [Flags] 2 [Guid] 466055451 [EditorId] 1207963401 [Version] 1048832 [Id] OSXPlayer(1,[LOCAL_HOST]) [Debug] 0 [PackageName] OSXPlayer [ProjectName] Энергоключ" 
+
+Player connection [8357805952] Started UDP target info broadcast (1) on [225.0.0.222:54997].
+
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+ preferred device: Apple M3 (high power)
+Metal devices available: 1
+0: Apple M3 (high power)
+Using device Apple M3 (high power)
+Initialize engine version: 6000.6.2f1 (770e33f6875c)
+[EntityIdStore] init: VM path (explicit commit), pageSize=16384, blockCount=262144, entitiesPerBlock=1024, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path /tmp/EnergoKey-FocusProbe/EnergoKey.app/Contents/Resources/Data/UnitySubsystems
+GfxDevice: creating device client; kGfxThreadingModeThreaded
+Initializing Metal device caps: Apple M3
+Mac GPU Family: 2
+Apple GPU Family: 9
+MSL Version: 3.0
+Has Float MSAA: 1
+Has Float Filtering: 1
+ReadWrite Texture Tier: 2
+Begin MonoManager ReloadAssembly
+- Finished resetting the current domain, in  0.004 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Metal RecreateSurface[0x113378970]: surface size 1280x720
+UnloadTime: 0.591000 ms
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:130)
+SceneBootstrap:Awake () (at [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets/Scripts/Core/SceneBootstrap.cs:27)
+
+(Filename: [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 130)
+
+ENERGOKEY_PAUSE_EVENT: paused=False; autoPause=True; state=Playing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:130)
+PauseController:OnApplicationPause (bool) (at [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets/Scripts/UI/PauseController.cs:294)
+
+(Filename: [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 130)
+
+ENERGOKEY_FOCUS_EVENT: hasFocus=True; autoPause=True; state=Playing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:130)
+PauseController:OnApplicationFocus (bool) (at [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets/Scripts/UI/PauseController.cs:284)
+
+(Filename: [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 130)
+
+ENERGOKEY_FOCUS_EVENT: hasFocus=False; autoPause=True; state=Playing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:130)
+PauseController:OnApplicationFocus (bool) (at [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets/Scripts/UI/PauseController.cs:284)
+
+(Filename: [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 130)
+
+ENERGOKEY_PAUSE_EVENT: paused=True; autoPause=True; state=Playing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:130)
+PauseController:OnApplicationPause (bool) (at [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets/Scripts/UI/PauseController.cs:294)
+
+(Filename: [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 130)
+
+ENERGOKEY_PAUSE_EVENT: paused=False; autoPause=True; state=Playing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:130)
+PauseController:OnApplicationPause (bool) (at [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets/Scripts/UI/PauseController.cs:294)
+
+(Filename: [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 130)
+
+ENERGOKEY_FOCUS_EVENT: hasFocus=True; autoPause=True; state=Playing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:130)
+PauseController:OnApplicationFocus (bool) (at [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets/Scripts/UI/PauseController.cs:284)
+
+(Filename: [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 130)
+
+ENERGOKEY_FOCUS_EVENT: hasFocus=False; autoPause=True; state=Playing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:130)
+PauseController:OnApplicationFocus (bool) (at [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets/Scripts/UI/PauseController.cs:284)
+
+(Filename: [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 130)
+
+ENERGOKEY_PAUSE_EVENT: paused=True; autoPause=True; state=Playing
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[]) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/DebugLogHandler.cs:9)
+UnityEngine.Logger:Log (UnityEngine.LogType,object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Logging/Logger.cs:60)
+UnityEngine.Debug:Log (object) (at [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs:130)
+PauseController:OnApplicationPause (bool) (at [USER_HOME]/Desktop/untitled folder 2/EnergoKey/Assets/Scripts/UI/PauseController.cs:294)
+
+(Filename: [USER_HOME]/build/output/unity/unity/Runtime/Export/Debug/Debug.bindings.cs Line: 130)
+

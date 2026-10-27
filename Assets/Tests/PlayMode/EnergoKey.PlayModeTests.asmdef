@@ -1,0 +1,20 @@
+{
+  "name": "EnergoKey.PlayModeTests",
+  "rootNamespace": "EnergoKey.Tests.PlayMode",
+  "references": [
+    "EnergoKey.Runtime",
+    "Unity.ugui"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

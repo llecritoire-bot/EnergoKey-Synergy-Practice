@@ -22,6 +22,8 @@ Exit codes:
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import os
 import re
 import shutil
@@ -29,6 +31,7 @@ import struct
 import subprocess
 import sys
 import textwrap
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
@@ -40,6 +43,22 @@ NOT_VERIFIED = "NOT VERIFIED"
 
 EXPECTED_UNITY_VERSION = "6000.6.2f1"
 EXPECTED_PRODUCT_VERSION = "1.0.0"
+EXPECTED_PLAYMODE_TEST_COUNT = 17
+
+RESPONSIVE_RESOLUTIONS: Dict[str, Tuple[int, int]] = {
+    "1280x720": (1280, 720),
+    "1440x720": (1440, 720),
+    "1024x768": (1024, 768),
+}
+RESPONSIVE_STATES = (
+    "MainMenu",
+    "LevelSelect",
+    "Gameplay",
+    "Pause",
+    "Victory",
+    "Defeat",
+    "Settings",
+)
 
 FORBIDDEN_DIRECTORY_NAMES = {
     "library",
@@ -900,6 +919,470 @@ def check_prefabs_and_meta(root: Path, reporter: Reporter) -> None:
         reporter.add(FAIL, "unity.asset_meta_coverage", "Assets directory is missing")
 
 
+def load_json_object(path: Path) -> Tuple[Optional[Dict[str, object]], str]:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8-sig"))
+    except OSError as exc:
+        return None, str(exc)
+    except (UnicodeError, json.JSONDecodeError) as exc:
+        return None, f"invalid JSON: {exc}"
+    if not isinstance(data, dict):
+        return None, "top-level JSON value is not an object"
+    return data, ""
+
+
+def check_evidence_privacy(root: Path, reporter: Reporter) -> None:
+    sanitizer = root / "Tools" / "sanitize_evidence.py"
+    if not sanitizer.is_file():
+        reporter.add(
+            FAIL,
+            "evidence.privacy_check",
+            "Tools/sanitize_evidence.py is missing",
+        )
+        return
+
+    try:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(sanitizer),
+                "--root",
+                str(root),
+                "--check",
+            ],
+            cwd=str(root),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            timeout=60,
+            check=False,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        reporter.add(
+            NOT_VERIFIED,
+            "evidence.privacy_check",
+            "Could not execute the read-only evidence privacy check",
+            str(exc),
+        )
+        return
+
+    output = "\n".join(
+        part.strip() for part in (completed.stdout, completed.stderr) if part.strip()
+    )
+    if len(output) > 4000:
+        output = output[:4000] + "\n... output truncated"
+
+    if completed.returncode == 0:
+        reporter.add(
+            PASS,
+            "evidence.privacy_check",
+            "sanitize_evidence.py --check found no machine-local metadata",
+            output,
+        )
+    elif completed.returncode == 1:
+        reporter.add(
+            FAIL,
+            "evidence.privacy_check",
+            "Evidence still contains machine-local metadata requiring redaction",
+            output,
+        )
+    else:
+        reporter.add(
+            FAIL,
+            "evidence.privacy_check",
+            f"Evidence privacy check exited with code {completed.returncode}",
+            output,
+        )
+
+
+def check_playmode_results(root: Path, reporter: Reporter) -> None:
+    relative_path = "EVIDENCE/PlayModeTests-final.xml"
+    path = root / relative_path
+    try:
+        test_run = ET.parse(path).getroot()
+    except OSError as exc:
+        reporter.add(FAIL, "tests.playmode", f"Missing or unreadable {relative_path}", str(exc))
+        return
+    except ET.ParseError as exc:
+        reporter.add(FAIL, "tests.playmode", f"Invalid XML in {relative_path}", str(exc))
+        return
+
+    expected = EXPECTED_PLAYMODE_TEST_COUNT
+    test_cases = list(test_run.iter("test-case"))
+    integer_fields = {
+        "testcasecount": expected,
+        "total": expected,
+        "passed": expected,
+        "failed": 0,
+        "inconclusive": 0,
+        "skipped": 0,
+    }
+    problems: List[str] = []
+    if test_run.get("result") != "Passed":
+        problems.append(f"result={test_run.get('result')!r}")
+    for name, expected_value in integer_fields.items():
+        raw = test_run.get(name)
+        try:
+            actual = int(raw) if raw is not None else None
+        except ValueError:
+            actual = None
+        if actual != expected_value:
+            problems.append(f"{name}={raw!r}, expected {expected_value}")
+    if len(test_cases) != expected:
+        problems.append(f"test-case elements={len(test_cases)}, expected {expected}")
+    non_passed = [
+        case.get("fullname") or case.get("name") or "<unnamed>"
+        for case in test_cases
+        if case.get("result") != "Passed"
+    ]
+    if non_passed:
+        problems.append("non-passed cases: " + ", ".join(non_passed))
+
+    if problems:
+        reporter.add(
+            FAIL,
+            "tests.playmode",
+            f"PlayMode result is not an exact {expected}/{expected} pass",
+            "; ".join(problems),
+        )
+    else:
+        reporter.add(
+            PASS,
+            "tests.playmode",
+            f"PlayMode XML records exactly {expected}/{expected} passed tests",
+            relative_path,
+        )
+
+
+def check_persistence_restart_probe(root: Path, reporter: Reporter) -> None:
+    relative_path = "EVIDENCE/PERSISTENCE_RESTART_PROBE.json"
+    data, error = load_json_object(root / relative_path)
+    if data is None:
+        reporter.add(FAIL, "evidence.persistence_restart", f"Could not read {relative_path}", error)
+        return
+
+    expected_values: Dict[str, object] = {
+        "status": "PASS",
+        "processCount": 2,
+        "unlockedLevel": 3,
+        "bestScore": 650,
+        "tutorialSeen": True,
+        "valuesMatched": True,
+        "isolatedKeysCleaned": True,
+    }
+    problems = [
+        f"{name}={data.get(name)!r}, expected {expected!r}"
+        for name, expected in expected_values.items()
+        if data.get(name) != expected
+    ]
+    volume = data.get("masterVolume")
+    if (
+        not isinstance(volume, (int, float))
+        or isinstance(volume, bool)
+        or abs(float(volume) - 0.37) > 0.0001
+    ):
+        problems.append(f"masterVolume={volume!r}, expected 0.37")
+    phase_one = data.get("phaseOneUtc")
+    phase_two = data.get("phaseTwoUtc")
+    if not isinstance(phase_one, str) or not phase_one.strip():
+        problems.append("phaseOneUtc is missing")
+    if not isinstance(phase_two, str) or not phase_two.strip():
+        problems.append("phaseTwoUtc is missing")
+    if phase_one == phase_two:
+        problems.append("phase timestamps are identical")
+
+    if problems:
+        reporter.add(
+            FAIL,
+            "evidence.persistence_restart",
+            "Two-process persistence probe is incomplete or inconsistent",
+            "; ".join(problems),
+        )
+    else:
+        reporter.add(
+            PASS,
+            "evidence.persistence_restart",
+            "Persistence probe passed in two processes with all expected values restored",
+            "level=3; bestScore=650; volume=0.37; tutorialSeen=true",
+        )
+
+
+def check_profiler_benchmark(root: Path, reporter: Reporter) -> None:
+    specifications = (
+        (
+            "before",
+            root / "EVIDENCE" / "PROFILER_BENCHMARK_BEFORE.json",
+            "before-per-frame",
+            600,
+            600,
+        ),
+        (
+            "after",
+            root / "EVIDENCE" / "PROFILER_BENCHMARK_AFTER.json",
+            "after-event-driven",
+            5,
+            5,
+        ),
+    )
+    loaded: Dict[str, Dict[str, object]] = {}
+    problems: List[str] = []
+    for label, path, expected_stage, expected_samples, expected_active in specifications:
+        data, error = load_json_object(path)
+        if data is None:
+            problems.append(f"{label}: {error}")
+            continue
+        loaded[label] = data
+        expected_fields: Dict[str, object] = {
+            "schema": "energokey-profiler-benchmark-v1",
+            "status": "PASS",
+            "stage": expected_stage,
+            "unityVersion": EXPECTED_UNITY_VERSION,
+            "warmupFrames": 120,
+            "measuredFrames": 600,
+            "notificationCount": 5,
+            "recorderSampleCount": expected_samples,
+            "activeMarkerFrames": expected_active,
+        }
+        for name, expected in expected_fields.items():
+            if data.get(name) != expected:
+                problems.append(
+                    f"{label}.{name}={data.get(name)!r}, expected {expected!r}"
+                )
+        revision = data.get("revision")
+        if not isinstance(revision, str) or not re.fullmatch(r"(?i)[0-9a-f]{40}", revision):
+            problems.append(f"{label}.revision is not a full Git hash")
+        total_ns = data.get("totalNanoseconds")
+        mean_ns = data.get("meanPerMeasuredFrameNanoseconds")
+        if (
+            not isinstance(total_ns, (int, float))
+            or isinstance(total_ns, bool)
+            or total_ns <= 0
+        ):
+            problems.append(f"{label}.totalNanoseconds is not positive")
+        if (
+            not isinstance(mean_ns, (int, float))
+            or isinstance(mean_ns, bool)
+            or mean_ns <= 0
+        ):
+            problems.append(f"{label}.meanPerMeasuredFrameNanoseconds is not positive")
+
+    if set(loaded) == {"before", "after"}:
+        before = loaded["before"]
+        after = loaded["after"]
+        for field in (
+            "schema",
+            "unityVersion",
+            "processor",
+            "scenario",
+            "warmupFrames",
+            "measuredFrames",
+            "notificationCount",
+        ):
+            if before.get(field) != after.get(field):
+                problems.append(f"before/after {field} differs")
+        before_total = before.get("totalNanoseconds")
+        after_total = after.get("totalNanoseconds")
+        before_mean = before.get("meanPerMeasuredFrameNanoseconds")
+        after_mean = after.get("meanPerMeasuredFrameNanoseconds")
+        if (
+            isinstance(before_total, (int, float))
+            and isinstance(after_total, (int, float))
+            and not isinstance(before_total, bool)
+            and not isinstance(after_total, bool)
+            and after_total >= before_total
+        ):
+            problems.append("after.totalNanoseconds is not lower than before")
+        if (
+            isinstance(before_mean, (int, float))
+            and isinstance(after_mean, (int, float))
+            and not isinstance(before_mean, bool)
+            and not isinstance(after_mean, bool)
+            and after_mean >= before_mean
+        ):
+            problems.append("after.meanPerMeasuredFrameNanoseconds is not lower than before")
+
+    if problems:
+        reporter.add(
+            FAIL,
+            "evidence.profiler_benchmark",
+            "Profiler before/after benchmark is incomplete or inconsistent",
+            "; ".join(problems),
+        )
+    else:
+        reporter.add(
+            PASS,
+            "evidence.profiler_benchmark",
+            "Profiler before/after results both PASS with 600 measured frames under one scenario",
+            "before active frames=600; after active frames=5",
+        )
+
+
+def expected_responsive_images() -> Dict[str, Tuple[int, int]]:
+    return {
+        f"RESP_{resolution}_{state}.png": dimensions
+        for resolution, dimensions in RESPONSIVE_RESOLUTIONS.items()
+        for state in RESPONSIVE_STATES
+    }
+
+
+def check_responsive_images(root: Path, reporter: Reporter) -> None:
+    directory = root / "EVIDENCE" / "responsive"
+    expected = expected_responsive_images()
+    actual = (
+        {
+            path.name: path
+            for path in directory.glob("RESP_*.png")
+            if path.is_file()
+        }
+        if directory.is_dir()
+        else {}
+    )
+
+    missing = sorted(set(expected) - set(actual))
+    extra = sorted(set(actual) - set(expected))
+    invalid: List[str] = []
+    for name, expected_dimensions in expected.items():
+        path = actual.get(name)
+        if path is None:
+            continue
+        dimensions, reason = image_dimensions(path)
+        if dimensions != expected_dimensions or "PNG" not in reason.upper():
+            shown = "unreadable" if dimensions is None else f"{dimensions[0]}x{dimensions[1]}"
+            invalid.append(
+                f"{name}={shown}, expected {expected_dimensions[0]}x{expected_dimensions[1]} ({reason})"
+            )
+
+    if missing or extra or invalid or len(actual) != 21:
+        detail: List[str] = [f"RESP PNG count={len(actual)}, expected 21"]
+        if missing:
+            detail.append("missing: " + ", ".join(missing))
+        if extra:
+            detail.append("extra: " + ", ".join(extra))
+        if invalid:
+            detail.append("invalid: " + ", ".join(invalid))
+        reporter.add(
+            FAIL,
+            "screenshots.responsive_matrix",
+            "Responsive evidence is not the exact seven-state by three-resolution matrix",
+            "; ".join(detail),
+        )
+    else:
+        reporter.add(
+            PASS,
+            "screenshots.responsive_matrix",
+            "All 21 RESP PNGs have the exact required 7x3 names and dimensions",
+            "1280x720, 1440x720, and 1024x768; seven states each",
+        )
+
+
+def sha256_file(path: Path) -> Optional[str]:
+    digest = hashlib.sha256()
+    try:
+        with path.open("rb") as handle:
+            while True:
+                chunk = handle.read(1024 * 1024)
+                if not chunk:
+                    break
+                digest.update(chunk)
+    except OSError:
+        return None
+    return digest.hexdigest()
+
+
+def check_persistence_screenshot_uniqueness(root: Path, reporter: Reporter) -> None:
+    screenshots = root / "EVIDENCE" / "screenshots"
+    pairs = (
+        ("PP12_08_SavedProgressAfterRestart.png", "PP12_04_MainMenu_LevelSelect.png"),
+        ("PP12_09_SavedVolume.png", "PP12_12_Settings.png"),
+    )
+    problems: List[str] = []
+    details: List[str] = []
+    for evidence_name, comparison_name in pairs:
+        evidence_hash = sha256_file(screenshots / evidence_name)
+        comparison_hash = sha256_file(screenshots / comparison_name)
+        if evidence_hash is None:
+            problems.append(f"missing/unreadable {evidence_name}")
+        if comparison_hash is None:
+            problems.append(f"missing/unreadable {comparison_name}")
+        if evidence_hash is not None and comparison_hash is not None:
+            details.append(
+                f"{evidence_name}={evidence_hash[:12]}..., "
+                f"{comparison_name}={comparison_hash[:12]}..."
+            )
+            if evidence_hash == comparison_hash:
+                problems.append(f"{evidence_name} duplicates {comparison_name}")
+
+    if problems:
+        reporter.add(
+            FAIL,
+            "screenshots.persistence_uniqueness",
+            "Persistence screenshots are missing or duplicate their comparison screens",
+            "; ".join(problems),
+        )
+    else:
+        reporter.add(
+            PASS,
+            "screenshots.persistence_uniqueness",
+            "Saved-progress and saved-volume screenshots have distinct SHA-256 values",
+            "; ".join(details),
+        )
+
+
+def check_mac_standalone(root: Path, reporter: Reporter) -> None:
+    report_path = root / "EVIDENCE" / "MAC_STANDALONE_TEST.md"
+    runtime_path = root / "EVIDENCE" / "logs" / "mac-standalone-smoke.log"
+    report_text = read_text(report_path)
+    runtime_text = read_text(runtime_path)
+    problems: List[str] = []
+    if report_text is None:
+        problems.append("MAC_STANDALONE_TEST.md is missing or unreadable")
+    else:
+        required_report_patterns = (
+            (r"(?im)^-\s*Сборка:\s*\x60?PASS\x60?\s*$", "build PASS"),
+            (r"(?im)^-\s*Фактический запуск[^:]*:\s*\x60?PASS\x60?\s*$", "runtime PASS"),
+            (r"Apple M3", "Apple M3"),
+            (
+                rf"Unity:\s*\x60?{re.escape(EXPECTED_UNITY_VERSION)}\x60?",
+                "Unity version",
+            ),
+            (
+                rf"Версия игры:\s*\x60?{re.escape(EXPECTED_PRODUCT_VERSION)}\x60?",
+                "product version",
+            ),
+            (
+                r"(?i)физическ[^\r\n]*MacBook|MacBook[^\r\n]*физическ",
+                "physical MacBook statement",
+            ),
+        )
+        for pattern, label in required_report_patterns:
+            if not re.search(pattern, report_text):
+                problems.append(f"report lacks {label}")
+
+    marker = (
+        "ENERGOKEY_RUNTIME_READY: scene=MainMenu; "
+        f"version={EXPECTED_PRODUCT_VERSION}; unity={EXPECTED_UNITY_VERSION}"
+    )
+    if runtime_text is None:
+        problems.append("logs/mac-standalone-smoke.log is missing or unreadable")
+    elif marker not in runtime_text:
+        problems.append("runtime log lacks the exact readiness marker")
+
+    if problems:
+        reporter.add(
+            FAIL,
+            "evidence.mac_standalone",
+            "macOS standalone build/run evidence is incomplete",
+            "; ".join(problems),
+        )
+    else:
+        reporter.add(
+            PASS,
+            "evidence.mac_standalone",
+            "macOS standalone build and physical MacBook runtime marker are recorded",
+            marker,
+        )
+
+
 def run_git(root: Path, args: Sequence[str]) -> Tuple[Optional[int], str, str]:
     git = shutil.which("git")
     if git is None:
@@ -917,6 +1400,65 @@ def run_git(root: Path, args: Sequence[str]) -> Tuple[Optional[int], str, str]:
     except (OSError, subprocess.SubprocessError) as exc:
         return None, "", str(exc)
     return completed.returncode, completed.stdout.strip(), completed.stderr.strip()
+
+
+def check_stage_tag_2d_configuration(root: Path, reporter: Reporter) -> None:
+    for tag in EXPECTED_STAGE_TAGS:
+        editor_rc, editor_text, editor_error = run_git(
+            root,
+            ("show", f"{tag}:ProjectSettings/EditorSettings.asset"),
+        )
+        manifest_rc, manifest_text, manifest_error = run_git(
+            root,
+            ("show", f"{tag}:Packages/manifest.json"),
+        )
+        problems: List[str] = []
+        if editor_rc is None or manifest_rc is None:
+            detail = editor_error or manifest_error or "git executable is unavailable"
+            reporter.add(
+                NOT_VERIFIED,
+                "git.stage_2d." + tag,
+                f"Could not inspect the 2D configuration at tag {tag}",
+                detail,
+            )
+            continue
+        if editor_rc != 0:
+            problems.append("ProjectSettings/EditorSettings.asset is unavailable")
+        elif not re.search(
+            r"(?m)^\s*m_DefaultBehaviorMode:\s*1\s*$",
+            editor_text,
+        ):
+            problems.append("m_DefaultBehaviorMode is not 1")
+
+        if manifest_rc != 0:
+            problems.append("Packages/manifest.json is unavailable")
+        else:
+            try:
+                manifest = json.loads(manifest_text)
+            except json.JSONDecodeError as exc:
+                problems.append(f"Packages/manifest.json is invalid JSON: {exc}")
+            else:
+                dependencies = manifest.get("dependencies") if isinstance(manifest, dict) else None
+                if not isinstance(dependencies, dict) or "com.unity.2d.sprite" not in dependencies:
+                    problems.append("com.unity.2d.sprite dependency is missing")
+
+        if problems:
+            detail = "; ".join(problems)
+            errors = "; ".join(item for item in (editor_error, manifest_error) if item)
+            if errors:
+                detail += "; git: " + errors
+            reporter.add(
+                FAIL,
+                "git.stage_2d." + tag,
+                f"Stage tag {tag} is not a Unity 2D project snapshot",
+                detail,
+            )
+        else:
+            reporter.add(
+                PASS,
+                "git.stage_2d." + tag,
+                f"Stage tag {tag} contains the 2D behavior mode and 2D Sprite package",
+            )
 
 
 def check_git(root: Path, reporter: Reporter) -> None:
@@ -1121,12 +1663,20 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     matrix_path = find_matrix(root, args.matrix)
     screenshot_names, _matrix_verified = load_screenshot_names(matrix_path, reporter)
     check_screenshot_files(root, screenshot_names, reporter)
+    check_persistence_screenshot_uniqueness(root, reporter)
+    check_responsive_images(root, reporter)
 
     check_release_images(root, reporter)
     check_release_documents(root, reporter)
     check_product_version(root, reporter)
     check_prefabs_and_meta(root, reporter)
+    check_playmode_results(root, reporter)
+    check_persistence_restart_probe(root, reporter)
+    check_profiler_benchmark(root, reporter)
+    check_mac_standalone(root, reporter)
+    check_evidence_privacy(root, reporter)
     check_git(root, reporter)
+    check_stage_tag_2d_configuration(root, reporter)
 
     return reporter.print_report()
 

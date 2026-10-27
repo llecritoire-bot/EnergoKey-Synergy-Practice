@@ -281,6 +281,7 @@ public sealed class PauseController : MonoBehaviour
     private void OnApplicationFocus(bool hasFocus)
     {
         applicationHasFocus = hasFocus;
+        Debug.Log($"ENERGOKEY_FOCUS_EVENT: hasFocus={hasFocus}; autoPause={pauseOnFocusLoss}; state={(timerSource != null ? timerSource.State.ToString() : "unbound")}");
         if (!hasFocus && pauseOnFocusLoss)
         {
             PauseGame();
@@ -290,6 +291,7 @@ public sealed class PauseController : MonoBehaviour
     private void OnApplicationPause(bool pauseStatus)
     {
         applicationHasFocus = !pauseStatus;
+        Debug.Log($"ENERGOKEY_PAUSE_EVENT: paused={pauseStatus}; autoPause={pauseOnFocusLoss}; state={(timerSource != null ? timerSource.State.ToString() : "unbound")}");
         if (pauseStatus && pauseOnFocusLoss)
         {
             PauseGame();

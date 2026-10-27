@@ -1,0 +1,5 @@
+ENERGOKEY_RUNTIME_READY: scene=Level1; version=1.0.0; unity=6000.6.2f1
+ENERGOKEY_PAUSE_EVENT: paused=False; autoPause=True; state=Playing
+ENERGOKEY_FOCUS_EVENT: hasFocus=True; autoPause=True; state=Playing
+ENERGOKEY_FOCUS_EVENT: hasFocus=False; autoPause=True; state=Playing
+ENERGOKEY_PAUSE_EVENT: paused=True; autoPause=True; state=Playing

@@ -1,0 +1,22 @@
+{
+  "name": "EnergoKey.ProfilerBenchmark",
+  "rootNamespace": "EnergoKey.Tests.ProfilerBenchmark",
+  "references": [
+    "EnergoKey.Runtime",
+    "Unity.ugui"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

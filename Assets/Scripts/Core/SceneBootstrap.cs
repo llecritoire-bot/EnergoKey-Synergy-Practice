@@ -24,6 +24,7 @@ public sealed class SceneBootstrap : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log($"ENERGOKEY_RUNTIME_READY: scene={SceneManager.GetActiveScene().name}; version={Application.version}; unity={Application.unityVersion}");
         AudioService.Ensure();
         Time.timeScale = 1f;
         BuildApplicationShell();
@@ -203,8 +204,8 @@ public sealed class SceneBootstrap : MonoBehaviour
             CreateLevelCard(root, level, (level - 2) * 290f);
         }
 
-        CreateFittedButton(root, "BackButton", "НАЗАД", NavigateToMainMenu, new Vector2(0f, -275f), new Vector2(240f, 58f));
-        Text hint = UIFactory.CreateText(root, "UnlockHint", "Следующий уровень открывается только после победы", 20, TextAnchor.MiddleCenter, new Vector2(0.1f, 0.12f), new Vector2(0.9f, 0.20f), Vector2.zero, Vector2.zero);
+        CreateFittedButton(root, "BackButton", "НАЗАД", NavigateToMainMenu, new Vector2(0f, -200f), new Vector2(240f, 58f));
+        Text hint = UIFactory.CreateText(root, "UnlockHint", "Следующий уровень открывается только после победы", 20, TextAnchor.MiddleCenter, new Vector2(0.1f, 0.02f), new Vector2(0.9f, 0.09f), Vector2.zero, Vector2.zero);
         hint.color = new Color(0.75f, 0.82f, 0.9f);
     }
 

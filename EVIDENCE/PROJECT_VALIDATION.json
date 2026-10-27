@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion": "1.0",
-    "generatedAtUtc": "2026-10-27T13:56:58.6747710Z",
+    "generatedAtUtc": "2026-10-27T14:58:15.9646590Z",
     "unityVersion": "6000.6.2f1",
     "projectRoot": "[USER_HOME]/Desktop/untitled folder 2/EnergoKey",
     "overallStatus": "PASS",
@@ -1390,28 +1390,28 @@
         },
         {
             "path": "README.md",
-            "bytes": 13717,
-            "sha256": "7665f016d5ac9771f9f0c9d3333af37b10f967dfd849c944e16d81c1159c89c8"
+            "bytes": 16453,
+            "sha256": "7ae0e134b6ebe46a1acb2c08fd4377b513b182ecf834e41ff8e11ed42b8f4ffa"
         },
         {
             "path": "Release/Docs/CHANGELOG.md",
-            "bytes": 1740,
-            "sha256": "0bcdb9bb768f47171649df16ea3738f6b28ae34c04863bbb77c1d1d4d75bfce6"
+            "bytes": 1739,
+            "sha256": "fcd17958dd05f1a592a7f8e0950105ea37813f2f2c6697ad37902e259200a726"
         },
         {
             "path": "Release/Docs/CREDITS.md",
-            "bytes": 1339,
-            "sha256": "1f7c5806ca8b95141897a87806ef69425af3955b790c380e699d4c499857d6ea"
+            "bytes": 1338,
+            "sha256": "1241d9d784955b8fbb7470fea6965acef7bed326fc529764a98390baf09cef69"
         },
         {
             "path": "Release/Docs/DESCRIPTION.md",
-            "bytes": 2031,
-            "sha256": "54703d54a1707f8d245073f26dfbce37889925e9a184a293e96f91a41e822a80"
+            "bytes": 2029,
+            "sha256": "f0dca11b02f4d250a067e8380a4f009e351f12225fd91bbd02169cc16af7fbbe"
         },
         {
             "path": "Release/Docs/PLAYER_GUIDE.md",
-            "bytes": 3502,
-            "sha256": "b8b8235f3e5ec51f1d3f719ccdbcf27e2225581d518b64de080c34c6bdc06099"
+            "bytes": 3501,
+            "sha256": "a797ca04f5756c9cc6be369fc14c86fac320f53d46eec5af15d82cd2320573ad"
         },
         {
             "path": "Release/icon_512.png",
@@ -1430,8 +1430,8 @@
         },
         {
             "path": "Release/storyboard.md",
-            "bytes": 3148,
-            "sha256": "2ed596a052802f973c36de3cdcb21fccbea7f2268ab6368cbb1fa237b733319f"
+            "bytes": 3147,
+            "sha256": "540405efcdf52c135d9236e868d8faf937a4e096e7280657970fdddb103650a7"
         }
     ],
     "limitations": [

@@ -1,0 +1,23 @@
+{
+    "schema": "energokey-profiler-benchmark-v1",
+    "status": "PASS",
+    "stage": "before-per-frame",
+    "revision": "f616afd3be9b8586eba9f7d76af568f11bd2e9c3",
+    "unityVersion": "6000.6.2f1",
+    "processor": "Apple M3",
+    "marker": "EnergoKey.HUD.PerFrameRefresh",
+    "profilerApi": "Unity.Profiling.ProfilerRecorder",
+    "scenario": "120 warm-up frames, then 600 measured frames; unchanged HUD state; notifications at measured frames 0, 120, 240, 360, 480",
+    "warmupFrames": 120,
+    "measuredFrames": 600,
+    "notificationCount": 5,
+    "recorderSampleCount": 600,
+    "activeMarkerFrames": 600,
+    "totalNanoseconds": 1158419,
+    "meanPerMeasuredFrameNanoseconds": 1930.6983333333333,
+    "meanPerActiveMarkerFrameNanoseconds": 1930.6983333333333,
+    "medianActiveFrameNanoseconds": 1709,
+    "p95ActiveFrameNanoseconds": 2958,
+    "minimumActiveFrameNanoseconds": 1500,
+    "maximumActiveFrameNanoseconds": 14125
+}

@@ -5,6 +5,7 @@
 ## Среда
 
 - Unity version: `6000.6.2f1` (`770e33f6875c`).
+- Устройство: физический MacBook с Apple M3.
 - OS: macOS 27.0, build 26A428; Darwin 27.0.0; arm64; без Rosetta.
 - Main scene: `Assets/Scenes/MainMenu.unity`.
 - Orientation: Landscape Left по умолчанию; разрешены Landscape Left/Right; портретные ориентации отключены.
@@ -13,7 +14,10 @@
 - Версия игры: `1.0.0`.
 - Итоговая компиляция: PASS, `EVIDENCE/logs/final-compile.log`.
 - EditMode: PASS, 24/24; итоговый прогон начат `2026-10-27 13:59:08Z`, `EVIDENCE/EditModeTests-final.xml`, `EVIDENCE/logs/editmode-tests-final.log`.
+- PlayMode: PASS, 17/17; физика, UI, три уровня, Restart, обучение, Pause, callback-логика фокуса, responsive renders и независимые кадры сохранений, `EVIDENCE/PlayModeTests-final.xml`.
 - Структурная проверка: PASS, 165/165, включая `ENV-2D-SPRITE-PACKAGE` и `ENV-2D-DEFAULT-MODE`, `EVIDENCE/PROJECT_VALIDATION.md`.
+- macOS Standalone Development Build: PASS, 0 ошибок, 0 предупреждений; фактический запуск MainMenu подтверждён runtime-маркером, `EVIDENCE/MAC_STANDALONE_TEST.md`.
+- PlayerPrefs между независимыми Unity-процессами: PASS, `EVIDENCE/PERSISTENCE_RESTART_PROBE.md`.
 
 ## Визуальная палитра
 
@@ -73,7 +77,7 @@
 | 2 | 4 | 4 | Более плотная схема и дополнительная стена | PASS по структурной проверке; Game View: `screenshots/PP12_02_Level2.png` |
 | 3 | 5 | 6 | Наибольшее число объектов и пять внутренних стен | PASS по структурной проверке; Game View: `screenshots/PP12_03_Level3.png` |
 
-Непрерывное ручное прохождение всех трёх уровней от начала до финала не зафиксировано; этот пункт указан в `MISSING_EVIDENCE.md`.
+Полный последовательный L1–L3 flow проверен PlayMode-тестом: уровни открываются по порядку, финал L3 возвращает в меню и не создаёт L4. Это автоматизированный runtime-прогон Unity, а не видеозапись ручного прохождения.
 
 ## Сохранения
 
@@ -91,7 +95,7 @@
 - громкость ограничивается диапазоном 0–1 и читается после записи;
 - `tutorialSeen` сохраняется.
 
-Источник: `EVIDENCE/EditModeTests-final.xml`, 24/24 Passed. Фактический перезапуск приложения с записью значений до/после не проведён.
+Источники: `EVIDENCE/EditModeTests-final.xml` (24/24), `EVIDENCE/PlayModeTests-final.xml` (17/17) и двухпроцессный `EVIDENCE/PERSISTENCE_RESTART_PROBE.md`. Процесс WRITE полностью завершился до запуска READ; повторно получены `unlockedLevel=3`, `bestScore=650`, `masterVolume=0.37`, `tutorialSeen=true`. Кадры `PP12_08_SavedProgressAfterRestart.png` и `PP12_09_SavedVolume.png` заново созданы Unity как независимые runtime-renders 1366×768 и отличаются от прежних comparison-кадров.
 
 ## Git
 
@@ -115,41 +119,50 @@
 
 ## Profiler
 
-- Сцена и условия: Unity Editor Play Mode, CPU Usage; реальные снимки Profiler до и после изменения. Оба кадра относятся к работе игры в Editor, но отображают разные выбранные номера кадров и разные режимы детализации нижней панели.
-- Что изменено: HUD переведён с обновления текстов каждый кадр на подписку на `GameController.StateChanged`; таймер обновляется только при смене целой секунды.
-- До: на выбранном одиночном кадре видно `CPU: 3.63 ms` — `screenshots/PP12_10_ProfilerBefore.png`.
-- После: на выбранном одиночном кадре видно `CPU: 1.19 ms` — `screenshots/PP12_11_ProfilerAfter.png`.
-- Вывод: на двух выбранных кадрах значение после ниже. Эти два числа не являются средним, медианой или серией измерений; статистическая значимость и точный вклад изменения не заявляются.
+- Изменение: HUD переведён с полного обновления каждый кадр на подписку `GameController.StateChanged`; таймер обновляется только при смене секунды.
+- Сравниваемые ревизии: `f616afd3be9b8586eba9f7d76af568f11bd2e9c3` до и `2c60fe4ea10b9e95401f5909dffa915f09d407cd` после.
+- Одинаковый сценарий: 120 кадров прогрева, затем 600 измеренных кадров; один HUD, четыре Text и пять одинаковых изменений состояния.
+- До: marker полного HUD refresh присутствовал в 600/600 кадрах, суммарно 1 158 419 ns.
+- После: marker событийного refresh присутствовал в 5/600 кадрах, суммарно 40 085 ns.
+- В одинаковом microbenchmark число полных обновлений снизилось с 600 до 5, суммарное время целевого marker — примерно в 28.90 раза. Это не заявляется как ускорение полного кадра всей игры.
+- Машинные результаты: `PROFILER_BENCHMARK.md`, `PROFILER_BENCHMARK_BEFORE.json`, `PROFILER_BENCHMARK_AFTER.json`.
+- Реальные GUI-кадры Profiler также сохранены: `screenshots/PP12_10_ProfilerBefore.png` и `screenshots/PP12_11_ProfilerAfter.png`.
 
 ## Пользовательская проверка
 
 - Внешний новый пользователь был: нет.
 - Самостоятельная проверка выполнена: да.
+- Пользователь-заказчик подтвердил общую работу проекта на физическом MacBook с Apple M3: `PASS (USER-REPORTED)`; дословная фиксация — `EVIDENCE/USER_ACCEPTANCE.md`.
+- Пользователь-заказчик заранее знаком с ТЗ и не выдаётся за нового пользователя.
+- MacBook является физическим компьютером macOS, но не мобильным Android/iOS-устройством.
 - Затруднение: в 4:3 нижняя кнопка D-pad частично выходила за видимую область.
 - Исправление: блок D-pad поднят на 35 px; нижняя кнопка перемещена с `y=15` на `y=50`.
 - Повторная проверка: PASS в Unity Game View 1024×768; кнопка отображается целиком.
-- Подробности: `EVIDENCE/USER_TEST.md`.
+- Дополнительное найденное отклонение: в Level Select 1024×768 подсказка пересекалась с кнопкой «Назад»; положение исправлено и закреплено assertion `BackButton.Overlaps(UnlockHint) == false`.
+- Подробности: `EVIDENCE/USER_TEST.md`, `EVIDENCE/USER_ACCEPTANCE.md`, `EVIDENCE/responsive/BEFORE_1024x768_LevelSelect_overlap.png`, `EVIDENCE/responsive/RESP_1024x768_LevelSelect.png`.
 
 ## Тесты ПП.ПМ.13
 
 | ID | Фактическое наблюдение | Статус | Рисунок/лог |
 |---|---|---|---|
-| T01 | Gameplay проверен в 16:9, 18:9 и 4:3; не все семь экранов проверены во всех трёх форматах. | NOT VERIFIED | `screenshots/PP13_02_16x9.png`–`PP13_04_4x3.png` |
-| T02 | Safe Area включена в Editor, HUD и кнопки видны внутри границы. | PASS | `screenshots/PP13_05_SafeAreaSimulation.png` |
-| T03 | Полный обход всех кнопок мышью не записан. | NOT VERIFIED | `MISSING_EVIDENCE.md` |
-| T04 | Фактическая проверка клика через каждую скрытую панель не записана. | NOT VERIFIED | `MISSING_EVIDENCE.md` |
-| T05 | Карточка 1 показана; автоматический первый запуск на чистом ключе не записан. | NOT VERIFIED | `screenshots/TUTORIAL_01_Controls.png` |
-| T06 | Показаны три карточки; полный переход «Далее» до меню не записан. | NOT VERIFIED | `screenshots/TUTORIAL_01_Controls.png`–`TUTORIAL_03_Completion.png` |
-| T07 | Сохранение `tutorialSeen` прошло EditMode-тест; полный UI-сценарий Skip/Finish и новый Play не выполнен. | NOT VERIFIED | `EditModeTests-final.xml` |
-| T08 | Кнопка и карточка 1 существуют; переход именно через «Как играть» не записан. | NOT VERIFIED | `screenshots/UP13_09_MainMenu.png` |
-| T09 | Панель паузы показана; числовое `Time.timeScale` во время появления не записано. | NOT VERIFIED | `screenshots/PP13_07_PauseTransition.png` |
-| T10 | Серия быстрых повторных кликов не проводилась. | NOT VERIFIED | `MISSING_EVIDENCE.md` |
+| T01 | Unity создал 21 runtime-render: Main Menu, Level Select, Gameplay, Pause, Victory, Defeat и Settings в 1280×720, 1440×720 и 1024×768; bounds assertions PASS. | PASS | `responsive/RESP_*.png`, `PlayModeTests-final.xml` |
+| T02 | Имитация Safe Area показана; все видимые controls в 21 render прошли проверку границ. | PASS | `screenshots/PP13_05_SafeAreaSimulation.png`, `PlayModeTests-final.xml` |
+| T03 | Pointer-тест прошёл обязательные кнопки Main Menu → Level Select → Gameplay и проверил D-pad/Pause. | PASS | `PlayModeTests-final.xml` |
+| T04 | Скрытые панели исключены из raycasts; underlying D-pad сохранил ввод. | PASS | `PlayModeTests-final.xml` |
+| T05 | При чистом `tutorialSeen=false` автоматически открылась карточка «Управление», 1/3. | PASS | `PlayModeTests-final.xml` |
+| T06 | «Далее» последовательно открыл 1/3, 2/3, 3/3 и вернул Main Menu. | PASS | `PlayModeTests-final.xml` |
+| T07 | Skip сохранил tutorialSeen, level, score и volume; после reload автопоказа не было. | PASS | `PlayModeTests-final.xml`, `PERSISTENCE_RESTART_PROBE.md` |
+| T08 | «Как играть» повторно открыл карточку «Управление», 1/3. | PASS | `PlayModeTests-final.xml` |
+| T09 | Во время fade подтверждены `Time.timeScale=0`, Pause и состояние transition. | PASS | `PlayModeTests-final.xml` |
+| T10 | Быстрые повторные Toggle/Pause/Resume проигнорированы до окончания transition; Resume завершился корректно. | PASS | `PlayModeTests-final.xml` |
 | T11 | Version 1.0.0 совпадает в About, Player Settings и README. | PASS | `screenshots/PP13_09_AboutScreen.png`, `PROJECT_VALIDATION.md` |
-| T12 | 57 Evidence PNG и 9 Release PNG распознаны; обязательная матрица полна. | PASS | `FILE_MANIFEST.md` |
-| T13 | Честный self-test с реальной проблемой 4:3 и кадрами до/после. | PASS | `USER_TEST.md`, `screenshots/PP13_10_BeforeUserFix.png`, `screenshots/PP13_11_AfterUserFix.png` |
-| T14 | Правило показано, но понимание новым пользователем не проверено. | NOT VERIFIED | `screenshots/TUTORIAL_02_SpecialRule.png` |
-| T15 | Отдельные состояния трёх уровней, Victory, Defeat и сохранений показаны; полного прохождения с перезапуском нет. | NOT VERIFIED | `TEST_RESULTS.md` |
+| T12 | Обязательная PNG-матрица полна; дополнительно созданы 21 валидный Unity runtime-render точных размеров. | PASS | `FILE_MANIFEST.md`, `responsive/RESP_*.png` |
+| T13 | Self-test UX-01 и Level Select overlap 4:3 зафиксированы до/после; пользовательская приёмка MacBook M3 записана отдельно. | PASS | `USER_TEST.md`, `USER_ACCEPTANCE.md`, `responsive/BEFORE_1024x768_LevelSelect_overlap.png`, `responsive/RESP_1024x768_LevelSelect.png` |
+| T14 | Внешний новый пользователь не привлекался; знакомый с ТЗ пользователь-заказчик не считается новым. | NOT VERIFIED | `USER_TEST.md`, `USER_ACCEPTANCE.md` |
+| T15 | PlayMode прошёл L1–L3, Victory, Defeat/Restart; независимые процессы подтвердили сохранения. | PASS | `PlayModeTests-final.xml`, `PERSISTENCE_RESTART_PROBE.md` |
 | T16 | Чистая копия candidate commit `91bff8f861632c1846e512aa57306d21d4e9d3f1` успешно прошла compile, EditMode 24/24 и validation 165/165. Exact tagged clone и ZIP дополнительно проверяются пост-коммитно с записью в `DELIVERY_MANIFEST.txt`. | PASS | `FRESH_CLONE_VERIFICATION.md`, `FreshCloneTests-candidate.xml`, `logs/fresh-clone-candidate-*.log`, архивный `DELIVERY_MANIFEST.txt` |
+
+Итог ПП.ПМ.13: 15 PASS, 0 FAIL, 1 NOT VERIFIED.
 
 Полные ожидаемые и фактические результаты приведены в `EVIDENCE/TEST_RESULTS.md`.
 
@@ -158,12 +171,14 @@
 | Ошибка | Причина | Исправление | Проверка после исправления |
 |---|---|---|---|
 | `UX-01`: обрезание нижней кнопки D-pad в 1024×768 | Вертикальная позиция Down была 15 px при высоте кнопки 72 px | Весь D-pad поднят на 35 px; Down установлена на 50 px | PASS, `screenshots/PP13_10_BeforeUserFix.png` и `PP13_11_AfterUserFix.png` |
+| `UX-02`: подсказка Level Select пересекалась с кнопкой «Назад» в 1024×768 | Нижняя подсказка и BackButton занимали пересекающиеся области 4:3 | BackButton поднята с `y=-275` до `y=-200`; anchors подсказки перенесены ниже (`0.02–0.09`) | PASS, кадры `responsive/BEFORE_1024x768_LevelSelect_overlap.png` и `responsive/RESP_1024x768_LevelSelect.png`; assertion отсутствия overlap во всех трёх форматах при включённой Safe Area simulation |
 
 ## Ограничения
 
-- Непроверенные платформы: физические Android/iOS-устройства; отдельная мобильная сборка не создавалась.
-- Известные ошибки финальной компиляции: не обнаружены; batch compile завершился кодом 0.
-- Не подтверждены непрерывным ручным сценарием: полное прохождение L1–L3, естественные столкновения Player с кристаллом/опасностью/выходом, Restart, потеря фокуса, сохранения после закрытия приложения, быстрые повторные клики Pause.
-- Внешний новый пользователь не привлекался.
+- Непроверенные платформы: физические Android/iOS-устройства; мобильная сборка не создавалась. macOS Standalone на физическом MacBook Apple M3 собран и запущен успешно.
+- Известные ошибки Editor/Standalone-компиляции: не обнаружены; macOS build завершён с 0 errors и 0 warnings.
+- Реальное системное сворачивание macOS Standalone проверено: runtime зарегистрировал `hasFocus=False`/`paused=True`, а после возврата отображалась Pause с остановленным таймером (`FOCUS_LOSS_TEST.md`).
+- Полный L1–L3 flow, физические контакты, Restart, Pause и сохранения подтверждены автоматизированными runtime-прогонами Unity, но отдельное непрерывное видео ручного прохождения не создавалось.
+- Внешний новый пользователь не привлекался. Пользователь-заказчик сообщил `PASS (USER-REPORTED)` на MacBook M3, но заранее знаком с ТЗ.
 - Публичный Git URL отсутствует; fresh clone candidate commit подтверждён внутренними логами, а точная итоговая ревизия и состав ZIP подтверждаются пост-коммитным `DELIVERY_MANIFEST.txt` и аннотацией `pp-pm13-release`.
 - Word/PDF-отчёты, PowerPoint-презентации, подписи, справка о практике и загрузка в LMS не входят в этот Unity ZIP и требуют ручной подготовки/оформления.

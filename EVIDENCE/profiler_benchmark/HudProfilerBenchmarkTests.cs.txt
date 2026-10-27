@@ -1,0 +1,175 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using NUnit.Framework;
+using Unity.Profiling;
+using Unity.Profiling.LowLevel.Unsafe;
+using UnityEngine;
+using UnityEngine.Profiling;
+using UnityEngine.TestTools;
+using UnityEngine.UI;
+
+namespace EnergoKey.Tests.ProfilerBenchmark
+{
+    public sealed class HudProfilerBenchmarkTests
+    {
+        private const int WarmupFrames = 120;
+        private const int MeasuredFrames = 600;
+        private const int NotificationInterval = 120;
+
+        [Serializable]
+        private sealed class BenchmarkResult
+        {
+            public string schema = "energokey-profiler-benchmark-v1";
+            public string status;
+            public string stage;
+            public string revision;
+            public string unityVersion;
+            public string processor;
+            public string marker;
+            public string profilerApi = "Unity.Profiling.ProfilerRecorder";
+            public string scenario = "120 warm-up frames, then 600 measured frames; unchanged HUD state; notifications at measured frames 0, 120, 240, 360, 480";
+            public int warmupFrames;
+            public int measuredFrames;
+            public int notificationCount;
+            public int recorderSampleCount;
+            public int activeMarkerFrames;
+            public long totalNanoseconds;
+            public double meanPerMeasuredFrameNanoseconds;
+            public double meanPerActiveMarkerFrameNanoseconds;
+            public long medianActiveFrameNanoseconds;
+            public long p95ActiveFrameNanoseconds;
+            public long minimumActiveFrameNanoseconds;
+            public long maximumActiveFrameNanoseconds;
+        }
+
+        [UnityTest]
+        [Timeout(120000)]
+        public IEnumerator MeasureFixedHudScenarioWithProfilerRecorder()
+        {
+            string outputPath = Environment.GetEnvironmentVariable("ENERGOKEY_PROFILER_OUTPUT");
+            Assert.That(outputPath, Is.Not.Null.And.Not.Empty,
+                "ENERGOKEY_PROFILER_OUTPUT must name the sanitized JSON result file.");
+
+            string stage = Environment.GetEnvironmentVariable("ENERGOKEY_PROFILER_STAGE") ?? "unknown";
+            string revision = Environment.GetEnvironmentVariable("ENERGOKEY_PROFILER_REVISION") ?? "unknown";
+
+            GameObject controllerObject = new GameObject("ProfilerBenchmark.GameController");
+            GameController controller = controllerObject.AddComponent<GameController>();
+            GameObject hudObject = new GameObject("ProfilerBenchmark.HUD");
+            HUDController hud = hudObject.AddComponent<HUDController>();
+            Text crystals = CreateText("Crystals");
+            Text lives = CreateText("Lives");
+            Text score = CreateText("Score");
+            Text timer = CreateText("Timer");
+
+            MethodInfo notifyChanged = typeof(GameController).GetMethod(
+                "NotifyChanged", BindingFlags.Instance | BindingFlags.NonPublic);
+            Assert.That(notifyChanged, Is.Not.Null);
+
+            bool eventDriven = typeof(HUDController).GetMethod(
+                "RefreshState", BindingFlags.Instance | BindingFlags.NonPublic) != null;
+            string markerName = eventDriven
+                ? "EnergoKey.HUD.EventRefresh"
+                : "EnergoKey.HUD.PerFrameRefresh";
+
+            bool previousProfilerEnabled = Profiler.enabled;
+            Profiler.enabled = true;
+            hud.Configure(controller, crystals, lives, score, timer);
+
+            for (int frame = 0; frame < WarmupFrames; frame++)
+            {
+                yield return null;
+            }
+
+            List<long> samples = new List<long>(MeasuredFrames);
+            int recorderSamples = 0;
+            List<ProfilerRecorderHandle> availableHandles = new List<ProfilerRecorderHandle>();
+            ProfilerRecorderHandle.GetAvailable(availableHandles);
+            ProfilerRecorderHandle markerHandle = availableHandles.FirstOrDefault(handle =>
+                ProfilerRecorderHandle.GetDescription(handle).Name == markerName);
+            Assert.That(markerHandle.Valid, Is.True, $"Profiler marker was not registered: {markerName}");
+
+            using (ProfilerRecorder recorder = new ProfilerRecorder(
+                       markerHandle,
+                       64,
+                       ProfilerRecorderOptions.StartImmediately |
+                       ProfilerRecorderOptions.CollectOnlyOnCurrentThread |
+                       ProfilerRecorderOptions.WrapAroundWhenCapacityReached))
+            {
+                for (int frame = 0; frame < MeasuredFrames; frame++)
+                {
+                    if (frame % NotificationInterval == 0)
+                    {
+                        notifyChanged.Invoke(controller, null);
+                    }
+
+                    yield return null;
+                    List<ProfilerRecorderSample> frameSamples = new List<ProfilerRecorderSample>();
+                    recorder.CopyTo(frameSamples, true);
+                    recorderSamples += frameSamples.Count;
+                    samples.Add(frameSamples.Sum(sample => sample.Value));
+                }
+            }
+
+            Profiler.enabled = previousProfilerEnabled;
+            List<long> active = samples.Where(value => value > 0).OrderBy(value => value).ToList();
+            long total = samples.Sum();
+            BenchmarkResult result = new BenchmarkResult
+            {
+                status = active.Count > 0 ? "PASS" : "FAIL",
+                stage = stage,
+                revision = revision,
+                unityVersion = Application.unityVersion,
+                processor = SystemInfo.processorType,
+                marker = markerName,
+                warmupFrames = WarmupFrames,
+                measuredFrames = MeasuredFrames,
+                notificationCount = MeasuredFrames / NotificationInterval,
+                recorderSampleCount = recorderSamples,
+                activeMarkerFrames = active.Count,
+                totalNanoseconds = total,
+                meanPerMeasuredFrameNanoseconds = total / (double)MeasuredFrames,
+                meanPerActiveMarkerFrameNanoseconds = active.Count == 0 ? 0d : total / (double)active.Count,
+                medianActiveFrameNanoseconds = Percentile(active, 0.50),
+                p95ActiveFrameNanoseconds = Percentile(active, 0.95),
+                minimumActiveFrameNanoseconds = active.Count == 0 ? 0 : active[0],
+                maximumActiveFrameNanoseconds = active.Count == 0 ? 0 : active[active.Count - 1]
+            };
+
+            Directory.CreateDirectory(Path.GetDirectoryName(outputPath));
+            File.WriteAllText(outputPath, JsonUtility.ToJson(result, true) + Environment.NewLine,
+                new UTF8Encoding(false));
+
+            UnityEngine.Object.Destroy(hudObject);
+            UnityEngine.Object.Destroy(controllerObject);
+            UnityEngine.Object.Destroy(crystals.gameObject);
+            UnityEngine.Object.Destroy(lives.gameObject);
+            UnityEngine.Object.Destroy(score.gameObject);
+            UnityEngine.Object.Destroy(timer.gameObject);
+
+            Assert.That(result.status, Is.EqualTo("PASS"),
+                $"ProfilerRecorder captured no positive samples for {markerName}.");
+        }
+
+        private static Text CreateText(string name)
+        {
+            GameObject textObject = new GameObject("ProfilerBenchmark." + name, typeof(RectTransform));
+            return textObject.AddComponent<Text>();
+        }
+
+        private static long Percentile(IReadOnlyList<long> sortedValues, double percentile)
+        {
+            if (sortedValues.Count == 0) return 0;
+            int index = Mathf.Clamp(
+                Mathf.CeilToInt((float)(percentile * sortedValues.Count)) - 1,
+                0,
+                sortedValues.Count - 1);
+            return sortedValues[index];
+        }
+    }
+}
