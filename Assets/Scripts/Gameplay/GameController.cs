@@ -30,6 +30,8 @@ public sealed class GameController : MonoBehaviour
     private Text feedbackText;
     private GameObject victoryPanel;
     private GameObject defeatPanel;
+    private Text victorySummaryText;
+    private Text defeatSummaryText;
     private float damageBlockedUntil;
     private Coroutine feedbackRoutine;
 
@@ -58,9 +60,24 @@ public sealed class GameController : MonoBehaviour
         {
             ElapsedTime += Time.deltaTime;
         }
+
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.F3)) CollectAllForEvidence();
+        if (Input.GetKeyDown(KeyCode.F4)) WinForEvidence();
+        if (Input.GetKeyDown(KeyCode.F5)) DefeatForEvidence();
+        if (Input.GetKeyDown(KeyCode.F6)) TryUseExit();
+#endif
     }
 
-    public void Configure(int level, PlayerController playerController, ExitGate gate, Text feedback, GameObject victory, GameObject defeat)
+    public void Configure(
+        int level,
+        PlayerController playerController,
+        ExitGate gate,
+        Text feedback,
+        GameObject victory,
+        GameObject defeat,
+        Text victorySummary = null,
+        Text defeatSummary = null)
     {
         LevelIndex = Mathf.Clamp(level, 1, GameRules.MaxLevel);
         player = playerController;
@@ -68,6 +85,8 @@ public sealed class GameController : MonoBehaviour
         feedbackText = feedback;
         victoryPanel = victory;
         defeatPanel = defeat;
+        victorySummaryText = victorySummary;
+        defeatSummaryText = defeatSummary;
     }
 
     public void Collect(Collectible collectible)
@@ -134,12 +153,47 @@ public sealed class GameController : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
+    private void CollectAllForEvidence()
+    {
+        if (State != GameRunState.Playing) return;
+        foreach (Collectible collectible in FindObjectsByType<Collectible>())
+        {
+            if (collectible != null && collectible.gameObject.activeInHierarchy)
+            {
+                Collect(collectible);
+            }
+        }
+    }
+
+    private void WinForEvidence()
+    {
+        if (State != GameRunState.Playing) return;
+        CollectAllForEvidence();
+        Win();
+    }
+
+    private void DefeatForEvidence()
+    {
+        if (State != GameRunState.Playing) return;
+        Lives = 0;
+        Lose();
+    }
+#endif
+
     private void Win()
     {
         State = GameRunState.Victory;
         player?.SetInputEnabled(false);
         SaveService.RegisterVictory(LevelIndex, Score);
         AudioService.Ensure().Play("victory");
+        if (victorySummaryText != null)
+        {
+            string heading = LevelIndex >= GameRules.MaxLevel
+                ? "Энергоключ восстановлен! Все три уровня пройдены."
+                : $"Уровень {LevelIndex} пройден. Открыт следующий уровень.";
+            victorySummaryText.text = $"{heading}\nКристаллы: {CollectedCrystals}/{TotalCrystals}   Жизни: {Lives}   Счёт: {Score}";
+        }
         SetPanel(victoryPanel, true);
         Time.timeScale = 0f;
         NotifyChanged();
@@ -151,6 +205,10 @@ public sealed class GameController : MonoBehaviour
         State = GameRunState.Defeat;
         player?.SetInputEnabled(false);
         AudioService.Ensure().Play("defeat");
+        if (defeatSummaryText != null)
+        {
+            defeatSummaryText.text = $"Энергия исчерпана на уровне {LevelIndex}.\nКристаллы: {CollectedCrystals}/{TotalCrystals}   Счёт: {Score}";
+        }
         SetPanel(defeatPanel, true);
         Time.timeScale = 0f;
         NotifyChanged();
@@ -175,12 +233,32 @@ public sealed class GameController : MonoBehaviour
 
     private static void SetPanel(GameObject panel, bool value)
     {
-        if (panel != null) panel.SetActive(value);
+        if (panel == null) return;
+
+        CanvasGroup group = panel.GetComponent<CanvasGroup>();
+        if (group == null)
+        {
+            panel.SetActive(value);
+            return;
+        }
+
+        panel.SetActive(true);
+        group.alpha = value ? 1f : 0f;
+        group.interactable = value;
+        group.blocksRaycasts = value;
     }
 
     private void NotifyChanged()
     {
         StateChanged?.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 }
 
